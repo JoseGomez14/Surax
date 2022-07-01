@@ -17,4 +17,6 @@ public class PersonaControlador {
     public static void metodoPruebaGit(){
         System.out.println("Prueba de GitHub");
     }
+    
+    //Hola amigos de yu tu 
 }
