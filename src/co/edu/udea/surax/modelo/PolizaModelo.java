@@ -21,7 +21,7 @@ public class PolizaModelo {
     int idPoliza;
     double costo;
     Date fechaExp;
-    //operario vendedor
+    OperadorModelo vendedor;
     String tipo;
     int mesesContratados;
     Date vigencia;
@@ -29,5 +29,113 @@ public class PolizaModelo {
     PersonaModelo beneficiario;
     short porcDescuento;
     String [] Beneficios;
+
+    public PolizaModelo(int idPoliza, double costo, Date fechaExp, OperadorModelo vendedor, String tipo, int mesesContratados, Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario, short porcDescuento, String[] Beneficios) {
+        this.idPoliza = idPoliza;
+        this.costo = costo;
+        this.fechaExp = fechaExp;
+        this.vendedor = vendedor;
+        this.tipo = tipo;
+        this.mesesContratados = mesesContratados;
+        this.vigencia = vigencia;
+        this.tomador = tomador;
+        this.beneficiario = beneficiario;
+        this.porcDescuento = porcDescuento;
+        this.Beneficios = Beneficios;
+    }
+
+    public PolizaModelo() {
+    }
+    
+    //Setter & Getter
+
+    public int getIdPoliza() {
+        return idPoliza;
+    }
+
+    public void setIdPoliza(int idPoliza) {
+        this.idPoliza = idPoliza;
+    }
+
+    public double getCosto() {
+        return costo;
+    }
+
+    public void setCosto(double costo) {
+        this.costo = costo;
+    }
+
+    public Date getFechaExp() {
+        return fechaExp;
+    }
+
+    public void setFechaExp(Date fechaExp) {
+        this.fechaExp = fechaExp;
+    }
+
+    public OperadorModelo getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(OperadorModelo vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getMesesContratados() {
+        return mesesContratados;
+    }
+
+    public void setMesesContratados(int mesesContratados) {
+        this.mesesContratados = mesesContratados;
+    }
+
+    public Date getVigencia() {
+        return vigencia;
+    }
+
+    public void setVigencia(Date vigencia) {
+        this.vigencia = vigencia;
+    }
+
+    public PersonaModelo getTomador() {
+        return tomador;
+    }
+
+    public void setTomador(PersonaModelo tomador) {
+        this.tomador = tomador;
+    }
+
+    public PersonaModelo getBeneficiario() {
+        return beneficiario;
+    }
+
+    public void setBeneficiario(PersonaModelo beneficiario) {
+        this.beneficiario = beneficiario;
+    }
+
+    public short getPorcDescuento() {
+        return porcDescuento;
+    }
+
+    public void setPorcDescuento(short porcDescuento) {
+        this.porcDescuento = porcDescuento;
+    }
+
+    public String[] getBeneficios() {
+        return Beneficios;
+    }
+
+    public void setBeneficios(String[] Beneficios) {
+        this.Beneficios = Beneficios;
+    }
+    
     
 }
