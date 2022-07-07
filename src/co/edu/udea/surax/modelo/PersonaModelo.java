@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class PersonaModelo {
 
+    //En persona jurídica, equivale a la razón social
     private String nombre;
     private int id;
     private int tel;
