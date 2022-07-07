@@ -7,10 +7,13 @@ package co.edu.udea.surax.modelo;
 
 /**
  *
- * @author Eljac
+ * @author Jose D. Gómez M.
+ * @author Hector A. Güiza O
+ * @author Luis D. Martínez G.
+ *
  */
-public class EstudianteModelo extends NaturalModelo{
-    
+public class EstudianteModelo extends NaturalModelo {
+
     String programa;
     String institucion;
     String tipoInstitucion;
@@ -38,9 +41,8 @@ public class EstudianteModelo extends NaturalModelo{
         this.tipoInstitucion = tipoInstitucion;
         this.acudiente = acudiente;
     }
-    
-    //Getters & Setters 
 
+    //Getters & Setters 
     public String getPrograma() {
         return programa;
     }
@@ -72,7 +74,5 @@ public class EstudianteModelo extends NaturalModelo{
     public void setAcudiente(NaturalModelo acudiente) {
         this.acudiente = acudiente;
     }
-    
-    
-    
+
 }
