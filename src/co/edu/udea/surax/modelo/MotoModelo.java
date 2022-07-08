@@ -12,16 +12,16 @@ package co.edu.udea.surax.modelo;
  * 
  */
 
-public class CarroModelo extends VehiculoModelo{
+public class MotoModelo extends VehiculoModelo{
     private String tipoMotor; //Electrico o combustión
     private int cilindraje;
     
     //Método constructor
-    public CarroModelo() {
+    public MotoModelo() {
     }
     
     //Método constructor con todos los atributos exepto el valor
-    public CarroModelo(String tipoMotor, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo dueño, int kmRecorridos, String color, String servicio, int numPasajeros) {        
+    public MotoModelo(String tipoMotor, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo dueño, int kmRecorridos, String color, String servicio, int numPasajeros) {        
         super(clase, marca, estado, modelo, ref, placa, dueño, kmRecorridos, color, servicio, numPasajeros);
         this.tipoMotor = tipoMotor;
         this.cilindraje = cilindraje;
