@@ -20,7 +20,7 @@ public class VehiculoModelo {
     private String ref;
     private String placa;
     private double valor;
-    private PersonaModelo dueño;
+    private PersonaModelo propietario;
     private int kmRecorridos;
     private String color;
     private String servicio; // Publico o particular
@@ -37,7 +37,7 @@ public class VehiculoModelo {
         this.modelo = modelo;
         this.ref = ref;
         this.placa = placa;
-        this.dueño = dueño;
+        this.propietario = dueño;
         this.kmRecorridos = kmRecorridos;
         this.color = color;
         this.servicio = servicio;
@@ -93,12 +93,12 @@ public class VehiculoModelo {
         this.valor = valor;
     }
 
-    public PersonaModelo getDueño() {
-        return dueño;
+    public PersonaModelo getPropietario() {
+        return propietario;
     }
 
-    public void setDueño(PersonaModelo dueño) {
-        this.dueño = dueño;
+    public void setPropietario(PersonaModelo propietario) {
+        this.propietario = propietario;
     }
 
     public int getKmRecorridos() {

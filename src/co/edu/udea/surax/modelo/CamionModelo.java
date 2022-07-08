@@ -22,8 +22,8 @@ public class CamionModelo extends VehiculoModelo{
     }
         
     //Método constructor con todos los atributos exepto el valor
-    public CamionModelo(int ejes, String proposito, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo dueño, int kmRecorridos, String color, String servicio, int numPasajeros) {
-        super(clase, marca, estado, modelo, ref, placa, dueño, kmRecorridos, color, servicio, numPasajeros);
+    public CamionModelo(int ejes, String proposito, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo propietario, int kmRecorridos, String color, String servicio, int numPasajeros) {
+        super(clase, marca, estado, modelo, ref, placa, propietario, kmRecorridos, color, servicio, numPasajeros);
         this.ejes = ejes;
         this.proposito = proposito;
         this.cilindraje = cilindraje;
