@@ -46,7 +46,7 @@ public class Surax extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        icon.setFont(new java.awt.Font("Segoe UI Variable", 0, 72)); // NOI18N
+        icon.setFont(new java.awt.Font("Segoe UI Symbol", 0, 72)); // NOI18N
         icon.setForeground(new java.awt.Color(0, 174, 199));
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png"))); // NOI18N
         icon.setText("SuraX");
@@ -89,13 +89,12 @@ public class Surax extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(143, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(btnPersonas))
                     .addComponent(btnVehiculos)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addComponent(btnEstudiantes)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnPersonas)
+                            .addComponent(btnEstudiantes))))
                 .addGap(40, 40, 40)
                 .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
