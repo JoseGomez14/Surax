@@ -99,12 +99,12 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="msjIndicacion1" min="-2" pref="1280" max="-2" attributes="0"/>
+                          <Component id="msjIndicacion" min="-2" pref="1280" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="jSeparator1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jSeparator" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -113,9 +113,9 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnActualizaInfo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCotizarPoliza" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -132,17 +132,17 @@
                           <Component id="btnLimpiarVentana" min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="msjIndicacion1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="msjIndicacion" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSeparator1" min="-2" pref="638" max="-2" attributes="0"/>
+                          <Component id="jSeparator" min="-2" pref="638" max="-2" attributes="0"/>
                           <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnActualizaInfo" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCotizarPoliza" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="25" max="32767" attributes="0"/>
                   </Group>
@@ -215,7 +215,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="msjIndicacion1">
+            <Component class="javax.swing.JLabel" name="msjIndicacion">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="24" style="1"/>
@@ -240,18 +240,18 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="inputOptionSexo1" max="32767" attributes="0"/>
+                              <Component id="inputOptionSexo" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="inputNumEdad1" min="-2" pref="212" max="-2" attributes="0"/>
+                                  <Component id="inputNumEdad" min="-2" pref="212" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="inputNumEstrato1" pref="210" max="32767" attributes="0"/>
+                                  <Component id="inputNumEstrato" pref="210" max="32767" attributes="0"/>
                               </Group>
                               <Component id="labelInfoPersonal1" max="32767" attributes="0"/>
-                              <Component id="inputNombre1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="inputId1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="inputEmail1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="inputTel1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="inputOcupacion1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="inputNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="inputId" alignment="0" max="32767" attributes="0"/>
+                              <Component id="inputEmail" alignment="0" max="32767" attributes="0"/>
+                              <Component id="inputTel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="inputOcupacion" alignment="0" max="32767" attributes="0"/>
                               <Component id="inputOptionEnfermedad" alignment="0" max="32767" attributes="0"/>
                               <Component id="inputOptionDiscapacidad" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -265,21 +265,21 @@
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                           <Component id="labelInfoPersonal1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="inputNombre1" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="inputNombre" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="inputId1" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="inputId" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="inputEmail1" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="inputEmail" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="inputTel1" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="inputTel" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="inputOcupacion1" min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="inputOcupacion" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="inputOptionSexo1" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="inputOptionSexo" min="-2" pref="37" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="inputNumEstrato1" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
-                              <Component id="inputNumEdad1" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
+                              <Component id="inputNumEstrato" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
+                              <Component id="inputNumEdad" alignment="3" min="-2" pref="65" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="inputOptionEnfermedad" min="-2" pref="37" max="-2" attributes="0"/>
@@ -302,7 +302,7 @@
                     <Property name="text" type="java.lang.String" value="Informaci&#xf3;n Personal*"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="inputNombre1">
+                <Component class="javax.swing.JTextField" name="inputNombre">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -329,7 +329,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputNombreActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="inputId1">
+                <Component class="javax.swing.JTextField" name="inputId">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -356,7 +356,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputIdActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="inputEmail1">
+                <Component class="javax.swing.JTextField" name="inputEmail">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -383,7 +383,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputEmailActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="inputTel1">
+                <Component class="javax.swing.JTextField" name="inputTel">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -410,7 +410,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputTelActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="inputOcupacion1">
+                <Component class="javax.swing.JTextField" name="inputOcupacion">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
@@ -437,7 +437,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputOcupacionActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="inputOptionSexo1">
+                <Component class="javax.swing.JComboBox" name="inputOptionSexo">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -451,11 +451,14 @@
                       <Border info="null"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputOptionSexoActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="inputNumEdad1">
+                <Component class="javax.swing.JSpinner" name="inputNumEdad">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -473,7 +476,7 @@
                     <Property name="debugGraphicsOptions" type="int" value="4"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="inputNumEstrato1">
+                <Component class="javax.swing.JSpinner" name="inputNumEstrato">
                   <Properties>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -877,15 +880,18 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JSeparator" name="jSeparator1">
+            <Component class="javax.swing.JSeparator" name="jSeparator">
               <Properties>
                 <Property name="orientation" type="int" value="1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="btnActualizaInfo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/co/edu/udea/surax/vista/images/act_informacion.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
                 </Property>
                 <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/co/edu/udea/surax/vista/images/act_informacion_disabled.png"/>
@@ -893,10 +899,13 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="btnCotizarPoliza">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/co/edu/udea/surax/vista/images/cotizar_poliza.png"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Hand Cursor"/>
                 </Property>
                 <Property name="disabledIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"/>

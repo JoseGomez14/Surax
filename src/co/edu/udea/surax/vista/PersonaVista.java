@@ -42,17 +42,17 @@ public class PersonaVista extends javax.swing.JFrame {
         btnBuscarPersona = new javax.swing.JLabel();
         btnEliminarPersona = new javax.swing.JLabel();
         btnLimpiarVentana = new javax.swing.JLabel();
-        msjIndicacion1 = new javax.swing.JLabel();
+        msjIndicacion = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         labelInfoPersonal1 = new javax.swing.JLabel();
-        inputNombre1 = new javax.swing.JTextField();
-        inputId1 = new javax.swing.JTextField();
-        inputEmail1 = new javax.swing.JTextField();
-        inputTel1 = new javax.swing.JTextField();
-        inputOcupacion1 = new javax.swing.JTextField();
-        inputOptionSexo1 = new javax.swing.JComboBox<>();
-        inputNumEdad1 = new javax.swing.JSpinner();
-        inputNumEstrato1 = new javax.swing.JSpinner();
+        inputNombre = new javax.swing.JTextField();
+        inputId = new javax.swing.JTextField();
+        inputEmail = new javax.swing.JTextField();
+        inputTel = new javax.swing.JTextField();
+        inputOcupacion = new javax.swing.JTextField();
+        inputOptionSexo = new javax.swing.JComboBox<>();
+        inputNumEdad = new javax.swing.JSpinner();
+        inputNumEstrato = new javax.swing.JSpinner();
         inputOptionEnfermedad = new javax.swing.JComboBox<>();
         inputOptionDiscapacidad = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
@@ -72,9 +72,9 @@ public class PersonaVista extends javax.swing.JFrame {
         labelZona = new javax.swing.JLabel();
         inputRdUrbana = new javax.swing.JRadioButton();
         inputRdRural = new javax.swing.JRadioButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jSeparator = new javax.swing.JSeparator();
+        btnActualizaInfo = new javax.swing.JLabel();
+        btnCotizarPoliza = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -112,10 +112,10 @@ public class PersonaVista extends javax.swing.JFrame {
         btnLimpiarVentana.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLimpiarVentana.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/trash_icon_disabled.png"))); // NOI18N
 
-        msjIndicacion1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        msjIndicacion1.setForeground(new java.awt.Color(112, 112, 112));
-        msjIndicacion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        msjIndicacion1.setText("Espacio para mensajes o indicaciones");
+        msjIndicacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        msjIndicacion.setForeground(new java.awt.Color(112, 112, 112));
+        msjIndicacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        msjIndicacion.setText("Espacio para mensajes o indicaciones");
 
         jPanel4.setBackground(java.awt.Color.white);
 
@@ -123,64 +123,69 @@ public class PersonaVista extends javax.swing.JFrame {
         labelInfoPersonal1.setForeground(new java.awt.Color(0, 163, 224));
         labelInfoPersonal1.setText("Información Personal*");
 
-        inputNombre1.setBackground(java.awt.Color.white);
-        inputNombre1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputNombre1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNombre1.setVerifyInputWhenFocusTarget(false);
-        inputNombre1.addActionListener(new java.awt.event.ActionListener() {
+        inputNombre.setBackground(java.awt.Color.white);
+        inputNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputNombre.setVerifyInputWhenFocusTarget(false);
+        inputNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputNombreActionPerformed(evt);
             }
         });
 
-        inputId1.setBackground(java.awt.Color.white);
-        inputId1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputId1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputId1.setVerifyInputWhenFocusTarget(false);
-        inputId1.addActionListener(new java.awt.event.ActionListener() {
+        inputId.setBackground(java.awt.Color.white);
+        inputId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputId.setVerifyInputWhenFocusTarget(false);
+        inputId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputIdActionPerformed(evt);
             }
         });
 
-        inputEmail1.setBackground(java.awt.Color.white);
-        inputEmail1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputEmail1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Correo Electrónico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputEmail1.setVerifyInputWhenFocusTarget(false);
-        inputEmail1.addActionListener(new java.awt.event.ActionListener() {
+        inputEmail.setBackground(java.awt.Color.white);
+        inputEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Correo Electrónico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputEmail.setVerifyInputWhenFocusTarget(false);
+        inputEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputEmailActionPerformed(evt);
             }
         });
 
-        inputTel1.setBackground(java.awt.Color.white);
-        inputTel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputTel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Teléfono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputTel1.setVerifyInputWhenFocusTarget(false);
-        inputTel1.addActionListener(new java.awt.event.ActionListener() {
+        inputTel.setBackground(java.awt.Color.white);
+        inputTel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputTel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Teléfono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputTel.setVerifyInputWhenFocusTarget(false);
+        inputTel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputTelActionPerformed(evt);
             }
         });
 
-        inputOcupacion1.setBackground(java.awt.Color.white);
-        inputOcupacion1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputOcupacion1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Ocupación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputOcupacion1.setVerifyInputWhenFocusTarget(false);
-        inputOcupacion1.addActionListener(new java.awt.event.ActionListener() {
+        inputOcupacion.setBackground(java.awt.Color.white);
+        inputOcupacion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputOcupacion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Ocupación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputOcupacion.setVerifyInputWhenFocusTarget(false);
+        inputOcupacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOcupacionActionPerformed(evt);
             }
         });
 
-        inputOptionSexo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo ------------", "Hombre", "Mujer", "Otro" }));
-        inputOptionSexo1.setBorder(null);
+        inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo ------------", "Hombre", "Mujer", "Otro" }));
+        inputOptionSexo.setBorder(null);
+        inputOptionSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionSexoActionPerformed(evt);
+            }
+        });
 
-        inputNumEdad1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Edad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNumEdad1.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        inputNumEdad.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Edad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputNumEdad.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
-        inputNumEstrato1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Estrato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNumEstrato1.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        inputNumEstrato.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Estrato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputNumEstrato.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
         inputOptionEnfermedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enfermedades ------------", "Hombre", "Mujer", "Otro" }));
         inputOptionEnfermedad.setBorder(null);
@@ -205,17 +210,17 @@ public class PersonaVista extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(inputOptionSexo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inputNumEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(inputNumEstrato1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                        .addComponent(inputNumEstrato, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
                     .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputNombre1)
-                    .addComponent(inputId1)
-                    .addComponent(inputEmail1)
-                    .addComponent(inputTel1)
-                    .addComponent(inputOcupacion1)
+                    .addComponent(inputNombre)
+                    .addComponent(inputId)
+                    .addComponent(inputEmail)
+                    .addComponent(inputTel)
+                    .addComponent(inputOcupacion)
                     .addComponent(inputOptionEnfermedad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(inputOptionDiscapacidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(74, Short.MAX_VALUE))
@@ -226,21 +231,21 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(labelInfoPersonal1)
                 .addGap(16, 16, 16)
-                .addComponent(inputNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputId1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputTel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOcupacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOptionSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputOptionSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputNumEstrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputNumEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNumEstrato, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputOptionEnfermedad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -438,15 +443,17 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion.png"))); // NOI18N
-        jLabel1.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion_disabled.png"))); // NOI18N
-        jLabel1.setEnabled(false);
+        btnActualizaInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion.png"))); // NOI18N
+        btnActualizaInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizaInfo.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion_disabled.png"))); // NOI18N
+        btnActualizaInfo.setEnabled(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza.png"))); // NOI18N
-        jLabel2.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"))); // NOI18N
-        jLabel2.setEnabled(false);
+        btnCotizarPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza.png"))); // NOI18N
+        btnCotizarPoliza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCotizarPoliza.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"))); // NOI18N
+        btnCotizarPoliza.setEnabled(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -466,20 +473,20 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(msjIndicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(148, 148, 148)
-                .addComponent(jLabel1)
+                .addComponent(btnActualizaInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(btnCotizarPoliza)
                 .addGap(147, 147, 147))
         );
         jPanel5Layout.setVerticalGroup(
@@ -493,16 +500,16 @@ public class PersonaVista extends javax.swing.JFrame {
                     .addComponent(btnAgregarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLimpiarVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(msjIndicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                    .addComponent(btnActualizaInfo)
+                    .addComponent(btnCotizarPoliza))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -598,6 +605,10 @@ public class PersonaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNombreActionPerformed
 
+    private void inputOptionSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputOptionSexoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -634,8 +645,10 @@ public class PersonaVista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnActualizaInfo;
     private javax.swing.JLabel btnAgregarPersona;
     private javax.swing.JLabel btnBuscarPersona;
+    private javax.swing.JLabel btnCotizarPoliza;
     private javax.swing.JLabel btnEliminarPersona;
     private javax.swing.ButtonGroup btnGroupTipoPersona;
     private javax.swing.ButtonGroup btnGroupZona;
@@ -644,18 +657,18 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField inputCodPostal;
     private javax.swing.JTextField inputDir;
-    private javax.swing.JTextField inputEmail1;
-    private javax.swing.JTextField inputId1;
-    private javax.swing.JTextField inputNombre1;
-    private javax.swing.JSpinner inputNumEdad1;
-    private javax.swing.JSpinner inputNumEstrato1;
-    private javax.swing.JTextField inputOcupacion1;
+    private javax.swing.JTextField inputEmail;
+    private javax.swing.JTextField inputId;
+    private javax.swing.JTextField inputNombre;
+    private javax.swing.JSpinner inputNumEdad;
+    private javax.swing.JSpinner inputNumEstrato;
+    private javax.swing.JTextField inputOcupacion;
     private javax.swing.JComboBox<String> inputOptionDiscapacidad;
     private javax.swing.JComboBox<String> inputOptionDpto;
     private javax.swing.JComboBox<String> inputOptionEnfermedad;
     private javax.swing.JComboBox<String> inputOptionEstadoCivil;
     private javax.swing.JComboBox<String> inputOptionMpio;
-    private javax.swing.JComboBox<String> inputOptionSexo1;
+    private javax.swing.JComboBox<String> inputOptionSexo;
     private javax.swing.JRadioButton inputRdJuridica;
     private javax.swing.JRadioButton inputRdNatural;
     private javax.swing.JRadioButton inputRdPregrado;
@@ -663,19 +676,17 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JRadioButton inputRdRural;
     private javax.swing.JRadioButton inputRdSecundaria;
     private javax.swing.JRadioButton inputRdUrbana;
-    private javax.swing.JTextField inputTel1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField inputTel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator;
     private javax.swing.JLabel labelDir;
     private javax.swing.JLabel labelInfoPersonal1;
     private javax.swing.JLabel labelInfoPersonal4;
     private javax.swing.JLabel labelTipoPersona;
     private javax.swing.JLabel labelZona;
-    private javax.swing.JLabel msjIndicacion1;
+    private javax.swing.JLabel msjIndicacion;
     // End of variables declaration//GEN-END:variables
 }
