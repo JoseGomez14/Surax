@@ -12,16 +12,15 @@ package co.edu.udea.surax.vista;
  * @author Luis D. Martínez G.
  * 
  */
-public class PersonaVista extends javax.swing.JFrame {
+public class VehiculoVista1 extends javax.swing.JFrame {
 
     /**
      * Creates new form PersonaVista
      */
-    public PersonaVista() {
+    public VehiculoVista1() {
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
         setTitle("Surax");
-        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
     }
 
     /**
@@ -35,27 +34,26 @@ public class PersonaVista extends javax.swing.JFrame {
 
         btnGroupTipoPersona = new javax.swing.ButtonGroup();
         btnGroupZona = new javax.swing.ButtonGroup();
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
+        btnAgregarPersona1 = new javax.swing.JLabel();
+        btnBuscarVehiculo = new javax.swing.JLabel();
+        btnEliminarVehiculo = new javax.swing.JLabel();
         btnVolver = new javax.swing.JLabel();
-        btnAgregarPersona = new javax.swing.JLabel();
-        btnBuscarPersona = new javax.swing.JLabel();
-        btnEliminarPersona = new javax.swing.JLabel();
         btnLimpiarVentana = new javax.swing.JLabel();
-        msjIndicacion = new javax.swing.JLabel();
+        msjIndicacion1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        labelInfoPersonal1 = new javax.swing.JLabel();
-        inputNombre = new javax.swing.JTextField();
-        inputId = new javax.swing.JTextField();
-        inputEmail = new javax.swing.JTextField();
-        inputTel = new javax.swing.JTextField();
-        inputOcupacion = new javax.swing.JTextField();
-        inputOptionSexo = new javax.swing.JComboBox<>();
-        inputNumEdad = new javax.swing.JSpinner();
-        inputNumEstrato = new javax.swing.JSpinner();
+        labelInfoVehiculo = new javax.swing.JLabel();
+        inputPlaca = new javax.swing.JTextField();
+        inputNumEdad1 = new javax.swing.JSpinner();
+        inputNumEstrato1 = new javax.swing.JSpinner();
         inputOptionEnfermedad = new javax.swing.JComboBox<>();
         inputOptionDiscapacidad = new javax.swing.JComboBox<>();
+        inputOptionDpto2 = new javax.swing.JComboBox<>();
+        inputOptionDpto4 = new javax.swing.JComboBox<>();
+        inputOptionDpto5 = new javax.swing.JComboBox<>();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         inputOptionEstadoCivil = new javax.swing.JComboBox<>();
         labelTipoPersona = new javax.swing.JLabel();
@@ -73,115 +71,62 @@ public class PersonaVista extends javax.swing.JFrame {
         labelZona = new javax.swing.JLabel();
         inputRdUrbana = new javax.swing.JRadioButton();
         inputRdRural = new javax.swing.JRadioButton();
-        jSeparator = new javax.swing.JSeparator();
-        btnActualizaInfo = new javax.swing.JLabel();
-        btnCotizarPoliza = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setResizable(false);
 
-        jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jPanel5.setBackground(java.awt.Color.white);
         jPanel5.setAutoscrolls(true);
-        jPanel5.setPreferredSize(new java.awt.Dimension(1280, 880));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1280, 820));
+
+        btnAgregarPersona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_vehiculo.png"))); // NOI18N
+        btnAgregarPersona1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btnBuscarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_vehiculo.png"))); // NOI18N
+        btnBuscarVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btnEliminarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_vehiculo.png"))); // NOI18N
+        btnEliminarVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btnAgregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_persona.png"))); // NOI18N
-        btnAgregarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAgregarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_persona_disabled.png"))); // NOI18N
-        btnAgregarPersona.setEnabled(false);
-
-        btnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_persona.png"))); // NOI18N
-        btnBuscarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_estudiante_disabled.png"))); // NOI18N
-        btnBuscarPersona.setEnabled(false);
-
-        btnEliminarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_persona.png"))); // NOI18N
-        btnEliminarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_persona_disabled.png"))); // NOI18N
-        btnEliminarPersona.setEnabled(false);
-
         btnLimpiarVentana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/trash_icon.png"))); // NOI18N
         btnLimpiarVentana.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLimpiarVentana.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/trash_icon_disabled.png"))); // NOI18N
 
-        msjIndicacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        msjIndicacion.setForeground(new java.awt.Color(112, 112, 112));
-        msjIndicacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        msjIndicacion.setText("Espacio para mensajes o indicaciones");
+        msjIndicacion1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        msjIndicacion1.setForeground(new java.awt.Color(112, 112, 112));
+        msjIndicacion1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        msjIndicacion1.setText("Espacio para mensajes o indicaciones");
 
         jPanel4.setBackground(java.awt.Color.white);
 
-        labelInfoPersonal1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        labelInfoPersonal1.setForeground(new java.awt.Color(0, 163, 224));
-        labelInfoPersonal1.setText("Información Personal*");
+        labelInfoVehiculo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelInfoVehiculo.setForeground(new java.awt.Color(0, 163, 224));
+        labelInfoVehiculo.setText("Información del Vehículo*");
 
-        inputNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNombre.setVerifyInputWhenFocusTarget(false);
-        inputNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputNombreActionPerformed(evt);
-            }
-        });
-
-        inputId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputId.setVerifyInputWhenFocusTarget(false);
-        inputId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputIdActionPerformed(evt);
-            }
-        });
-
-        inputEmail.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputEmail.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Correo Electrónico", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputEmail.setVerifyInputWhenFocusTarget(false);
-        inputEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputEmailActionPerformed(evt);
-            }
-        });
-
-        inputTel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputTel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Teléfono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputTel.setVerifyInputWhenFocusTarget(false);
-        inputTel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputTelActionPerformed(evt);
-            }
-        });
-
-        inputOcupacion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputOcupacion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Ocupación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputOcupacion.setVerifyInputWhenFocusTarget(false);
-        inputOcupacion.addActionListener(new java.awt.event.ActionListener() {
+        inputPlaca.setBackground(java.awt.Color.white);
+        inputPlaca.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputPlaca.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Placa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputPlaca.setVerifyInputWhenFocusTarget(false);
+        inputPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOcupacionActionPerformed(evt);
             }
         });
 
-        inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo ------------", "Hombre", "Mujer", "Otro" }));
-        inputOptionSexo.setBorder(null);
-        inputOptionSexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputOptionSexoActionPerformed(evt);
-            }
-        });
+        inputNumEdad1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Edad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputNumEdad1.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
-        inputNumEdad.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Edad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNumEdad.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-
-        inputNumEstrato.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Estrato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputNumEstrato.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        inputNumEstrato1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Estrato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
+        inputNumEstrato1.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
         inputOptionEnfermedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enfermedades ------------", "Hombre", "Mujer", "Otro" }));
         inputOptionEnfermedad.setBorder(null);
@@ -199,54 +144,88 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        inputOptionDpto2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoría ------------", "Automóvil", "Bicicleta", "Camión", "Monopatín", "Motocicleta", " " }));
+        inputOptionDpto2.setBorder(null);
+        inputOptionDpto2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionDpto2ActionPerformed(evt);
+            }
+        });
+
+        inputOptionDpto4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Referencia ------------", "WRANGLER 4.2 MT 4200CC CAB", "EAGLE SUMMIT AT 2400CC LX 4P", "RE MAXIMA CARGO FURGON [ASL] MT 236CC" }));
+        inputOptionDpto4.setBorder(null);
+        inputOptionDpto4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionDpto4ActionPerformed(evt);
+            }
+        });
+
+        inputOptionDpto5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca ------------", "Audi", "Chevrolet", "Pulsar" }));
+        inputOptionDpto5.setBorder(null);
+        inputOptionDpto5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionDpto5ActionPerformed(evt);
+            }
+        });
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, null, 100000000, 100));
+        jSpinner1.setBorder(javax.swing.BorderFactory.createTitledBorder("Km Recorridos"));
+        jSpinner1.setName("Km recorrridos"); // NOI18N
+
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(2022, 1900, 2100, 1));
+        jSpinner2.setBorder(javax.swing.BorderFactory.createTitledBorder("Modelo"));
+        jSpinner2.setMinimumSize(new java.awt.Dimension(440, 37));
+        jSpinner2.setName(""); // NOI18N
+        jSpinner2.setPreferredSize(new java.awt.Dimension(252, 43));
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(inputOptionDpto2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(inputNumEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(inputNumEstrato))
-                    .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                    .addComponent(inputId)
-                    .addComponent(inputEmail)
-                    .addComponent(inputTel)
-                    .addComponent(inputOcupacion)
+                        .addComponent(inputNumEstrato1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                    .addComponent(labelInfoVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputPlaca)
                     .addComponent(inputOptionEnfermedad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(inputOptionDiscapacidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputNombre))
-                .addGap(74, 74, 74))
+                    .addComponent(inputOptionDpto4, 0, 440, Short.MAX_VALUE)
+                    .addComponent(inputOptionDpto5, javax.swing.GroupLayout.Alignment.TRAILING, 0, 440, Short.MAX_VALUE)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(16, 16, 16)
-                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOptionSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelInfoVehiculo)
+                .addGap(31, 31, 31)
+                .addComponent(inputOptionDpto2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(inputOptionDpto5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(inputOptionDpto4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(inputPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputNumEstrato, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputNumEstrato1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNumEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputOptionEnfermedad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputOptionDiscapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(java.awt.Color.white);
@@ -325,6 +304,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        inputDir.setBackground(java.awt.Color.white);
         inputDir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputDir.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Dirección", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputDir.setVerifyInputWhenFocusTarget(false);
@@ -334,6 +314,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        inputCodPostal.setBackground(java.awt.Color.white);
         inputCodPostal.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputCodPostal.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Código Postal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputCodPostal.setVerifyInputWhenFocusTarget(false);
@@ -434,20 +415,10 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputRdUrbana, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputRdRural, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
-        btnActualizaInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion.png"))); // NOI18N
-        btnActualizaInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnActualizaInfo.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion_disabled.png"))); // NOI18N
-        btnActualizaInfo.setEnabled(false);
-
-        btnCotizarPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza.png"))); // NOI18N
-        btnCotizarPoliza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCotizarPoliza.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"))); // NOI18N
-        btnCotizarPoliza.setEnabled(false);
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -457,31 +428,25 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(btnVolver)
                 .addGap(27, 27, 27)
-                .addComponent(btnAgregarPersona)
+                .addComponent(btnAgregarPersona1)
                 .addGap(86, 86, 86)
-                .addComponent(btnBuscarPersona)
+                .addComponent(btnBuscarVehiculo)
                 .addGap(86, 86, 86)
-                .addComponent(btnEliminarPersona)
+                .addComponent(btnEliminarVehiculo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLimpiarVentana)
                 .addGap(32, 32, 32))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(msjIndicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)
-                        .addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(btnActualizaInfo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCotizarPoliza)
-                .addGap(147, 147, 147))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -489,22 +454,18 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEliminarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAgregarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnEliminarVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBuscarVehiculo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAgregarPersona1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLimpiarVentana, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 638, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnActualizaInfo)
-                    .addComponent(btnCotizarPoliza))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(msjIndicacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel5);
@@ -583,25 +544,17 @@ public class PersonaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputOcupacionActionPerformed
 
-    private void inputTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelActionPerformed
+    private void inputOptionDpto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionDpto2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputTelActionPerformed
+    }//GEN-LAST:event_inputOptionDpto2ActionPerformed
 
-    private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailActionPerformed
+    private void inputOptionDpto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionDpto4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmailActionPerformed
+    }//GEN-LAST:event_inputOptionDpto4ActionPerformed
 
-    private void inputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdActionPerformed
+    private void inputOptionDpto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionDpto5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_inputIdActionPerformed
-
-    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombreActionPerformed
-
-    private void inputOptionSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOptionSexoActionPerformed
+    }//GEN-LAST:event_inputOptionDpto5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -620,49 +573,48 @@ public class PersonaVista extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PersonaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehiculoVista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PersonaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehiculoVista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PersonaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehiculoVista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PersonaVista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VehiculoVista1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PersonaVista().setVisible(true);
+                new VehiculoVista1().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnActualizaInfo;
-    private javax.swing.JLabel btnAgregarPersona;
-    private javax.swing.JLabel btnBuscarPersona;
-    private javax.swing.JLabel btnCotizarPoliza;
-    private javax.swing.JLabel btnEliminarPersona;
+    private javax.swing.JLabel btnAgregarPersona1;
+    private javax.swing.JLabel btnBuscarVehiculo;
+    private javax.swing.JLabel btnEliminarVehiculo;
     private javax.swing.ButtonGroup btnGroupTipoPersona;
     private javax.swing.ButtonGroup btnGroupZona;
     private javax.swing.JLabel btnLimpiarVentana;
     private javax.swing.JLabel btnVolver;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField inputCodPostal;
     private javax.swing.JTextField inputDir;
-    private javax.swing.JTextField inputEmail;
-    private javax.swing.JTextField inputId;
-    private javax.swing.JTextField inputNombre;
-    private javax.swing.JSpinner inputNumEdad;
-    private javax.swing.JSpinner inputNumEstrato;
-    private javax.swing.JTextField inputOcupacion;
+    private javax.swing.JSpinner inputNumEdad1;
+    private javax.swing.JSpinner inputNumEstrato1;
     private javax.swing.JComboBox<String> inputOptionDiscapacidad;
     private javax.swing.JComboBox<String> inputOptionDpto;
+    private javax.swing.JComboBox<String> inputOptionDpto2;
+    private javax.swing.JComboBox<String> inputOptionDpto4;
+    private javax.swing.JComboBox<String> inputOptionDpto5;
     private javax.swing.JComboBox<String> inputOptionEnfermedad;
     private javax.swing.JComboBox<String> inputOptionEstadoCivil;
     private javax.swing.JComboBox<String> inputOptionMpio;
-    private javax.swing.JComboBox<String> inputOptionSexo;
+    private javax.swing.JTextField inputPlaca;
     private javax.swing.JRadioButton inputRdJuridica;
     private javax.swing.JRadioButton inputRdNatural;
     private javax.swing.JRadioButton inputRdPregrado;
@@ -670,17 +622,18 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JRadioButton inputRdRural;
     private javax.swing.JRadioButton inputRdSecundaria;
     private javax.swing.JRadioButton inputRdUrbana;
-    private javax.swing.JTextField inputTel;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JLabel labelDir;
-    private javax.swing.JLabel labelInfoPersonal1;
     private javax.swing.JLabel labelInfoPersonal4;
+    private javax.swing.JLabel labelInfoVehiculo;
     private javax.swing.JLabel labelTipoPersona;
     private javax.swing.JLabel labelZona;
-    private javax.swing.JLabel msjIndicacion;
+    private javax.swing.JLabel msjIndicacion1;
     // End of variables declaration//GEN-END:variables
 }
