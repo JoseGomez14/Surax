@@ -25,13 +25,25 @@ public class VehiculoModelo {
     private String color;
     private String servicio; // Publico o particular
     private int numPasajeros;
+    private boolean importado;
     
     //Método constructor
     public VehiculoModelo() {
     }
     
-    //Método constructor con todos los atributos exepto el valor y clase
-    public VehiculoModelo(String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo dueño, int kmRecorridos, String color, String servicio, int numPasajeros) {
+    //Método constructor base
+    public VehiculoModelo(String clase, String marca, String ref, double valor, String servicio, int numPasajeros, boolean importado) {        
+        this.clase = clase;
+        this.marca = marca;
+        this.ref = ref;
+        this.valor = valor;
+        this.servicio = servicio;
+        this.numPasajeros = numPasajeros;
+        this.importado = importado;
+    }
+
+    //Método constructor con todos los atributos exepto el valor
+    public VehiculoModelo(String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo dueño, int kmRecorridos, String color, String servicio, int numPasajeros, boolean importado) {
         this.clase = clase;
         this.marca = marca;
         this.modelo = modelo;
@@ -42,6 +54,7 @@ public class VehiculoModelo {
         this.color = color;
         this.servicio = servicio;
         this.numPasajeros = numPasajeros;
+        this.importado = importado;
     }
     
     //Getters y setters para todas las variables
@@ -131,6 +144,14 @@ public class VehiculoModelo {
 
     public void setNumPasajeros(int numPasajeros) {
         this.numPasajeros = numPasajeros;
+    }
+    
+    public boolean getImportado() {
+        return importado;
+    }
+
+    public void setImportado(boolean importado) {
+        this.importado = importado;
     }
         
     //Métodos  de la clase

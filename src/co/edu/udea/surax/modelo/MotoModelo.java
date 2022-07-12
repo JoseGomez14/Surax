@@ -20,9 +20,16 @@ public class MotoModelo extends VehiculoModelo{
     public MotoModelo() {
     }
     
+    //Método constructor base
+    public MotoModelo(String tipoMotor, int cilindraje, String clase, String marca, String ref, double valor, String servicio, int numPasajeros, boolean importado) {    
+        super(clase, marca, ref, valor, servicio, numPasajeros, importado);
+        this.tipoMotor = tipoMotor;
+        this.cilindraje = cilindraje;
+    }
+
     //Método constructor con todos los atributos exepto el valor
-    public MotoModelo(String tipoMotor, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo propietario, int kmRecorridos, String color, String servicio, int numPasajeros) {        
-        super(clase, marca, estado, modelo, ref, placa, propietario, kmRecorridos, color, servicio, numPasajeros);
+    public MotoModelo(String tipoMotor, int cilindraje, String clase, String marca, String estado, int modelo, String ref, String placa, PersonaModelo propietario, int kmRecorridos, String color, String servicio, int numPasajeros, boolean importado) {        
+        super(clase, marca, estado, modelo, ref, placa, propietario, kmRecorridos, color, servicio, numPasajeros, importado);
         this.tipoMotor = tipoMotor;
         this.cilindraje = cilindraje;
     }
