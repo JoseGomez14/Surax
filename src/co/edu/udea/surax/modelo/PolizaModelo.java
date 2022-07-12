@@ -26,14 +26,14 @@ public class PolizaModelo {
     private PersonaModelo tomador;
     private PersonaModelo beneficiario;
     private short porcDescuento;
-    private String[] Beneficios;
+    private String Beneficios;
     private boolean activo;
     private double valor;
 
     public PolizaModelo(int idPoliza, double costo, Date fechaExp,
             OperarioModelo vendedor, String tipo, int mesesContratados,
             Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario,
-            short porcDescuento, String[] Beneficios) {
+            short porcDescuento, String Beneficios) {
         this.idPoliza = idPoliza;
         this.costo = costo;
         this.fechaExp = fechaExp;
@@ -132,11 +132,11 @@ public class PolizaModelo {
         this.porcDescuento = porcDescuento;
     }
 
-    public String[] getBeneficios() {
+    public String getBeneficios() {
         return Beneficios;
     }
 
-    public void setBeneficios(String[] Beneficios) {
+    public void setBeneficios(String Beneficios) {
         this.Beneficios = Beneficios;
     }
 

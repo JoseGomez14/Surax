@@ -19,22 +19,29 @@ public class EstudianteModelo extends NaturalModelo {
     String tipoInstitucion;
     NaturalModelo acudiente;
 
-    public EstudianteModelo(String programa, String institucion, String tipoInstitucion, NaturalModelo acudiente) {
+    public EstudianteModelo(String programa, String institucion, 
+            String tipoInstitucion, NaturalModelo acudiente) {
         this.programa = programa;
         this.institucion = institucion;
         this.tipoInstitucion = tipoInstitucion;
         this.acudiente = acudiente;
     }
 
-    public EstudianteModelo(String programa, String institucion, String tipoInstitucion, NaturalModelo acudiente, char sexo, String enfermedadesPreinscritas, String discapacidad, String ocupacion, short estrato, boolean estadoCivil, String nivelEducativo, short edad) {
-        super(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad);
+    public EstudianteModelo(String programa, String institucion, String 
+            tipoInstitucion, NaturalModelo acudiente, char sexo, String 
+            enfermedadesPreinscritas, String discapacidad, short ocupacion, 
+            short estrato, boolean estadoCivil, String nivelEducativo, short edad
+            , short peso, short altura, short vo2max) {
+        super(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato,
+                estadoCivil, nivelEducativo, edad, peso, altura, vo2max);
         this.programa = programa;
         this.institucion = institucion;
         this.tipoInstitucion = tipoInstitucion;
         this.acudiente = acudiente;
     }
 
-    public EstudianteModelo(String programa, String institucion, String tipoInstitucion, NaturalModelo acudiente, String nombre, int id, int tel, String correo) {
+    public EstudianteModelo(String programa, String institucion, String 
+            tipoInstitucion, NaturalModelo acudiente, String nombre, int id, int tel, String correo) {
         super(nombre, id, tel, correo);
         this.programa = programa;
         this.institucion = institucion;

@@ -12,27 +12,32 @@ package co.edu.udea.surax.modelo;
  * @author Luis D. Martínez G.
  *
  */
-public class NaturalModelo extends PersonaModelo{
-    
+public class NaturalModelo extends PersonaModelo {
+
     private char sexo;
     private String enfermedadesPreinscritas;
     private String discapacidad;
-    private String ocupacion;
+
+    //riesgo de la ocupación del 1 al 10
+    private short ocupacion;
     private short estrato;
     private boolean estadoCivil;
     private String nivelEducativo;
     private short edad;
+    private short peso;
+    private short altura;
+    private short vo2max;
+    private int porcRiesgo;
 
-    
     //Constructores
     public NaturalModelo() {
     }
 
-    public NaturalModelo(char sexo, String enfermedadesPreinscritas, 
-            String discapacidad, String ocupacion, short estrato, 
-            boolean estadoCivil, String nivelEducativo, short edad
-            ) {
-        
+    public NaturalModelo(char sexo, String enfermedadesPreinscritas,
+            String discapacidad, short ocupacion, short estrato,
+            boolean estadoCivil, String nivelEducativo, short edad,
+            short peso, short altura, short vo2max) {
+
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
@@ -41,17 +46,19 @@ public class NaturalModelo extends PersonaModelo{
         this.estadoCivil = estadoCivil;
         this.nivelEducativo = nivelEducativo;
         this.edad = edad;
+        this.peso = peso;
+        this.altura = altura;
+        this.vo2max = vo2max;
     }
-    
-    public NaturalModelo(String nombre, int id, int tel, String correo){
+
+    public NaturalModelo(String nombre, int id, int tel, String correo) {
         super.setNombre(nombre);
-        super.setId(id); 
+        super.setId(id);
         super.setTel(tel);
         super.setCorreo(correo);
     }
-    
-    //Getters & Setters
 
+    //Getters & Setters
     public char getSexo() {
         return sexo;
     }
@@ -76,11 +83,11 @@ public class NaturalModelo extends PersonaModelo{
         this.discapacidad = discapacidad;
     }
 
-    public String getOcupacion() {
+    public short getOcupacion() {
         return ocupacion;
     }
 
-    public void setOcupacion(String ocupacion) {
+    public void setOcupacion(short ocupacion) {
         this.ocupacion = ocupacion;
     }
 
@@ -115,5 +122,105 @@ public class NaturalModelo extends PersonaModelo{
     public void setEdad(short edad) {
         this.edad = edad;
     }
-    
+
+    public short getPeso() {
+        return peso;
+    }
+
+    public void setPeso(short peso) {
+        this.peso = peso;
+    }
+
+    public short getAltura() {
+        return altura;
+    }
+
+    public void setAltura(short altura) {
+        this.altura = altura;
+    }
+
+    public short getVo2max() {
+        return vo2max;
+    }
+
+    public void setVo2max(short vo2max) {
+        this.vo2max = vo2max;
+    }
+
+    public int getPorcRiesgo() {
+        return porcRiesgo;
+    }
+
+    public void setPorcRiesgo(int porcRiesgo) {
+        this.porcRiesgo = porcRiesgo;
+    }
+
+    //Metodo
+    void calcularPorcRiesgo() {
+
+        double imc = getPeso() / (getAltura() * getAltura());
+        int puntaje = 0;
+
+        //Filtramos las enfermedades para el puntaje
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Diabetes I")) {
+            puntaje += 10;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Diabetes II")) {
+            puntaje += 4;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Enfermedad leve")) {
+            puntaje += 1;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Enfermedad grave")) {
+            puntaje += 20;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Enfermedad medianamente grave")) {
+            puntaje += 8;
+        }
+        if (imc < 18) {
+            puntaje += 3;
+        } else if (imc >= 25 && imc <= 29.9) {
+            puntaje += 5;
+        } else if (imc > 30) {
+            puntaje += 8;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Cardiopatía isquémica")) {
+            puntaje += 20;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Demencia")) {
+            puntaje += 18;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Antecedente cerebrovacular")) {
+            puntaje += 20;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Enfermedad pulmonar")) {
+            puntaje += 18;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Cáncer de pulmón")) {
+            puntaje += 20;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Hipertensión")) {
+            puntaje += 10;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Cancer de colon")) {
+            puntaje += 18;
+        }
+        if (getVo2max() < 35) {
+            puntaje += 5;
+        }
+        if (getEnfermedadesPreinscritas().equalsIgnoreCase("Paciente terminal")) {
+            puntaje += 50;
+        }
+        if (getSexo() == 'M') {
+            puntaje += 5;
+        }
+
+        if (puntaje >= 50) {
+            setPorcRiesgo(100);
+        } else {
+            setPorcRiesgo(puntaje * 2);
+        }
+
+    }
+
 }
