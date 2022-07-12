@@ -21,6 +21,7 @@ public class PersonaVista extends javax.swing.JFrame {
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
         setTitle("Surax");
+        jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
     }
 
     /**
