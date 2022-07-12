@@ -25,6 +25,8 @@ public class Utils {
     /**
      * Método que permite leer información de un archivo .csv
      * @param filePath es la ruta del archivo que se desea leer
+     * 
+     * @return Retorna ArrayList<String> con las lineas del archivo .csv
      */
     public static ArrayList<String> leerCsv(String filePath) throws IOException {
         BufferedReader br = null;

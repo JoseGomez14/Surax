@@ -21,7 +21,7 @@ public class PolizaModelo {
     int idPoliza;
     double costo;
     Date fechaExp;
-    OperadorModelo vendedor;
+    OperarioModelo vendedor;
     String tipo;
     int mesesContratados;
     Date vigencia;
@@ -30,7 +30,7 @@ public class PolizaModelo {
     short porcDescuento;
     String [] Beneficios;
 
-    public PolizaModelo(int idPoliza, double costo, Date fechaExp, OperadorModelo vendedor, String tipo, int mesesContratados, Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario, short porcDescuento, String[] Beneficios) {
+    public PolizaModelo(int idPoliza, double costo, Date fechaExp, OperarioModelo vendedor, String tipo, int mesesContratados, Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario, short porcDescuento, String[] Beneficios) {
         this.idPoliza = idPoliza;
         this.costo = costo;
         this.fechaExp = fechaExp;
@@ -73,11 +73,11 @@ public class PolizaModelo {
         this.fechaExp = fechaExp;
     }
 
-    public OperadorModelo getVendedor() {
+    public OperarioModelo getVendedor() {
         return vendedor;
     }
 
-    public void setVendedor(OperadorModelo vendedor) {
+    public void setVendedor(OperarioModelo vendedor) {
         this.vendedor = vendedor;
     }
 

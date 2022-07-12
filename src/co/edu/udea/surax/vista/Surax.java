@@ -6,8 +6,11 @@
 package co.edu.udea.surax.vista;
 
 /**
- *
- * @author josda
+ * 
+ * @author Jose D. Gómez M.
+ * @author Hector A. Güiza O
+ * @author Luis D. Martínez G.
+ * 
  */
 public class Surax extends javax.swing.JFrame {
 
@@ -17,6 +20,7 @@ public class Surax extends javax.swing.JFrame {
     public Surax() {
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
+        setTitle("Surax");
     }
 
     /**
@@ -29,11 +33,11 @@ public class Surax extends javax.swing.JFrame {
     private void initComponents() {
 
         icon = new javax.swing.JLabel();
-        btnPersonas = new javax.swing.JLabel();
-        btnVehiculos = new javax.swing.JLabel();
-        btnEstudiantes = new javax.swing.JLabel();
-        msjIndicacion = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        btnEstudiantes = new javax.swing.JLabel();
+        btnVehiculos = new javax.swing.JLabel();
+        btnPersonas = new javax.swing.JLabel();
+        msjIndicacion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -48,35 +52,53 @@ public class Surax extends javax.swing.JFrame {
         icon.setText("SuraX");
         getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas.png"))); // NOI18N
-        btnPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btnPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 190, -1, -1));
-
-        btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/vehiculos.png"))); // NOI18N
-        btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.N_RESIZE_CURSOR));
-        getContentPane().add(btnVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 175, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btnEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/estudiantes.png"))); // NOI18N
         btnEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btnEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(854, 190, -1, -1));
+
+        btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/vehiculos.png"))); // NOI18N
+        btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas.png"))); // NOI18N
+        btnPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         msjIndicacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         msjIndicacion.setForeground(new java.awt.Color(112, 112, 112));
         msjIndicacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         msjIndicacion.setText("Selecciona la modalidad de poliza a la que desea acceder");
-        getContentPane().add(msjIndicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 1280, 40));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(btnPersonas)
+                .addGap(36, 36, 36)
+                .addComponent(btnVehiculos)
+                .addGap(36, 36, 36)
+                .addComponent(btnEstudiantes)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(143, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnPersonas))
+                    .addComponent(btnVehiculos)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnEstudiantes)))
+                .addGap(40, 40, 40)
+                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
