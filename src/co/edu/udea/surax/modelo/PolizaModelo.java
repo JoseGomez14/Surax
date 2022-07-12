@@ -1,6 +1,5 @@
 package co.edu.udea.surax.modelo;
 
-
 import java.util.Date;
 
 /*
@@ -8,7 +7,6 @@ import java.util.Date;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Jose D. Gómez M.
@@ -17,20 +15,25 @@ import java.util.Date;
  *
  */
 public class PolizaModelo {
-    
-    int idPoliza;
-    double costo;
-    Date fechaExp;
-    OperadorModelo vendedor;
-    String tipo;
-    int mesesContratados;
-    Date vigencia;
-    PersonaModelo tomador;
-    PersonaModelo beneficiario;
-    short porcDescuento;
-    String [] Beneficios;
 
-    public PolizaModelo(int idPoliza, double costo, Date fechaExp, OperadorModelo vendedor, String tipo, int mesesContratados, Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario, short porcDescuento, String[] Beneficios) {
+    private int idPoliza;
+    private double costo;
+    private Date fechaExp;
+    private OperadorModelo vendedor;
+    private String tipo;
+    private int mesesContratados;
+    private Date vigencia;
+    private PersonaModelo tomador;
+    private PersonaModelo beneficiario;
+    private short porcDescuento;
+    private String[] Beneficios;
+    private boolean activo;
+    private double valor;
+
+    public PolizaModelo(int idPoliza, double costo, Date fechaExp,
+            OperadorModelo vendedor, String tipo, int mesesContratados,
+            Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario,
+            short porcDescuento, String[] Beneficios) {
         this.idPoliza = idPoliza;
         this.costo = costo;
         this.fechaExp = fechaExp;
@@ -42,13 +45,13 @@ public class PolizaModelo {
         this.beneficiario = beneficiario;
         this.porcDescuento = porcDescuento;
         this.Beneficios = Beneficios;
+
     }
 
     public PolizaModelo() {
     }
-    
-    //Setter & Getter
 
+    //Setter & Getter
     public int getIdPoliza() {
         return idPoliza;
     }
@@ -136,6 +139,5 @@ public class PolizaModelo {
     public void setBeneficios(String[] Beneficios) {
         this.Beneficios = Beneficios;
     }
-    
-    
+
 }

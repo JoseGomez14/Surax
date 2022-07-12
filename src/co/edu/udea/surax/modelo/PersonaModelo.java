@@ -78,5 +78,13 @@ public class PersonaModelo {
     }
 
     
+    //Métodos   
+    
+   /* ArrayList<String> adquirirPoliza(){
+        
+        
+        
+    }*/
+    
     
 }
