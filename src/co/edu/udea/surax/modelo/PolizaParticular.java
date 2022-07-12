@@ -27,5 +27,9 @@ public class PolizaParticular {
     
     void calcularRiesgos(){
         
+        
+        for (RiesgoModelo riesgo : riesgos) {
+            
+        }
     }
 }
