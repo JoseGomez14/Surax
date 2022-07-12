@@ -28,7 +28,11 @@ public class NaturalModelo extends PersonaModelo{
     public NaturalModelo() {
     }
 
-    public NaturalModelo(char sexo, String enfermedadesPreinscritas, String discapacidad, String ocupacion, short estrato, boolean estadoCivil, String nivelEducativo, short edad) {
+    public NaturalModelo(char sexo, String enfermedadesPreinscritas, 
+            String discapacidad, String ocupacion, short estrato, 
+            boolean estadoCivil, String nivelEducativo, short edad
+            ) {
+        
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
