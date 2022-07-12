@@ -54,13 +54,13 @@ public class Surax extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/estudiantes.png"))); // NOI18N
+        btnEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/estudiantes_card.png"))); // NOI18N
         btnEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/vehiculos.png"))); // NOI18N
+        btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/vehiculos_card.png"))); // NOI18N
         btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas.png"))); // NOI18N
+        btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas_card.png"))); // NOI18N
         btnPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         msjIndicacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N

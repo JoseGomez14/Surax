@@ -107,7 +107,7 @@
         <Component class="javax.swing.JLabel" name="btnEstudiantes">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/co/edu/udea/surax/vista/images/estudiantes.png"/>
+              <Image iconType="3" name="/co/edu/udea/surax/vista/images/estudiantes_card.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
@@ -117,7 +117,7 @@
         <Component class="javax.swing.JLabel" name="btnVehiculos">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/co/edu/udea/surax/vista/images/vehiculos.png"/>
+              <Image iconType="3" name="/co/edu/udea/surax/vista/images/vehiculos_card.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
@@ -127,7 +127,7 @@
         <Component class="javax.swing.JLabel" name="btnPersonas">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/co/edu/udea/surax/vista/images/personas.png"/>
+              <Image iconType="3" name="/co/edu/udea/surax/vista/images/personas_card.png"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
