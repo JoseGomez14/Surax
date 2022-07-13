@@ -5,6 +5,9 @@
  */
 package co.edu.udea.surax.vista;
 
+import co.edu.udea.surax.modelo.Utils;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  * 
  * @author Jose D. Gómez M.
@@ -13,7 +16,11 @@ package co.edu.udea.surax.vista;
  * 
  */
 public class PersonaVista extends javax.swing.JFrame {
-
+    
+    
+    
+    
+    
     /**
      * Creates new form PersonaVista
      */
@@ -23,6 +30,15 @@ public class PersonaVista extends javax.swing.JFrame {
         setTitle("Surax");
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
     }
+    
+    int idxDtpoSelect = 0;
+    int idxMpioSelect = 0;
+    Utils utils = new Utils();
+    String[] listDptos = utils.getDEPARTAMENTOS();
+    String[] listMpios = utils.getMUNICIPIOS()[idxDtpoSelect];
+       
+    DefaultComboBoxModel optionsCbxModelDptos;
+    DefaultComboBoxModel optionsCbxModelMpios;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,13 +70,12 @@ public class PersonaVista extends javax.swing.JFrame {
         inputOptionSexo = new javax.swing.JComboBox<>();
         inputNumEdad = new javax.swing.JSpinner();
         inputNumEstrato = new javax.swing.JSpinner();
-        inputOptionEnfermedad = new javax.swing.JComboBox<>();
-        inputOptionDiscapacidad = new javax.swing.JComboBox<>();
-        jPanel3 = new javax.swing.JPanel();
         inputOptionEstadoCivil = new javax.swing.JComboBox<>();
+        jCheckBox8 = new javax.swing.JCheckBox();
         labelTipoPersona = new javax.swing.JLabel();
         inputRdNatural = new javax.swing.JRadioButton();
         inputRdJuridica = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
         labelInfoPersonal4 = new javax.swing.JLabel();
         inputRdPrimaria = new javax.swing.JRadioButton();
         inputRdSecundaria = new javax.swing.JRadioButton();
@@ -73,6 +88,19 @@ public class PersonaVista extends javax.swing.JFrame {
         labelZona = new javax.swing.JLabel();
         inputRdUrbana = new javax.swing.JRadioButton();
         inputRdRural = new javax.swing.JRadioButton();
+        labelTipoPersona1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
         jSeparator = new javax.swing.JSeparator();
         btnActualizaInfo = new javax.swing.JLabel();
         btnCotizarPoliza = new javax.swing.JLabel();
@@ -89,7 +117,7 @@ public class PersonaVista extends javax.swing.JFrame {
 
         jPanel5.setBackground(java.awt.Color.white);
         jPanel5.setAutoscrolls(true);
-        jPanel5.setPreferredSize(new java.awt.Dimension(1280, 880));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1280, 950));
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -101,7 +129,7 @@ public class PersonaVista extends javax.swing.JFrame {
 
         btnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_persona.png"))); // NOI18N
         btnBuscarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnBuscarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_estudiante_disabled.png"))); // NOI18N
+        btnBuscarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_persona_disabled.png"))); // NOI18N
         btnBuscarPersona.setEnabled(false);
 
         btnEliminarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_persona.png"))); // NOI18N
@@ -136,9 +164,21 @@ public class PersonaVista extends javax.swing.JFrame {
         inputId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputId.setVerifyInputWhenFocusTarget(false);
+        inputId.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                inputIdInputMethodTextChanged(evt);
+            }
+        });
         inputId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputIdActionPerformed(evt);
+            }
+        });
+        inputId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inputIdKeyTyped(evt);
             }
         });
 
@@ -169,7 +209,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
-        inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo ------------", "Hombre", "Mujer", "Otro" }));
+        inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un sexo", "Hombre", "Mujer" }));
         inputOptionSexo.setBorder(null);
         inputOptionSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,82 +217,19 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        inputNumEdad.setModel(new javax.swing.SpinnerNumberModel(Short.valueOf((short)0), Short.valueOf((short)0), Short.valueOf((short)120), Short.valueOf((short)1)));
         inputNumEdad.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Edad", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumEdad.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
+        inputNumEstrato.setModel(new javax.swing.SpinnerNumberModel(Short.valueOf((short)0), Short.valueOf((short)0), Short.valueOf((short)6), Short.valueOf((short)1)));
         inputNumEstrato.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Estrato", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumEstrato.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
-        inputOptionEnfermedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enfermedades ------------", "Hombre", "Mujer", "Otro" }));
-        inputOptionEnfermedad.setBorder(null);
-        inputOptionEnfermedad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputOptionEnfermedadActionPerformed(evt);
-            }
-        });
-
-        inputOptionDiscapacidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discapacidad ------------", "Hombre", "Mujer", "Otro" }));
-        inputOptionDiscapacidad.setBorder(null);
-        inputOptionDiscapacidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputOptionDiscapacidadActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(inputNumEstrato))
-                    .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                    .addComponent(inputId)
-                    .addComponent(inputEmail)
-                    .addComponent(inputTel)
-                    .addComponent(inputOcupacion)
-                    .addComponent(inputOptionEnfermedad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputOptionDiscapacidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputNombre))
-                .addGap(74, 74, 74))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(16, 16, 16)
-                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOptionSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputNumEstrato, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOptionEnfermedad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputOptionDiscapacidad, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel3.setBackground(java.awt.Color.white);
-
-        inputOptionEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estado Civil ------------", "Hombre", "Mujer", "Otro" }));
+        inputOptionEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un estado civil", "Soltero/a", "Casado/a", "Viudo/a", "Divorciado/a", "En unión libre" }));
         inputOptionEstadoCivil.setBorder(null);
+
+        jCheckBox8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jCheckBox8.setText("Discapacidad");
 
         labelTipoPersona.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         labelTipoPersona.setForeground(new java.awt.Color(0, 163, 224));
@@ -276,6 +253,76 @@ public class PersonaVista extends javax.swing.JFrame {
                 inputRdJuridicaActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(inputRdNatural, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputRdJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelTipoPersona, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jCheckBox8)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(inputOptionEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputOptionSexo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNumEstrato))
+                            .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                            .addComponent(inputId, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputTel, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputOcupacion, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputNombre, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(74, 74, 74))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(labelInfoPersonal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputTel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputOptionSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputNumEstrato, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputOptionEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBox8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelTipoPersona)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputRdNatural, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputRdJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
+
+        jPanel3.setBackground(java.awt.Color.white);
 
         labelInfoPersonal4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         labelInfoPersonal4.setForeground(new java.awt.Color(0, 163, 224));
@@ -309,7 +356,7 @@ public class PersonaVista extends javax.swing.JFrame {
         labelDir.setForeground(new java.awt.Color(0, 163, 224));
         labelDir.setText("Dirección*");
 
-        inputOptionDpto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Departamento ------------", "Hombre", "Mujer", "Otro" }));
+        inputOptionDpto.setModel(new javax.swing.DefaultComboBoxModel<>(listDptos));
         inputOptionDpto.setBorder(null);
         inputOptionDpto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -317,7 +364,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
-        inputOptionMpio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Municipio ------------", "Hombre", "Mujer", "Otro" }));
+        inputOptionMpio.setModel(new javax.swing.DefaultComboBoxModel<>(listMpios));
         inputOptionMpio.setBorder(null);
         inputOptionMpio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -366,24 +413,110 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        labelTipoPersona1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        labelTipoPersona1.setForeground(new java.awt.Color(0, 163, 224));
+        labelTipoPersona1.setText("Enfermedades");
+
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox1.setText("Diabetes I");
+
+        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox2.setText("Diabetes II");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox3.setText("Enfermedad leve");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox4.setText("Demencia");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox5.setText("Hipertensión");
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox5ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox6.setText("Enfermedad grave");
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox7.setText("Cardiopatía isquémica");
+
+        jCheckBox9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox9.setText("Enfermedad medianamente grave");
+        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox9ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox10.setText("Antecedente cerebrovacular");
+
+        jCheckBox11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox11.setText("Enfermedad pulmonar");
+        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox11ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox12.setText("Cancer de colon");
+
+        jCheckBox13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jCheckBox13.setText("Cáncer de pulmón");
+        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(74, 74, 74)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(inputRdUrbana, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(inputRdRural, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(labelZona, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCheckBox9))
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(inputRdNatural, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(inputRdJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(inputRdUrbana, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputRdRural, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelZona, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(inputRdPrimaria, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -391,26 +524,58 @@ public class PersonaVista extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(inputRdPregrado, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(inputDir)
-                        .addComponent(inputOptionEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(inputOptionDpto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelTipoPersona, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
                         .addComponent(labelInfoPersonal4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelDir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(inputOptionMpio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(inputCodPostal)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                        .addComponent(inputCodPostal)
+                        .addComponent(labelTipoPersona1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jCheckBox12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(inputOptionEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelTipoPersona)
+                .addContainerGap()
+                .addComponent(labelTipoPersona1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputRdNatural, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputRdJuridica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox7)
+                    .addComponent(jCheckBox9))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox10)
+                    .addComponent(jCheckBox11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox12)
+                    .addComponent(jCheckBox13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelInfoPersonal4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -434,7 +599,7 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inputRdUrbana, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputRdRural, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -458,9 +623,9 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addComponent(btnVolver)
                 .addGap(27, 27, 27)
                 .addComponent(btnAgregarPersona)
-                .addGap(86, 86, 86)
+                .addGap(108, 108, 108)
                 .addComponent(btnBuscarPersona)
-                .addGap(86, 86, 86)
+                .addGap(108, 108, 108)
                 .addComponent(btnEliminarPersona)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnLimpiarVentana)
@@ -504,7 +669,7 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnActualizaInfo)
                     .addComponent(btnCotizarPoliza))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel5);
@@ -544,11 +709,14 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputDirinputNombreActionPerformed
 
     private void inputOptionMpioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionMpioActionPerformed
-        // TODO add your handling code here:
+        idxMpioSelect = utils.buscarEnStringArray(listMpios, (String) inputOptionMpio.getSelectedItem());
     }//GEN-LAST:event_inputOptionMpioActionPerformed
 
     private void inputOptionDptoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionDptoActionPerformed
-        // TODO add your handling code here:
+        idxDtpoSelect = utils.buscarEnStringArray(listDptos, (String) inputOptionDpto.getSelectedItem());
+        listMpios = utils.getMUNICIPIOS()[idxDtpoSelect];
+        DefaultComboBoxModel styleCbxModelMpios = new javax.swing.DefaultComboBoxModel<>(listMpios);
+        inputOptionMpio.setModel(styleCbxModelMpios);
     }//GEN-LAST:event_inputOptionDptoActionPerformed
 
     private void inputRdPregradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdPregradoActionPerformed
@@ -570,14 +738,6 @@ public class PersonaVista extends javax.swing.JFrame {
     private void inputRdNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdNaturalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputRdNaturalActionPerformed
-
-    private void inputOptionDiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionDiscapacidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOptionDiscapacidadActionPerformed
-
-    private void inputOptionEnfermedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionEnfermedadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOptionEnfermedadActionPerformed
 
     private void inputOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOcupacionActionPerformed
         // TODO add your handling code here:
@@ -602,6 +762,52 @@ public class PersonaVista extends javax.swing.JFrame {
     private void inputOptionSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionSexoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputOptionSexoActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox9ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox11ActionPerformed
+
+    private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox13ActionPerformed
+
+    private void inputIdInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inputIdInputMethodTextChanged
+
+    }//GEN-LAST:event_inputIdInputMethodTextChanged
+
+    private void inputIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputIdKeyTyped
+        if(inputId.getText().equals("")){
+            btnBuscarPersona.setEnabled(false);
+            btnEliminarPersona.setEnabled(false);
+        }else{
+            btnBuscarPersona.setEnabled(true);
+            btnEliminarPersona.setEnabled(true);
+        }
+    }//GEN-LAST:event_inputIdKeyTyped
 
     /**
      * @param args the command line arguments
@@ -657,9 +863,7 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JSpinner inputNumEdad;
     private javax.swing.JSpinner inputNumEstrato;
     private javax.swing.JTextField inputOcupacion;
-    private javax.swing.JComboBox<String> inputOptionDiscapacidad;
     private javax.swing.JComboBox<String> inputOptionDpto;
-    private javax.swing.JComboBox<String> inputOptionEnfermedad;
     private javax.swing.JComboBox<String> inputOptionEstadoCivil;
     private javax.swing.JComboBox<String> inputOptionMpio;
     private javax.swing.JComboBox<String> inputOptionSexo;
@@ -671,6 +875,19 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JRadioButton inputRdSecundaria;
     private javax.swing.JRadioButton inputRdUrbana;
     private javax.swing.JTextField inputTel;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox11;
+    private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -680,6 +897,7 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JLabel labelInfoPersonal1;
     private javax.swing.JLabel labelInfoPersonal4;
     private javax.swing.JLabel labelTipoPersona;
+    private javax.swing.JLabel labelTipoPersona1;
     private javax.swing.JLabel labelZona;
     private javax.swing.JLabel msjIndicacion;
     // End of variables declaration//GEN-END:variables
