@@ -6,7 +6,7 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="btnGroupZona">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="btnGroupNivelAdco">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -592,16 +592,16 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jCheckBox7" min="-2" pref="182" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf7" min="-2" pref="182" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jCheckBox9" min="-2" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf8" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="jCheckBox1" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf1" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox2" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf2" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox3" max="32767" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf3" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -626,26 +626,26 @@
                                   <Component id="inputCodPostal" alignment="0" max="32767" attributes="0"/>
                                   <Component id="labelTipoPersona1" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jCheckBox4" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf4" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox5" min="-2" pref="140" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf5" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jCheckBox6" max="32767" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf6" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jCheckBox12" max="32767" attributes="0"/>
-                                      <Component id="jCheckBox10" min="-2" pref="211" max="-2" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf11" max="32767" attributes="0"/>
+                                      <Component id="inputCheckBoxEnf9" min="-2" pref="211" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox11" min="-2" pref="213" max="-2" attributes="0"/>
+                                          <Component id="inputCheckBoxEnf10" min="-2" pref="213" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                          <Component id="jCheckBox13" min="-2" pref="213" max="-2" attributes="0"/>
+                                          <Component id="inputCheckBoxEnf12" min="-2" pref="213" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -661,30 +661,30 @@
                           <Component id="labelTipoPersona1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf7" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf8" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jCheckBox10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="inputCheckBoxEnf12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="labelInfoPersonal4" min="-2" max="-2" attributes="0"/>
@@ -730,6 +730,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="inputRdPrimaria">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroupNivelAdco"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
@@ -741,6 +744,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="inputRdSecundaria">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroupNivelAdco"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
@@ -752,6 +758,9 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="inputRdPregrado">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroupNivelAdco"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
@@ -903,7 +912,7 @@
                     <Property name="text" type="java.lang.String" value="Enfermedades"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -911,7 +920,7 @@
                     <Property name="text" type="java.lang.String" value="Diabetes I"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -919,10 +928,10 @@
                     <Property name="text" type="java.lang.String" value="Diabetes II"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf2ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -930,10 +939,10 @@
                     <Property name="text" type="java.lang.String" value="Enfermedad leve"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf3ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -941,10 +950,10 @@
                     <Property name="text" type="java.lang.String" value="Demencia"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf4ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf5">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -952,10 +961,10 @@
                     <Property name="text" type="java.lang.String" value="Hipertensi&#xf3;n"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox5ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf5ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -963,10 +972,10 @@
                     <Property name="text" type="java.lang.String" value="Enfermedad grave"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox6ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf6ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf7">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -974,7 +983,7 @@
                     <Property name="text" type="java.lang.String" value="Cardiopat&#xed;a isqu&#xe9;mica"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf8">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -982,10 +991,10 @@
                     <Property name="text" type="java.lang.String" value="Enfermedad medianamente grave"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf8ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf9">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -993,7 +1002,7 @@
                     <Property name="text" type="java.lang.String" value="Antecedente cerebrovacular"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf10">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -1001,10 +1010,10 @@
                     <Property name="text" type="java.lang.String" value="Enfermedad pulmonar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox11ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf10ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf11">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -1012,7 +1021,7 @@
                     <Property name="text" type="java.lang.String" value="Cancer de colon"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+                <Component class="javax.swing.JCheckBox" name="inputCheckBoxEnf12">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="16" style="0"/>
@@ -1020,7 +1029,7 @@
                     <Property name="text" type="java.lang.String" value="C&#xe1;ncer de pulm&#xf3;n"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox13ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputCheckBoxEnf12ActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>

@@ -51,7 +51,7 @@ public class PersonaVista extends javax.swing.JFrame {
 
         btnGroupTipoPersona = new javax.swing.ButtonGroup();
         btnGroupZona = new javax.swing.ButtonGroup();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btnGroupNivelAdco = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         btnVolver = new javax.swing.JLabel();
@@ -89,18 +89,18 @@ public class PersonaVista extends javax.swing.JFrame {
         inputRdUrbana = new javax.swing.JRadioButton();
         inputRdRural = new javax.swing.JRadioButton();
         labelTipoPersona1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf1 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf2 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf3 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf4 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf5 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf6 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf7 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf8 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf9 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf10 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf11 = new javax.swing.JCheckBox();
+        inputCheckBoxEnf12 = new javax.swing.JCheckBox();
         jSeparator = new javax.swing.JSeparator();
         btnActualizaInfo = new javax.swing.JLabel();
         btnCotizarPoliza = new javax.swing.JLabel();
@@ -328,6 +328,7 @@ public class PersonaVista extends javax.swing.JFrame {
         labelInfoPersonal4.setForeground(new java.awt.Color(0, 163, 224));
         labelInfoPersonal4.setText("Nivel Académico");
 
+        btnGroupNivelAdco.add(inputRdPrimaria);
         inputRdPrimaria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputRdPrimaria.setText("Primaria");
         inputRdPrimaria.addActionListener(new java.awt.event.ActionListener() {
@@ -336,6 +337,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        btnGroupNivelAdco.add(inputRdSecundaria);
         inputRdSecundaria.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputRdSecundaria.setText("Secundaria");
         inputRdSecundaria.addActionListener(new java.awt.event.ActionListener() {
@@ -344,6 +346,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         });
 
+        btnGroupNivelAdco.add(inputRdPregrado);
         inputRdPregrado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputRdPregrado.setText("Pregrado");
         inputRdPregrado.addActionListener(new java.awt.event.ActionListener() {
@@ -417,79 +420,79 @@ public class PersonaVista extends javax.swing.JFrame {
         labelTipoPersona1.setForeground(new java.awt.Color(0, 163, 224));
         labelTipoPersona1.setText("Enfermedades");
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox1.setText("Diabetes I");
+        inputCheckBoxEnf1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf1.setText("Diabetes I");
 
-        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox2.setText("Diabetes II");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf2.setText("Diabetes II");
+        inputCheckBoxEnf2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                inputCheckBoxEnf2ActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox3.setText("Enfermedad leve");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf3.setText("Enfermedad leve");
+        inputCheckBoxEnf3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                inputCheckBoxEnf3ActionPerformed(evt);
             }
         });
 
-        jCheckBox4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox4.setText("Demencia");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf4.setText("Demencia");
+        inputCheckBoxEnf4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                inputCheckBoxEnf4ActionPerformed(evt);
             }
         });
 
-        jCheckBox5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox5.setText("Hipertensión");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf5.setText("Hipertensión");
+        inputCheckBoxEnf5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                inputCheckBoxEnf5ActionPerformed(evt);
             }
         });
 
-        jCheckBox6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox6.setText("Enfermedad grave");
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf6.setText("Enfermedad grave");
+        inputCheckBoxEnf6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                inputCheckBoxEnf6ActionPerformed(evt);
             }
         });
 
-        jCheckBox7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox7.setText("Cardiopatía isquémica");
+        inputCheckBoxEnf7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf7.setText("Cardiopatía isquémica");
 
-        jCheckBox9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox9.setText("Enfermedad medianamente grave");
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf8.setText("Enfermedad medianamente grave");
+        inputCheckBoxEnf8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
+                inputCheckBoxEnf8ActionPerformed(evt);
             }
         });
 
-        jCheckBox10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox10.setText("Antecedente cerebrovacular");
+        inputCheckBoxEnf9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf9.setText("Antecedente cerebrovacular");
 
-        jCheckBox11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox11.setText("Enfermedad pulmonar");
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf10.setText("Enfermedad pulmonar");
+        inputCheckBoxEnf10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                inputCheckBoxEnf10ActionPerformed(evt);
             }
         });
 
-        jCheckBox12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox12.setText("Cancer de colon");
+        inputCheckBoxEnf11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf11.setText("Cancer de colon");
 
-        jCheckBox13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jCheckBox13.setText("Cáncer de pulmón");
-        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+        inputCheckBoxEnf12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        inputCheckBoxEnf12.setText("Cáncer de pulmón");
+        inputCheckBoxEnf12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox13ActionPerformed(evt);
+                inputCheckBoxEnf12ActionPerformed(evt);
             }
         });
 
@@ -502,15 +505,15 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCheckBoxEnf7, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox9))
+                            .addComponent(inputCheckBoxEnf8))
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCheckBoxEnf1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCheckBoxEnf2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(inputCheckBoxEnf3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(inputRdUrbana, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -531,22 +534,22 @@ public class PersonaVista extends javax.swing.JFrame {
                         .addComponent(inputCodPostal)
                         .addComponent(labelTipoPersona1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCheckBoxEnf4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputCheckBoxEnf5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(inputCheckBoxEnf6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jCheckBox12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputCheckBoxEnf11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputCheckBoxEnf9, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(inputCheckBoxEnf10, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
-                                .addComponent(jCheckBox13, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(inputCheckBoxEnf12, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -556,26 +559,26 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addComponent(labelTipoPersona1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3))
+                    .addComponent(inputCheckBoxEnf1)
+                    .addComponent(inputCheckBoxEnf2)
+                    .addComponent(inputCheckBoxEnf3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
+                    .addComponent(inputCheckBoxEnf4)
+                    .addComponent(inputCheckBoxEnf5)
+                    .addComponent(inputCheckBoxEnf6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox7)
-                    .addComponent(jCheckBox9))
+                    .addComponent(inputCheckBoxEnf7)
+                    .addComponent(inputCheckBoxEnf8))
                 .addGap(8, 8, 8)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jCheckBox11))
+                    .addComponent(inputCheckBoxEnf9)
+                    .addComponent(inputCheckBoxEnf10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox13))
+                    .addComponent(inputCheckBoxEnf11)
+                    .addComponent(inputCheckBoxEnf12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelInfoPersonal4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -763,37 +766,37 @@ public class PersonaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputOptionSexoActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void inputCheckBoxEnf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf2ActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void inputCheckBoxEnf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf3ActionPerformed
 
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
+    private void inputCheckBoxEnf5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf5ActionPerformed
 
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+    private void inputCheckBoxEnf6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf6ActionPerformed
 
-    private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
+    private void inputCheckBoxEnf8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf8ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox9ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf8ActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void inputCheckBoxEnf4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf4ActionPerformed
 
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+    private void inputCheckBoxEnf10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf10ActionPerformed
 
-    private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
+    private void inputCheckBoxEnf12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf12ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox13ActionPerformed
+    }//GEN-LAST:event_inputCheckBoxEnf12ActionPerformed
 
     private void inputIdInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inputIdInputMethodTextChanged
 
@@ -850,11 +853,23 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JLabel btnBuscarPersona;
     private javax.swing.JLabel btnCotizarPoliza;
     private javax.swing.JLabel btnEliminarPersona;
+    private javax.swing.ButtonGroup btnGroupNivelAdco;
     private javax.swing.ButtonGroup btnGroupTipoPersona;
     private javax.swing.ButtonGroup btnGroupZona;
     private javax.swing.JLabel btnLimpiarVentana;
     private javax.swing.JLabel btnVolver;
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox inputCheckBoxEnf1;
+    private javax.swing.JCheckBox inputCheckBoxEnf10;
+    private javax.swing.JCheckBox inputCheckBoxEnf11;
+    private javax.swing.JCheckBox inputCheckBoxEnf12;
+    private javax.swing.JCheckBox inputCheckBoxEnf2;
+    private javax.swing.JCheckBox inputCheckBoxEnf3;
+    private javax.swing.JCheckBox inputCheckBoxEnf4;
+    private javax.swing.JCheckBox inputCheckBoxEnf5;
+    private javax.swing.JCheckBox inputCheckBoxEnf6;
+    private javax.swing.JCheckBox inputCheckBoxEnf7;
+    private javax.swing.JCheckBox inputCheckBoxEnf8;
+    private javax.swing.JCheckBox inputCheckBoxEnf9;
     private javax.swing.JTextField inputCodPostal;
     private javax.swing.JTextField inputDir;
     private javax.swing.JTextField inputEmail;
@@ -875,19 +890,7 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JRadioButton inputRdSecundaria;
     private javax.swing.JRadioButton inputRdUrbana;
     private javax.swing.JTextField inputTel;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
     private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

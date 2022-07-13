@@ -52,13 +52,13 @@ public class VehiculoVista extends javax.swing.JFrame {
         inputPlaca = new javax.swing.JTextField();
         inputNumKmRecorridos = new javax.swing.JSpinner();
         inputNumModelo = new javax.swing.JSpinner();
+        inputOptionReferencia1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         labelTipodeServicios = new javax.swing.JLabel();
         inputRdParticular = new javax.swing.JRadioButton();
         inputRdPublico = new javax.swing.JRadioButton();
         labelInfoPropietario = new javax.swing.JLabel();
         inputNumPasajeros = new javax.swing.JTextField();
-        inputColor1 = new javax.swing.JTextField();
         inputNombre = new javax.swing.JTextField();
         inputDocumento = new javax.swing.JTextField();
         inputCorreoElectronico = new javax.swing.JTextField();
@@ -114,7 +114,7 @@ public class VehiculoVista extends javax.swing.JFrame {
         labelInfoVehiculo1.setForeground(new java.awt.Color(0, 163, 224));
         labelInfoVehiculo1.setText("Información del Vehículo*");
 
-        inputOptionCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Categoría ------------", "Automóvil", "Bicicleta", "Camión", "Monopatín", "Motocicleta", " " }));
+        inputOptionCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoría", "Automóvil", "Bicicleta", "Camión", "Monopatín", "Motocicleta", " " }));
         inputOptionCategoria.setBorder(null);
         inputOptionCategoria.setMinimumSize(new java.awt.Dimension(118, 20));
         inputOptionCategoria.setPreferredSize(new java.awt.Dimension(118, 20));
@@ -124,16 +124,18 @@ public class VehiculoVista extends javax.swing.JFrame {
             }
         });
 
-        inputOptionMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marca ------------", "Audi", "Chevrolet", "Pulsar" }));
+        inputOptionMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una marca" }));
         inputOptionMarca.setBorder(null);
+        inputOptionMarca.setEnabled(false);
         inputOptionMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionMarcaActionPerformed(evt);
             }
         });
 
-        inputOptionReferencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Referencia ------------", "WRANGLER 4.2 MT 4200CC CAB", "EAGLE SUMMIT AT 2400CC LX 4P", "RE MAXIMA CARGO FURGON [ASL] MT 236CC" }));
+        inputOptionReferencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una referencia" }));
         inputOptionReferencia.setBorder(null);
+        inputOptionReferencia.setEnabled(false);
         inputOptionReferencia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionReferenciaActionPerformed(evt);
@@ -158,6 +160,14 @@ public class VehiculoVista extends javax.swing.JFrame {
         inputNumModelo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Modelo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumModelo.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
+        inputOptionReferencia1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un color", "Negro", "Marrón", "Rojo", "Naranja", "Amarillo", "Verde", "Azul", "Violeta", "Gris", "Blanco", "Oro", "Plata" }));
+        inputOptionReferencia1.setBorder(null);
+        inputOptionReferencia1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionReferencia1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -171,7 +181,8 @@ public class VehiculoVista extends javax.swing.JFrame {
                     .addComponent(inputOptionMarca, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(inputOptionCategoria, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(inputNumModelo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelInfoVehiculo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labelInfoVehiculo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputOptionReferencia1, javax.swing.GroupLayout.Alignment.LEADING, 0, 440, Short.MAX_VALUE))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -190,7 +201,9 @@ public class VehiculoVista extends javax.swing.JFrame {
                 .addComponent(inputPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputNumKmRecorridos, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputOptionReferencia1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         inputNumKmRecorridos.getAccessibleContext().setAccessibleName("KmRecorridos");
@@ -202,6 +215,7 @@ public class VehiculoVista extends javax.swing.JFrame {
         labelTipodeServicios.setText("Tipo de Servicios*");
 
         inputRdParticular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputRdParticular.setSelected(true);
         inputRdParticular.setText("Particular");
         inputRdParticular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,16 +239,6 @@ public class VehiculoVista extends javax.swing.JFrame {
         inputNumPasajeros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputNumPasajeros.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Pasajeros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumPasajeros.setVerifyInputWhenFocusTarget(false);
-
-        inputColor1.setBackground(java.awt.Color.white);
-        inputColor1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputColor1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Color", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputColor1.setVerifyInputWhenFocusTarget(false);
-        inputColor1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputColor1ActionPerformed(evt);
-            }
-        });
 
         inputNombre.setBackground(java.awt.Color.white);
         inputNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -291,7 +295,6 @@ public class VehiculoVista extends javax.swing.JFrame {
                         .addComponent(labelTipodeServicios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelInfoPropietario, javax.swing.GroupLayout.DEFAULT_SIZE, 886, Short.MAX_VALUE)
                         .addComponent(inputNumPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inputColor1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,9 +303,8 @@ public class VehiculoVista extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(inputColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(inputNumPasajeros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelTipodeServicios)
@@ -320,10 +322,9 @@ public class VehiculoVista extends javax.swing.JFrame {
                 .addComponent(inputCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputNumTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        inputRdParticular.getAccessibleContext().setAccessibleName("Particular");
         inputNumPasajeros.getAccessibleContext().setAccessibleName("NumeroPasajeros");
 
         jSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -446,10 +447,6 @@ public class VehiculoVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNombreActionPerformed
 
-    private void inputColor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputColor1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputColor1ActionPerformed
-
     private void inputDocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDocumentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputDocumentoActionPerformed
@@ -461,6 +458,10 @@ public class VehiculoVista extends javax.swing.JFrame {
     private void inputNumTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNumTelefonoActionPerformed
+
+    private void inputOptionReferencia1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionReferencia1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputOptionReferencia1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -509,7 +510,6 @@ public class VehiculoVista extends javax.swing.JFrame {
     private javax.swing.JLabel btnLimpiarVentana;
     private javax.swing.JLabel btnVolver;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JTextField inputColor1;
     private javax.swing.JTextField inputCorreoElectronico;
     private javax.swing.JTextField inputDocumento;
     private javax.swing.JTextField inputNombre;
@@ -520,6 +520,7 @@ public class VehiculoVista extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> inputOptionCategoria;
     private javax.swing.JComboBox<String> inputOptionMarca;
     private javax.swing.JComboBox<String> inputOptionReferencia;
+    private javax.swing.JComboBox<String> inputOptionReferencia1;
     private javax.swing.JTextField inputPlaca;
     private javax.swing.JRadioButton inputRdParticular;
     private javax.swing.JRadioButton inputRdPublico;
