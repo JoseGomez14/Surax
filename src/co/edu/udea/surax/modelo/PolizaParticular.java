@@ -43,8 +43,11 @@ public class PolizaParticular extends PolizaModelo{
 
         for (RiesgoModelo riesgo : riesgos) {
             //Si se trata de la cobertura principal, se tienen en cuenta diferentes cosas
-            riesgo.setValorBase(riesgo.getValorBase() + riesgo.getValorBase() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100)));
-            riesgo.setValorMensual(riesgo.getValorMensual() + riesgo.getValorMensual() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100)));
+            riesgo.setValorBase((int) (riesgo.getValorBase() + riesgo.getValorBase() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100))));
+            riesgo.setValorMensual((int) (riesgo.getValorMensual() + riesgo.getValorMensual() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100))));
+            
+            super.setValor(super.getValor() + riesgo.getValorBase());
+            super.setCosto(super.getValor() + riesgo.getValorMensual());
         }
     }
 }
