@@ -29,7 +29,7 @@ public class EstudianteModelo extends NaturalModelo {
 
     public EstudianteModelo(String programa, String institucion, String 
             tipoInstitucion, NaturalModelo acudiente, char sexo, String 
-            enfermedadesPreinscritas, String discapacidad, short ocupacion, 
+            enfermedadesPreinscritas, boolean discapacidad, short ocupacion, 
             short estrato, boolean estadoCivil, String nivelEducativo, short edad
             , short peso, short altura, short vo2max) {
         super(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato,
