@@ -12,8 +12,8 @@ package co.edu.udea.surax.modelo;
 public class RiesgoModelo {
     
     private String nombre;
-    private int valorBase;
-    private int valorMensual;
+    private double valorBase;
+    private double valorMensual;
 
     public RiesgoModelo(String nombre, int valorBase, int valorMensual) {
         this.nombre = nombre;
@@ -30,7 +30,7 @@ public class RiesgoModelo {
         this.nombre = nombre;
     }
 
-    public int getValorBase() {
+    public double getValorBase() {
         return valorBase;
     }
 
@@ -38,7 +38,7 @@ public class RiesgoModelo {
         this.valorBase = valorBase;
     }
 
-    public int getValorMensual() {
+    public double getValorMensual() {
         return valorMensual;
     }
 

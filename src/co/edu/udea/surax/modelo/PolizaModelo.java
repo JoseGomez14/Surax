@@ -28,7 +28,7 @@ public class PolizaModelo {
     private short porcDescuento;
     private String Beneficios;
     private boolean activo;
-    private double valor;
+    private Double valor;
 
     public PolizaModelo(int idPoliza, double costo, Date fechaExp,
             OperarioModelo vendedor, String tipo, int mesesContratados,
@@ -139,5 +139,23 @@ public class PolizaModelo {
     public void setBeneficios(String Beneficios) {
         this.Beneficios = Beneficios;
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+    
+    
 
 }

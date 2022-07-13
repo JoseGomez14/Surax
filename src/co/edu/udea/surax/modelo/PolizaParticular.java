@@ -26,19 +26,28 @@ public class PolizaParticular extends PolizaModelo{
             OperarioModelo vendedor, String tipo, int mesesContratados,
             Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario,
             short porcDescuento, String Beneficios) {
-         super(idPoliza, costo, fechaExp, vendedor, tipo, mesesContratados,
+        super(idPoliza, costo, fechaExp, vendedor, tipo, mesesContratados,
                 vigencia, tomador, beneficiario, porcDescuento, Beneficios);
-        
+
         this.asegurado = asegurado;
         this.riesgos = riesgos;
     }
 
     //Metodos
-    void calcularRiesgos() {
+    void calcularRiesgos(String principal) {
+
+        if (asegurado.getPorcRiesgo() > 80) {
+            super.setValor(null);
+            return;
+        }
 
         for (RiesgoModelo riesgo : riesgos) {
-            riesgo.setValorMensual(riesgo.getValorBase());
+            //Si se trata de la cobertura principal, se tienen en cuenta diferentes cosas
+            riesgo.setValorBase((int) (riesgo.getValorBase() + riesgo.getValorBase() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100))));
+            riesgo.setValorMensual((int) (riesgo.getValorMensual() + riesgo.getValorMensual() * (((asegurado.getPorcRiesgo()) / 100) * ((asegurado.getPorcRiesgo()) / 100))));
+            
+            super.setValor(super.getValor() + riesgo.getValorBase());
+            super.setCosto(super.getValor() + riesgo.getValorMensual());
         }
-        
     }
 }

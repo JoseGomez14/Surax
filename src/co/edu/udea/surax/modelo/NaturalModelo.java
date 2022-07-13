@@ -16,7 +16,7 @@ public class NaturalModelo extends PersonaModelo {
 
     private char sexo;
     private String enfermedadesPreinscritas;
-    private String discapacidad;
+    private boolean discapacidad;
 
     //riesgo de la ocupación del 1 al 10
     private short ocupacion;
@@ -34,7 +34,7 @@ public class NaturalModelo extends PersonaModelo {
     }
 
     public NaturalModelo(char sexo, String enfermedadesPreinscritas,
-            String discapacidad, short ocupacion, short estrato,
+            boolean discapacidad, short ocupacion, short estrato,
             boolean estadoCivil, String nivelEducativo, short edad,
             short peso, short altura, short vo2max) {
 
@@ -49,6 +49,7 @@ public class NaturalModelo extends PersonaModelo {
         this.peso = peso;
         this.altura = altura;
         this.vo2max = vo2max;
+        calcularPorcRiesgo();
     }
 
     public NaturalModelo(String nombre, int id, int tel, String correo) {
@@ -75,11 +76,11 @@ public class NaturalModelo extends PersonaModelo {
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
     }
 
-    public String getDiscapacidad() {
+    public boolean getDiscapacidad() {
         return discapacidad;
     }
 
-    public void setDiscapacidad(String discapacidad) {
+    public void setDiscapacidad(boolean discapacidad) {
         this.discapacidad = discapacidad;
     }
 
@@ -156,7 +157,7 @@ public class NaturalModelo extends PersonaModelo {
     }
 
     //Metodo
-    void calcularPorcRiesgo() {
+    public void calcularPorcRiesgo() {
 
         double imc = getPeso() / (getAltura() * getAltura());
         int puntaje = 0;
@@ -215,12 +216,19 @@ public class NaturalModelo extends PersonaModelo {
             puntaje += 5;
         }
 
+        if (getDiscapacidad()) {
+            puntaje += 3;
+        }
+        
+        Double res = ((Math.exp(edad/20.268888)- 1.6666)) ;
+        puntaje = res.intValue();
+        
         if (puntaje >= 50) {
             setPorcRiesgo(100);
         } else {
             setPorcRiesgo(puntaje * 2);
         }
-
+        
     }
 
 }
