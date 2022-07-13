@@ -54,6 +54,26 @@ public class Controlador {
             
         }
         
+        ArrayList<String> marcasVehiculos = new ArrayList<>();
+        
+        for (VehiculoModelo vehiculo : vehiculos) {
+            marcasVehiculos.add(vehiculo.getMarca());
+        }
+        
+        marcasVehiculos = Utils.listarParametros(marcasVehiculos);
+        System.out.println(marcasVehiculos);
+        
+        String marcaSelecionada = marcasVehiculos.get(2);
+        
+        ArrayList<String> refereciasMarcaSeleccionada = new ArrayList<>();
+        
+        for (VehiculoModelo vehiculo : vehiculos) {
+            if(vehiculo.getMarca().equals(marcaSelecionada)){
+                refereciasMarcaSeleccionada.add(vehiculo.getRef());
+            }
+        }
+        
+        System.out.println(refereciasMarcaSeleccionada);
     }        
     
 }

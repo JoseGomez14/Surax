@@ -5,6 +5,16 @@
  */
 package co.edu.udea.surax.vista;
 
+import co.edu.udea.surax.modelo.CamionModelo;
+import co.edu.udea.surax.modelo.CarroModelo;
+import co.edu.udea.surax.modelo.MotoModelo;
+import co.edu.udea.surax.modelo.Utils;
+import co.edu.udea.surax.modelo.VehiculoModelo;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  * 
  * @author Jose D. Gómez M.
@@ -13,15 +23,59 @@ package co.edu.udea.surax.vista;
  * 
  */
 public class VehiculoVista extends javax.swing.JFrame {
-
+    
+    final String FILEVEHICULOS = "GuiaValoresVehiculos.csv";
+    final String SEPARADORCSV = ";";
+    String categoriaSelecionada = "";
+    String marcaSelecionada = "";
+    String referenciaSelecionada = "";
+    ArrayList<VehiculoModelo> vehiculos = new ArrayList<>();
+    
     /**
      * Creates new form PersonaVista
      */
-    public VehiculoVista() {
+    public VehiculoVista(){
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
         setTitle("Surax");
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
+        
+        Utils Utils = new Utils();
+        try{
+            ArrayList<String> datosVehiculosCSV = Utils.leerCsv(this.FILEVEHICULOS);
+            vehiculos = new ArrayList<VehiculoModelo>();
+
+            for(String datosVehiculoCSV: datosVehiculosCSV) {
+                String[] cutter = datosVehiculoCSV.split(SEPARADORCSV);
+                String marca = cutter[0];
+                String clase = cutter[1];
+                String ref = cutter[2];
+                String servicio = cutter[3];
+                double valor = Double.parseDouble(cutter[4]);
+                boolean importado = Boolean.parseBoolean(cutter[5]);
+                int cilindraje = Integer.parseInt(cutter[6]);
+                int numPasajeros = Integer.parseInt(cutter[7]);
+                String tipoMotor = cutter[8];
+
+                switch (clase) {
+                    case "AUTOMOVIL":
+                        vehiculos.add(new CarroModelo(tipoMotor, cilindraje, clase, marca, ref, valor, servicio, numPasajeros, importado));
+                        break;
+                    case "MOTOCICLETA":
+                        vehiculos.add(new MotoModelo(tipoMotor, cilindraje, clase, marca, ref, valor, servicio, numPasajeros, importado));
+                        break;
+                    case "CAMION":
+                        vehiculos.add(new CamionModelo(cilindraje, clase, marca, ref, valor, servicio, numPasajeros, importado));
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }catch(Exception e){
+            
+        }
+        
     }
 
     /**
@@ -35,7 +89,7 @@ public class VehiculoVista extends javax.swing.JFrame {
 
         btnGroupTipoPersona = new javax.swing.ButtonGroup();
         btnGroupZona = new javax.swing.ButtonGroup();
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btnGroupTipoServicio = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
         btnVolver = new javax.swing.JLabel();
@@ -156,7 +210,10 @@ public class VehiculoVista extends javax.swing.JFrame {
         inputNumKmRecorridos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Km Recorridos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumKmRecorridos.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
-        inputNumModelo.setModel(new javax.swing.SpinnerNumberModel(2022, 1900, 2100, 1));
+        LocalDate fecha = LocalDate.now();
+        int maximo = fecha.getYear();
+        maximo++;
+        inputNumModelo.setModel(new javax.swing.SpinnerNumberModel(2022, 1900, maximo, 1));
         inputNumModelo.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Modelo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputNumModelo.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
@@ -214,6 +271,7 @@ public class VehiculoVista extends javax.swing.JFrame {
         labelTipodeServicios.setForeground(new java.awt.Color(0, 163, 224));
         labelTipodeServicios.setText("Tipo de Servicios*");
 
+        btnGroupTipoServicio.add(inputRdParticular);
         inputRdParticular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputRdParticular.setSelected(true);
         inputRdParticular.setText("Particular");
@@ -223,6 +281,7 @@ public class VehiculoVista extends javax.swing.JFrame {
             }
         });
 
+        btnGroupTipoServicio.add(inputRdPublico);
         inputRdPublico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputRdPublico.setText("Público");
         inputRdPublico.addActionListener(new java.awt.event.ActionListener() {
@@ -440,7 +499,42 @@ public class VehiculoVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputOptionMarcaActionPerformed
 
     private void inputOptionCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionCategoriaActionPerformed
-        // TODO add your handling code here:
+        categoriaSelecionada = (String) inputOptionCategoria.getSelectedItem();
+        if(categoriaSelecionada.equals("Automóvil") || categoriaSelecionada.equals("Camión") || categoriaSelecionada.equals("Motocicleta")){
+            ArrayList<String> marcasVehiculos = new ArrayList<>();
+            switch(categoriaSelecionada){
+                case "Automóvil":
+                    categoriaSelecionada = "AUTOMOVIL";
+                    break;
+                case "Camión":
+                    categoriaSelecionada = "CAMION";
+                    break;
+                case "Motocicleta":
+                    categoriaSelecionada = "MOTOCICLETA";
+                    break;
+            }
+            
+            for (VehiculoModelo vehiculo : this.vehiculos) {
+                if(vehiculo.getClase().equals(categoriaSelecionada)){
+                    marcasVehiculos.add(vehiculo.getMarca());
+                }
+            }
+            marcasVehiculos  = Utils.listarParametros(marcasVehiculos);
+            String[] marcas = new String[marcasVehiculos.size()];
+                
+            for (int i = 0; i < marcas.length; i++) {
+                marcas[i] = marcasVehiculos.get(i);
+            }
+                        
+            DefaultComboBoxModel styleCbxModelMarcas = new javax.swing.DefaultComboBoxModel<>(marcas);
+            inputOptionMarca.setModel(styleCbxModelMarcas);
+            inputOptionMarca.setEnabled(true);
+        }else if(categoriaSelecionada.equals("Seleccione una categoría")){
+            String[] marcas = {"Seleccione una marca"};
+            DefaultComboBoxModel styleCbxModelMarcas = new javax.swing.DefaultComboBoxModel<>(marcas);
+            inputOptionMarca.setModel(styleCbxModelMarcas);
+            inputOptionMarca.setEnabled(false);
+        }     
     }//GEN-LAST:event_inputOptionCategoriaActionPerformed
 
     private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
@@ -506,10 +600,10 @@ public class VehiculoVista extends javax.swing.JFrame {
     private javax.swing.JLabel btnCotizarPoliza;
     private javax.swing.JLabel btnEliminarVehiculo;
     private javax.swing.ButtonGroup btnGroupTipoPersona;
+    private javax.swing.ButtonGroup btnGroupTipoServicio;
     private javax.swing.ButtonGroup btnGroupZona;
     private javax.swing.JLabel btnLimpiarVentana;
     private javax.swing.JLabel btnVolver;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField inputCorreoElectronico;
     private javax.swing.JTextField inputDocumento;
     private javax.swing.JTextField inputNombre;

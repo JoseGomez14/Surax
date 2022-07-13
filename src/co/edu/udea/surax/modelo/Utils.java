@@ -18,7 +18,9 @@ import java.util.ArrayList;
  */
 
 public class Utils {
+    //Lista de departamentos de Colombia
     final String[] DEPARTAMENTOS =  {"Seleccione un departamento", "Amazonas", "Antioquia", "Arauca", "Atlántico", "Bolívar", "Boyacá", "Caldas", "Caquetá", "Casanare", "Cauca", "Cesar", "Chocó", "Cundinamarca", "Córdoba", "Guainía", "Guaviare", "Huila", "La Guajira", "Magdalena", "Meta", "Nariño", "Norte de Santander", "Putumayo", "Quindío", "Risaralda", "San Andrés y Providencia", "Santander", "Sucre", "Tolima", "Valle del Cauca", "Vaupés", "Vichada"};
+    //Lista de municipios por departamento
     final String[][] MUNICIPIOS = {
             {"Seleccione un municipio"},
             {"Seleccione un municipio", "Leticia", "Puerto Nariño"},
@@ -105,7 +107,39 @@ public class Utils {
         }
         return posResult;
     }
-
+    
+    /**
+     * Método que permite buscar un párametro en un ArrayList y devuelve si está o no
+     * @param lista es el ArrayList de valores en el que se desea hacer la busqueda
+     * @param elementoABuscar es el elemento que se desea buscar en el arreglo
+     * 
+     * @return Retorna la existencia del elemento buscado
+     */
+    public static boolean buscarEnStringArrayList(ArrayList<String> lista, String elementoABuscar){
+        boolean result = false;
+        for(String item: lista){
+            if(item.equals(elementoABuscar)){
+                return true;
+            }
+        }
+        return result;
+    }
+    
+    /**
+     * Método para construir un arreglo con cada elemento sin repetición que se ecuentre en una lista
+     * @param lista es el ArrayList de valores originales
+     * 
+     * @return Retorna un ArrayList de los elementos listados sin repetición
+     */
+    public static ArrayList<String> listarParametros(ArrayList<String> lista){
+        ArrayList<String> result = new ArrayList<String>();
+        for(String item: lista){
+            if(!buscarEnStringArrayList(result, item)){
+                result.add(item);
+            }
+        }
+        return result;
+    }
     public String[] getDEPARTAMENTOS() {
         return DEPARTAMENTOS;
     }
