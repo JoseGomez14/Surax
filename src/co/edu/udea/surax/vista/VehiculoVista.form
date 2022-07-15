@@ -6,7 +6,7 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="btnGroupZona">
     </Component>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    <Component class="javax.swing.ButtonGroup" name="btnGroupTipoServicio">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -80,19 +80,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="btnAgregarVehiculo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="btnBuscarVehiculo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="btnEliminarVehiculo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnLimpiarVentana" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="msjIndicacion" min="-2" pref="1280" max="-2" attributes="0"/>
@@ -107,12 +94,28 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="btnActualizaInfo" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="btnVolver" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="btnAgregarVehiculo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="btnBuscarVehiculo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                              <Component id="btnEliminarVehiculo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                              <Component id="btnLimpiarVentana" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="btnActualizaInfo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="btnCotizarPoliza" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnCotizarPoliza" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -243,6 +246,7 @@
                               <Component id="inputOptionCategoria" alignment="0" max="32767" attributes="0"/>
                               <Component id="inputNumModelo" alignment="0" max="32767" attributes="0"/>
                               <Component id="labelInfoVehiculo1" max="32767" attributes="0"/>
+                              <Component id="inputOptionColor" alignment="0" pref="440" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="74" max="32767" attributes="0"/>
                       </Group>
@@ -264,7 +268,9 @@
                           <Component id="inputPlaca" min="-2" pref="65" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="inputNumKmRecorridos" min="-2" pref="65" max="-2" attributes="0"/>
-                          <EmptySpace pref="68" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="inputOptionColor" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -285,7 +291,7 @@
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="7">
-                        <StringItem index="0" value="Categor&#xed;a ------------"/>
+                        <StringItem index="0" value="Seleccione una categor&#xed;a"/>
                         <StringItem index="1" value="Autom&#xf3;vil"/>
                         <StringItem index="2" value="Bicicleta"/>
                         <StringItem index="3" value="Cami&#xf3;n"/>
@@ -314,16 +320,14 @@
                 <Component class="javax.swing.JComboBox" name="inputOptionMarca">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Marca ------------"/>
-                        <StringItem index="1" value="Audi"/>
-                        <StringItem index="2" value="Chevrolet"/>
-                        <StringItem index="3" value="Pulsar"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="Seleccione una marca"/>
                       </StringArray>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputOptionMarcaActionPerformed"/>
@@ -335,16 +339,14 @@
                 <Component class="javax.swing.JComboBox" name="inputOptionReferencia">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Referencia ------------"/>
-                        <StringItem index="1" value="WRANGLER 4.2 MT 4200CC CAB"/>
-                        <StringItem index="2" value="EAGLE SUMMIT AT 2400CC LX 4P"/>
-                        <StringItem index="3" value="RE MAXIMA CARGO FURGON [ASL] MT 236CC"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="Seleccione una referencia"/>
                       </StringArray>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>
                     </Property>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputOptionReferenciaActionPerformed"/>
@@ -406,8 +408,8 @@
                 </Component>
                 <Component class="javax.swing.JSpinner" name="inputNumModelo">
                   <Properties>
-                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                      <SpinnerModel initial="2022" maximum="2100" minimum="1900" numberType="java.lang.Integer" stepSize="1" type="number"/>
+                    <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="new javax.swing.SpinnerNumberModel(2022, 1900, maximo, 1)" type="code"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -424,6 +426,39 @@
                     </Property>
                     <Property name="debugGraphicsOptions" type="int" value="4"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="LocalDate fecha = LocalDate.now();&#xa;int maximo = fecha.getYear();&#xa;maximo++;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="inputOptionColor">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="13">
+                        <StringItem index="0" value="Seleccione un color"/>
+                        <StringItem index="1" value="Negro"/>
+                        <StringItem index="2" value="Marr&#xf3;n"/>
+                        <StringItem index="3" value="Rojo"/>
+                        <StringItem index="4" value="Naranja"/>
+                        <StringItem index="5" value="Amarillo"/>
+                        <StringItem index="6" value="Verde"/>
+                        <StringItem index="7" value="Azul"/>
+                        <StringItem index="8" value="Violeta"/>
+                        <StringItem index="9" value="Gris"/>
+                        <StringItem index="10" value="Blanco"/>
+                        <StringItem index="11" value="Oro"/>
+                        <StringItem index="12" value="Plata"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="null"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputOptionColorActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -453,7 +488,6 @@
                                   <Component id="labelInfoPropietario" alignment="0" pref="886" max="32767" attributes="0"/>
                                   <Component id="inputNumPasajeros" min="-2" pref="440" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="inputColor1" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                               <Component id="inputNombre" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                               <Component id="inputDocumento" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
                               <Component id="inputCorreoElectronico" alignment="0" min="-2" pref="440" max="-2" attributes="0"/>
@@ -465,9 +499,8 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="inputColor1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="inputNumPasajeros" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="labelTipodeServicios" min="-2" max="-2" attributes="0"/>
@@ -486,7 +519,7 @@
                           <Component id="inputCorreoElectronico" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="inputNumTelefono" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="20" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -505,20 +538,24 @@
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="inputRdParticular">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroupTipoServicio"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
+                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Particular"/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Particular"/>
-                  </AccessibilityProperties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputRdParticularActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="inputRdPublico">
                   <Properties>
+                    <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                      <ComponentRef name="btnGroupTipoServicio"/>
+                    </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="18" style="0"/>
                     </Property>
@@ -565,33 +602,6 @@
                   <AccessibilityProperties>
                     <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="NumeroPasajeros"/>
                   </AccessibilityProperties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="inputColor1">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" id="white" palette="1" red="ff" type="palette"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="18" style="0"/>
-                    </Property>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                        <TitledBorder title="Color">
-                          <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                            <LineBorder thickness="2">
-                              <Color PropertyName="color" blue="70" green="70" red="70" type="rgb"/>
-                            </LineBorder>
-                          </Border>
-                          <Font PropertyName="font" name="Segoe UI" size="16" style="0"/>
-                          <Color PropertyName="color" blue="70" green="70" red="70" type="rgb"/>
-                        </TitledBorder>
-                      </Border>
-                    </Property>
-                    <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputColor1ActionPerformed"/>
-                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="inputNombre">
                   <Properties>
