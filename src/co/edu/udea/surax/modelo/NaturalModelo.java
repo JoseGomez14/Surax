@@ -223,4 +223,8 @@ public class NaturalModelo extends PersonaModelo {
      
     }
  
+    public void asignarOcupacion(String empleo){
+        
+    }
+    
 }

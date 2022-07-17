@@ -65,7 +65,7 @@ public class Utils {
         {"Seleccione un municipio", "Carurú", "Mitú", "Taraira"},
         {"Seleccione un municipio", "Cumaribo", "La Primavera", "Puerto Carreño", "Santa Rosalía"}
     };
-    
+
     public Utils() {
     }
 
@@ -80,7 +80,7 @@ public class Utils {
         BufferedReader br = null;
         FileReader fr = null;
         ArrayList<String> result = new ArrayList<String>();
-        
+
         try {
             fr = new FileReader(filePath);
             br = new BufferedReader(fr);
@@ -89,7 +89,7 @@ public class Utils {
                 result.add(line);
                 line = br.readLine();
             }
-            
+
         } catch (IOException e) {
             System.out.println(e);
         } finally {
@@ -99,32 +99,40 @@ public class Utils {
         }
         return result;
     }
-    
+
     /**
-     * Metodo para leer csv separado por comas y omite un número definido de lineas
-     * 
+     * Metodo para leer csv separado por comas y omite un número definido de
+     * lineas
+     *
      * @param <T> El tipo de ArrayList se definirá luego por código
      * @param filePath es la ruta del archivo que se desea leer
      * @param lineaSalto número lineas para saltar
      * @return
-     * @throws IOException 
+     * @throws IOException
      */
-    public static  ArrayList<HashMap> leerCsv(String filePath, int lineaSalto) throws IOException {
+    public static ArrayList<HashMap> leerCsv(String filePath, int lineaSalto) throws IOException {
         BufferedReader br = null;
         FileReader fr = null;
-        HashMap coleccion = new HashMap();
-        ArrayList <HashMap> result = new ArrayList<>();
-        for (int i = 0; i < lineaSalto; i++) {
-            br.readLine();
-        }
+        ArrayList<HashMap> result = new ArrayList<>();
+
         String[] cutter;
         try {
             fr = new FileReader(filePath);
             br = new BufferedReader(fr);
+
+            for (int i = 0; i < lineaSalto; i++) {
+                br.readLine();
+            }
             String line;
             while ((line = br.readLine()) != null) {
-               cutter = line.split(";");
+                cutter = line.split(";");
+                HashMap coleccion = new HashMap();
+                for (int i = 0; i < cutter.length; i++) {
+                    coleccion.put(i,cutter[i]);
+                    
                 }
+                result.add(coleccion);
+            }
         } catch (IOException e) {
             System.out.println(e);
         } finally {
@@ -134,8 +142,7 @@ public class Utils {
         }
         return result;
     }
-      
- 
+
     /**
      * Método que permite buscar un párametro en un arreglo y devuelve su
      * posición
@@ -198,7 +205,7 @@ public class Utils {
     public String[] getDEPARTAMENTOS() {
         return DEPARTAMENTOS;
     }
-    
+
     public String[][] getMUNICIPIOS() {
         return MUNICIPIOS;
     }
@@ -213,7 +220,7 @@ public class Utils {
         anterior.setVisible(false);
         siguiente.setVisible(true);
     }
-    
+
     public static boolean comprobarTexto(String texto, String expresionRegular) {
         Pattern patternName = Pattern.compile(expresionRegular);
         Matcher matcherName = patternName.matcher(texto);
@@ -222,7 +229,7 @@ public class Utils {
         }
         return false;
     }
-    
+
     public static void limpiarCampos(JPanel panel) {
         for (Object objeto : panel.getComponents()) {
             if (objeto instanceof JTextField) {
