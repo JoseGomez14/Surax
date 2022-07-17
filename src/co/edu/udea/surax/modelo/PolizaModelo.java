@@ -156,7 +156,5 @@ public class PolizaModelo {
     public void setValor(Double valor) {
         this.valor = valor;
     }
-    
-    
 
 }

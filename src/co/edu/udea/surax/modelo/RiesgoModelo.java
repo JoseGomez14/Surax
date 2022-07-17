@@ -7,7 +7,10 @@ package co.edu.udea.surax.modelo;
 
 /**
  *
- * @author Eljac
+ * @author Jose D. Gómez M.
+ * @author Hector A. Güiza O
+ * @author Luis D. Martínez G.
+ *
  */
 public class RiesgoModelo {
     
@@ -25,33 +28,35 @@ public class RiesgoModelo {
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public double getValorBase() {
         return valorBase;
-    }
-
-    public void setValorBase(int valorBase) {
-        this.valorBase = valorBase;
     }
 
     public double getValorMensual() {
         return valorMensual;
     }
 
-    public void setValorMensual(int valorMensual) {
+    public void setValorBase(double valorBase) {
+        this.valorBase = valorBase;
+    }
+
+    public void setValorMensual(double valorMensual) {
         this.valorMensual = valorMensual;
     }
+    
+    
 
     //Métodos
     
-    void calcularValores(short porcentaje){
+    /**
+     * Metodo que multiplica el valor base por un porcentaje con el fin de cambiar el valor base y mensual de la poliza
+     * 
+     * @param porcentaje 
+     */
+    void calcularValores(short porcentaje, short porcentaje2){
         
         this.valorBase *= porcentaje;
-        this.valorMensual *= porcentaje;
+        this.valorMensual *= porcentaje2;
         
     }
     

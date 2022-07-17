@@ -22,7 +22,7 @@ public class OperarioModelo extends PersonaModelo{
     public OperarioModelo() {
     }
 
-    public OperarioModelo(String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+    public OperarioModelo(String nombre, long id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
     }
     
@@ -32,7 +32,7 @@ public class OperarioModelo extends PersonaModelo{
         this.numVentas = numVentas;
     }
 
-    public OperarioModelo(String cargo, int mesesTrabajo, int numVentas, String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+    public OperarioModelo(String cargo, int mesesTrabajo, int numVentas, String nombre, long id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
         this.cargo = cargo;
         this.mesesTrabajo = mesesTrabajo;
