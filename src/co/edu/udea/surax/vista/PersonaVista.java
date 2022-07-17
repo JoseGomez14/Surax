@@ -13,7 +13,6 @@ import co.edu.udea.surax.modelo.Utils;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -37,8 +36,7 @@ public class PersonaVista extends javax.swing.JFrame {
         setTitle("Surax");
         
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
-        inputRdNatural.setSelected(true);
-        inputRdUrbana.setSelected(true);
+        cambiarANatural();
         
         controladorDePersona = new PersonaControl();
     }
@@ -55,16 +53,15 @@ public class PersonaVista extends javax.swing.JFrame {
                     nivEducativo = "Pregrado";
                 }
                 
-                char sexo = 'M';
+                char sexo = 'F';
                 if(inputOptionSexo.getSelectedItem() == "Hombre"){
-                    sexo = 'H';
+                    sexo = 'M';
                 }
-                
                 controladorDePersona.crearPersona(inputNombre.getText(), 
                         Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
-                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
+                        inputCheckBoxDiscapacidad.isSelected(), (String)inputOptionOcupacion.getSelectedItem(), 
                         (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
@@ -131,16 +128,16 @@ public class PersonaVista extends javax.swing.JFrame {
                     nivEducativo = "Pregrado";
                 }
                 
-                char sexo = 'M';
+                char sexo = 'F';
                 if(inputOptionSexo.getSelectedItem() == "Hombre"){
-                    sexo = 'H';
+                    sexo = 'M';
                 }
                 
                 controladorDePersona.actPersona(inputNombre.getText(), 
                         Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
-                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"),
+                        inputCheckBoxDiscapacidad.isSelected(), (String)inputOptionOcupacion.getSelectedItem(),
                         (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
@@ -165,19 +162,19 @@ public class PersonaVista extends javax.swing.JFrame {
     
     public void buscarNaturalVista(NaturalModelo naturalModelo) {
         if (naturalModelo.getSexo() == 'M') {
-            inputOptionSexo.setSelectedIndex(1);
+            inputOptionSexo.setSelectedItem("Hombre");
         } else {
-            inputOptionSexo.setSelectedIndex(2);
+            inputOptionSexo.setSelectedItem("Mujer");
         }
 
         inputNumEdad.setValue(naturalModelo.getEdad());
         inputNumEstrato.setValue(naturalModelo.getEstrato());
-        inputRdNatural.setSelected(true);
-        inputRdJuridica.setSelected(false);
 
         if (naturalModelo.getDiscapacidad()) {
             inputCheckBoxDiscapacidad.setSelected(true);
         }
+        
+        inputOptionEstadoCivil.setSelectedItem(naturalModelo.getEstadoCivil());
 
         if ("Primaria".equals(naturalModelo.getNivelEducativo())) {
             inputRdPrimaria.setSelected(true);
@@ -186,6 +183,7 @@ public class PersonaVista extends javax.swing.JFrame {
         } else if ("Pregrado".equals(naturalModelo.getNivelEducativo())) {
             inputRdPrimaria.setSelected(true);
         }
+        
     }
     
     public void buscarPersonaVista(){
@@ -194,11 +192,11 @@ public class PersonaVista extends javax.swing.JFrame {
        if(personaBuscada != null){
            if(personaBuscada instanceof NaturalModelo naturalModelo){
                 buscarNaturalVista(naturalModelo);
+                cambiarANatural();
             }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
                 inputActividad.setText(juridicaModelo.getActividadPrincipal());
                 inputOptionSector.setSelectedItem(((JuridicaModelo) personaBuscada).getSector());
-                inputRdNatural.setSelected(false);
-                inputRdJuridica.setSelected(true);;  
+                cambiarAJuridica();
             }
             
             inputTel.setText(String.valueOf(personaBuscada.getTel()));
@@ -209,7 +207,7 @@ public class PersonaVista extends javax.swing.JFrame {
            
            btnActualizaInfo.setEnabled(true);
        }else{
-           msjIndicacion.setText("La persona buscada no se encuentra en la base de datos");
+           msjIndicacion.setText("La persona buscada no se encuentra en la base de datos.");
        }
     }
     
@@ -224,7 +222,6 @@ public class PersonaVista extends javax.swing.JFrame {
         btnBuscarPersona.setEnabled(false);
         btnEliminarPersona.setEnabled(false);
         btnActualizaInfo.setEnabled(false);
-        
     }
     
     public void compTxtFld(JTextField input, String expresion){
@@ -260,7 +257,6 @@ public class PersonaVista extends javax.swing.JFrame {
     }
     
     public boolean comprobarFormularioNatural(){
-        compTxtFld(inputOcupacion, "^[a-zA-ZÀ-ÿ\\s]{1,40}$");
         if(inputOptionSexo.getSelectedItem() != "Seleccione un sexo"){
             inputOptionSexo.setBackground(colorBlanco);
         }else{inputOptionSexo.setBackground(colorError);}
@@ -270,7 +266,6 @@ public class PersonaVista extends javax.swing.JFrame {
         }else{inputOptionEstadoCivil.setBackground(colorError);}
         
         return comprobarFormulario()
-                && Utils.comprobarTexto(inputOcupacion.getText(), "^[a-zA-ZÀ-ÿ\\s]{1,40}$")
                 && inputOptionSexo.getSelectedItem() != "Seleccione un sexo"
                 && inputOptionEstadoCivil.getSelectedItem() != "Seleccione un estado civil";
     }
@@ -298,7 +293,7 @@ public class PersonaVista extends javax.swing.JFrame {
         result.add(listMpios[idxMpioSelect]);
         result.add(inputRdUrbana.isSelected()? "Urbano": "Rural");
         result.add(inputDir.getText());
-        result.add(inputCodPostal.getText().equals("")? "00000": inputCodPostal.getText());
+        result.add(inputCodPostal.getText());
         
         return result;
     }
@@ -317,6 +312,26 @@ public class PersonaVista extends javax.swing.JFrame {
         inputCodPostal.setText(direccion.get(5));
         idxDtpoSelect = inputOptionDpto.getSelectedIndex();
         idxMpioSelect = inputOptionMpio.getSelectedIndex();
+    }
+    
+    public void cambiarANatural(){
+        jPanelEnf.setVisible(true);
+        jPanelInfoPer2.setVisible(true);
+        jPanelInfoPer3.setVisible(false);
+        inputRdNatural.setSelected(true);
+        inputRdJuridica.setSelected(false);
+        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+    }
+    
+    public void cambiarAJuridica(){
+        jPanelEnf.setVisible(false);
+        jPanelInfoPer2.setVisible(false);
+        jPanelInfoPer3.setVisible(true);
+        inputRdNatural.setSelected(false);
+        inputRdJuridica.setSelected(true);
+        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Razón Social", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "NIT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
     }
         
     int idxDtpoSelect = 0;
@@ -362,12 +377,12 @@ public class PersonaVista extends javax.swing.JFrame {
         inputRdJuridica = new javax.swing.JRadioButton();
         labelTipoPersona = new javax.swing.JLabel();
         jPanelInfoPer2 = new javax.swing.JPanel();
-        inputOcupacion = new javax.swing.JTextField();
         inputOptionSexo = new javax.swing.JComboBox<>();
         inputNumEdad = new javax.swing.JSpinner();
         inputNumEstrato = new javax.swing.JSpinner();
         inputOptionEstadoCivil = new javax.swing.JComboBox<>();
         inputCheckBoxDiscapacidad = new javax.swing.JCheckBox();
+        inputOptionOcupacion = new javax.swing.JComboBox<>();
         jPanelInfoPer3 = new javax.swing.JPanel();
         inputActividad = new javax.swing.JTextField();
         inputOptionSector = new javax.swing.JComboBox<>();
@@ -625,15 +640,6 @@ public class PersonaVista extends javax.swing.JFrame {
 
         jPanelInfoPer2.setBackground(java.awt.Color.white);
 
-        inputOcupacion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        inputOcupacion.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Ocupación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
-        inputOcupacion.setVerifyInputWhenFocusTarget(false);
-        inputOcupacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inputOcupacionActionPerformed(evt);
-            }
-        });
-
         inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un sexo", "Hombre", "Mujer" }));
         inputOptionSexo.setBorder(null);
         inputOptionSexo.addActionListener(new java.awt.event.ActionListener() {
@@ -657,6 +663,14 @@ public class PersonaVista extends javax.swing.JFrame {
         inputCheckBoxDiscapacidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputCheckBoxDiscapacidad.setText("Discapacidad");
 
+        inputOptionOcupacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una ocupación", "Trabajador", "Estudiante" }));
+        inputOptionOcupacion.setBorder(null);
+        inputOptionOcupacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputOptionOcupacionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelInfoPer2Layout = new javax.swing.GroupLayout(jPanelInfoPer2);
         jPanelInfoPer2.setLayout(jPanelInfoPer2Layout);
         jPanelInfoPer2Layout.setHorizontalGroup(
@@ -666,21 +680,22 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
                         .addComponent(inputCheckBoxDiscapacidad)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(inputOptionEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(312, 312, 312))
                     .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
-                        .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(inputNumEstrato))
-                    .addComponent(inputOcupacion))
-                .addContainerGap())
+                        .addGroup(jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputOptionEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
+                                .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputNumEstrato))
+                            .addComponent(inputOptionOcupacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanelInfoPer2Layout.setVerticalGroup(
             jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(inputOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputOptionOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(inputOptionSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1129,24 +1144,12 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputOptionDptoActionPerformed
 
     private void inputRdJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdJuridicaActionPerformed
-        jPanelEnf.setVisible(false);
-        jPanelInfoPer2.setVisible(false);
-        jPanelInfoPer3.setVisible(true);
-        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Razón Social", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
-        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "NIT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        cambiarAJuridica();
     }//GEN-LAST:event_inputRdJuridicaActionPerformed
 
     private void inputRdNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdNaturalActionPerformed
-        jPanelEnf.setVisible(true);
-        jPanelInfoPer2.setVisible(true);
-        jPanelInfoPer3.setVisible(false);
-        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
-        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        cambiarANatural();
     }//GEN-LAST:event_inputRdNaturalActionPerformed
-
-    private void inputOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOcupacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOcupacionActionPerformed
 
     private void inputTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelActionPerformed
         // TODO add your handling code here:
@@ -1173,7 +1176,7 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputIdInputMethodTextChanged
 
     private void inputIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputIdKeyTyped
-        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,14}$")){
+        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
             btnBuscarPersona.setEnabled(true);
             btnEliminarPersona.setEnabled(true);
         }else{
@@ -1258,6 +1261,10 @@ public class PersonaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formKeyPressed
 
+    private void inputOptionOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionOcupacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputOptionOcupacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1325,10 +1332,10 @@ public class PersonaVista extends javax.swing.JFrame {
     private javax.swing.JTextField inputNombre;
     private javax.swing.JSpinner inputNumEdad;
     private javax.swing.JSpinner inputNumEstrato;
-    private javax.swing.JTextField inputOcupacion;
     private javax.swing.JComboBox<String> inputOptionDpto;
     private javax.swing.JComboBox<String> inputOptionEstadoCivil;
     private javax.swing.JComboBox<String> inputOptionMpio;
+    private javax.swing.JComboBox<String> inputOptionOcupacion;
     private javax.swing.JComboBox<String> inputOptionSector;
     private javax.swing.JComboBox<String> inputOptionSexo;
     private javax.swing.JRadioButton inputRdJuridica;
