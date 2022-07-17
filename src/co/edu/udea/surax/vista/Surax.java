@@ -5,6 +5,9 @@
  */
 package co.edu.udea.surax.vista;
 
+import co.edu.udea.surax.modelo.Utils;
+import co.edu.udea.surax.vista.*;
+
 /**
  * 
  * @author Jose D. Gómez M.
@@ -62,6 +65,11 @@ public class Surax extends javax.swing.JFrame {
 
         btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas_card.png"))); // NOI18N
         btnPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPersonasMouseClicked(evt);
+            }
+        });
 
         msjIndicacion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         msjIndicacion.setForeground(new java.awt.Color(112, 112, 112));
@@ -104,6 +112,10 @@ public class Surax extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPersonasMouseClicked
+        Utils.pasarFrame(this, new PersonaVista());
+    }//GEN-LAST:event_btnPersonasMouseClicked
 
     /**
      * @param args the command line arguments

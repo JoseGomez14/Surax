@@ -5,6 +5,8 @@
  */
 package co.edu.udea.surax.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jose D. Gómez M.
@@ -32,6 +34,14 @@ public class NaturalModelo extends PersonaModelo {
     //Constructores
     public NaturalModelo() {
     }
+
+    public NaturalModelo(short ocupacion, short edad, String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+        super(nombre, id, tel, direccion, correo);
+        this.ocupacion = ocupacion;
+        this.edad = edad;
+    }
+    
+    
 
     public NaturalModelo(char sexo, String enfermedadesPreinscritas,
             boolean discapacidad, short ocupacion, short estrato,

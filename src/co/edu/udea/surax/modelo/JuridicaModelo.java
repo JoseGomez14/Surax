@@ -5,6 +5,8 @@
  */
 package co.edu.udea.surax.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Jose D. Gómez M.
@@ -28,6 +30,12 @@ public class JuridicaModelo extends PersonaModelo{
         this.actividadPrincipal = null;
         this.sector = null;
     }
+
+    public JuridicaModelo(String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+        super(nombre, id, tel, direccion, correo);
+    }
+    
+    
     
     //Setters & Getters
 
