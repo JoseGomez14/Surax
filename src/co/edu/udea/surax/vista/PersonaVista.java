@@ -61,11 +61,11 @@ public class PersonaVista extends javax.swing.JFrame {
                 }
                 
                 controladorDePersona.crearPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
                         inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
                 msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
@@ -77,8 +77,8 @@ public class PersonaVista extends javax.swing.JFrame {
     
     public void agregarJuridicaVista(){
         if(comprobarFormularioJuridica()){
-                controladorDePersona.crearPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
+                controladorDePersona.crearPersona(inputNombre.getText(), Long.parseLong(inputId.getText()),
+                        Long.parseLong(inputTel.getText()), crearDir(),
                         inputEmail.getText(), inputActividad.getText()
                         , (String)inputOptionSector.getSelectedItem());
                 msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
@@ -90,7 +90,7 @@ public class PersonaVista extends javax.swing.JFrame {
     
     public void agregarPersonaVista(){
         if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
-            if(!controladorDePersona.personaExistente(Integer.parseInt(inputId.getText()))){
+            if(!controladorDePersona.personaExistente(Long.parseLong(inputId.getText()))){
                 if(inputRdNatural.isSelected()){
                     agregarNaturalVista();
                 }
@@ -109,7 +109,7 @@ public class PersonaVista extends javax.swing.JFrame {
     
     public void eliminarPersonaVista(){
         String msj = "";
-        if(controladorDePersona.eliminarPersona(Integer.parseInt(inputId.getText()))){
+        if(controladorDePersona.eliminarPersona(Long.parseLong(inputId.getText()))){
                 msj = "Se eliminó correctamente la persona identificada con: " + inputId.getText();
                 limpiarVetana();
         }else{
@@ -137,11 +137,11 @@ public class PersonaVista extends javax.swing.JFrame {
                 }
                 
                 controladorDePersona.actPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
                         inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"),
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
                 msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
@@ -151,8 +151,8 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         }else{
             if(comprobarFormularioJuridica()){
-                controladorDePersona.actPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
+                controladorDePersona.actPersona(inputNombre.getText(), Long.parseLong(inputId.getText()),
+                        Long.parseLong(inputTel.getText()), crearDir(),
                         inputEmail.getText(), inputActividad.getText()
                         , (String)inputOptionSector.getSelectedItem());
                 msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
@@ -189,7 +189,7 @@ public class PersonaVista extends javax.swing.JFrame {
     }
     
     public void buscarPersonaVista(){
-        PersonaModelo personaBuscada = controladorDePersona.leerPersona(Integer.parseInt(inputId.getText()));
+        PersonaModelo personaBuscada = controladorDePersona.leerPersona(Long.parseLong(inputId.getText()));
     
        if(personaBuscada != null){
            if(personaBuscada instanceof NaturalModelo naturalModelo){
