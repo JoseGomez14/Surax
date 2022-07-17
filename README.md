@@ -26,4 +26,4 @@ Es proyecto ha sido desarrollado por los siguientes estudiantes de Ingenieria de
 
 -	Luis David Martínez G.
 
-La aplicación se ha desarrollado bajo el paradigma objetual o también conocido como la programación orientada a objetos (POO), usando el lenguaje de programación JAVA en su versión Standard Edition, y el patrón de diseño MVC (Modelo – vista – controlador).
+La aplicación se ha desarrollado bajo el paradigma objetual o también conocido como la programación orientada a objetos (POO), usando el lenguaje de programación JAVA en su versión Standard Edition, y el patrón de diseño ** MVC ** (Modelo – vista – controlador).
