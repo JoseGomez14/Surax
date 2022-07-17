@@ -43,6 +43,146 @@ public class PersonaVista extends javax.swing.JFrame {
         controladorDePersona = new PersonaControl();
     }
     
+    public void agregarNaturalVista(){
+        if(comprobarFormularioNatural()){             
+                String nivEducativo = "Ninguno";
+                
+                if(inputRdPrimaria.isSelected()){
+                    nivEducativo = "Primaria";
+                }else if(inputRdSecundaria.isSelected()){
+                    nivEducativo = "Secundaria";
+                }else if(inputRdPregrado.isSelected()){
+                    nivEducativo = "Pregrado";
+                }
+                
+                char sexo = 'M';
+                if(inputOptionSexo.getSelectedItem() == "Hombre"){
+                    sexo = 'H';
+                }
+                
+                controladorDePersona.crearPersona(inputNombre.getText(), 
+                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        crearDir(), inputEmail.getText(), 
+                        sexo, "Hola", 
+                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
+                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEdad.getValue(), Short.parseShort("0"),
+                        Short.parseShort("0"), Short.parseShort("0"));
+                msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
+                limpiarVetana();
+                }else{
+                msjIndicacion.setText("Debes ingresar información valida en los campos");
+            }
+    }
+    
+    public void agregarJuridicaVista(){
+        if(comprobarFormularioJuridica()){
+                controladorDePersona.crearPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
+                        Integer.parseInt(inputTel.getText()), crearDir(),
+                        inputEmail.getText(), inputActividad.getText()
+                        , (String)inputOptionSector.getSelectedItem());
+                msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
+                limpiarVetana();
+            }else{
+                msjIndicacion.setText("Debes ingresar información valida en los campos");
+            }
+    }
+    
+    public void agregarPersonaVista(){
+        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,11}$")){
+            if(controladorDePersona.personaExistente(Integer.parseInt(inputId.getText()))){
+                if(inputRdNatural.isSelected()){
+                    agregarNaturalVista();
+                }
+                else{
+                    agregarJuridicaVista();
+                }
+            }else{
+                msjIndicacion.setText("La persona ya se encuentra registrada.");
+            }
+        }
+    }
+    
+    public void eliminarPersonaVista(){
+        String msj = "";
+        if(controladorDePersona.eliminarPersona(Integer.parseInt(inputId.getText()))){
+                msj = "Se eliminó correctamente la persona identificada con: " + inputId.getText();
+                limpiarVetana();
+        }else{
+            msj = "No se pudo eliminar el registro, revise el documento";
+        }
+        msjIndicacion.setText(msj);
+    }
+    
+    public void actualizarPersonaVista(){
+        if(inputRdNatural.isSelected()){
+            if(comprobarFormularioNatural()){             
+                String nivEducativo = "Ninguno";
+                
+                if(inputRdPrimaria.isSelected()){
+                    nivEducativo = "Primaria";
+                }else if(inputRdSecundaria.isSelected()){
+                    nivEducativo = "Secundaria";
+                }else if(inputRdPregrado.isSelected()){
+                    nivEducativo = "Pregrado";
+                }
+                
+                char sexo = 'M';
+                if(inputOptionSexo.getSelectedItem() == "Hombre"){
+                    sexo = 'H';
+                }
+                
+                controladorDePersona.actPersona(inputNombre.getText(), 
+                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        crearDir(), inputEmail.getText(), 
+                        sexo, "Hola", 
+                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"),
+                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEdad.getValue(), Short.parseShort("0"),
+                        Short.parseShort("0"), Short.parseShort("0"));
+                msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
+                limpiarVetana();
+            }else{
+                msjIndicacion.setText("Debes ingresar información valida en los campos");
+            }
+        }else{
+            if(comprobarFormularioJuridica()){
+                controladorDePersona.actPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
+                        Integer.parseInt(inputTel.getText()), crearDir(),
+                        inputEmail.getText(), inputActividad.getText()
+                        , (String)inputOptionSector.getSelectedItem());
+                msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
+                limpiarVetana();
+            }else{
+                msjIndicacion.setText("Debes ingresar información valida en los campos");
+            }
+        }
+    }
+    
+    public void buscarPersonaVista(){
+        PersonaModelo personaBuscada = controladorDePersona.leerPersona(Integer.parseInt(inputId.getText()));
+    
+       if(personaBuscada != null){
+            inputNombre.setText(personaBuscada.getNombre());
+            inputId.setText(String.valueOf(personaBuscada.getId()));
+            inputEmail.setText(personaBuscada.getCorreo());
+            leerDir(personaBuscada.getDireccion());
+            if(personaBuscada instanceof NaturalModelo naturalModelo){
+                inputNumEdad.setValue(naturalModelo.getEdad());
+                inputRdNatural.setSelected(true);
+                inputRdJuridica.setSelected(false);
+            }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
+                inputActividad.setText(juridicaModelo.getActividadPrincipal());
+                inputRdNatural.setSelected(false);
+                inputRdJuridica.setSelected(true);;                     
+            }
+           
+           btnActualizaInfo.setEnabled(true);
+       }else{
+           msjIndicacion.setText("La persona buscada no se encuentra en la base de datos");
+       }
+    }
+    
     public void limpiarVetana(){
         Utils.limpiarCampos(jPanelIzq);
         Utils.limpiarCampos(jPanelDer);
@@ -1004,48 +1144,7 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputIdKeyTyped
 
     private void btnAgregarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarPersonaMouseClicked
-        if(inputRdNatural.isSelected()){
-            if(comprobarFormularioNatural()){             
-                String nivEducativo = "Ninguno";
-                
-                if(inputRdPrimaria.isSelected()){
-                    nivEducativo = "Primaria";
-                }else if(inputRdSecundaria.isSelected()){
-                    nivEducativo = "Secundaria";
-                }else if(inputRdPregrado.isSelected()){
-                    nivEducativo = "Pregrado";
-                }
-                
-                char sexo = 'M';
-                if(inputOptionSexo.getSelectedItem() == "Hombre"){
-                    sexo = 'H';
-                }
-                
-                controladorDePersona.crearPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
-                        crearDir(), inputEmail.getText(), 
-                        sexo, "Hola", 
-                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
-                        (short) inputNumEdad.getValue(), Short.parseShort("0"),
-                        Short.parseShort("0"), Short.parseShort("0"));
-                msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
-                limpiarVetana();
-            }else{
-                msjIndicacion.setText("Debes ingresar información valida en los campos");
-            }
-        }else{
-            if(comprobarFormularioJuridica()){
-                controladorDePersona.crearPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
-                        inputEmail.getText(), inputActividad.getText()
-                        , (String)inputOptionSector.getSelectedItem());
-                msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
-                limpiarVetana();
-            }else{
-                msjIndicacion.setText("Debes ingresar información valida en los campos");
-            }
-        }
+        agregarPersonaVista();
     }//GEN-LAST:event_btnAgregarPersonaMouseClicked
 
     private void inputCheckBoxEnf12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf12ActionPerformed
@@ -1093,14 +1192,7 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputRdPrimariaActionPerformed
 
     private void btnEliminarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarPersonaMouseClicked
-        String msj = "";
-        if(controladorDePersona.eliminarPersona(Integer.parseInt(inputId.getText()))){
-                msj = "Se eliminó correctamente la persona identificada con: " + inputId.getText();
-                limpiarVetana();
-        }else{
-            msj = "No se pudo eliminar el registro, revise el documento";
-        }
-        msjIndicacion.setText(msj);
+        eliminarPersonaVista();
     }//GEN-LAST:event_btnEliminarPersonaMouseClicked
 
     private void inputActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputActividadActionPerformed
@@ -1112,72 +1204,11 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarVentanaMouseClicked
 
     private void btnBuscarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarPersonaMouseClicked
-       PersonaModelo personaBuscada = controladorDePersona.leerPersona(Integer.parseInt(inputId.getText()));
-    
-       if(personaBuscada != null){
-            inputNombre.setText(personaBuscada.getNombre());
-            inputId.setText(String.valueOf(personaBuscada.getId()));
-            inputEmail.setText(personaBuscada.getCorreo());
-            leerDir(personaBuscada.getDireccion());
-            if(personaBuscada instanceof NaturalModelo naturalModelo){
-                inputNumEdad.setValue(naturalModelo.getEdad());
-                inputRdNatural.setSelected(true);
-                inputRdJuridica.setSelected(false);
-            }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
-                inputActividad.setText(juridicaModelo.getActividadPrincipal());
-                inputRdNatural.setSelected(false);
-                inputRdJuridica.setSelected(true);;                     
-            }
-           
-           btnActualizaInfo.setEnabled(true);
-       }else{
-           msjIndicacion.setText("La persona buscada no se encuentra en la base de datos");
-       }
+       buscarPersonaVista();
     }//GEN-LAST:event_btnBuscarPersonaMouseClicked
 
     private void btnActualizaInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizaInfoMouseClicked
-        if(inputRdNatural.isSelected()){
-            if(comprobarFormularioNatural()){             
-                String nivEducativo = "Ninguno";
-                
-                if(inputRdPrimaria.isSelected()){
-                    nivEducativo = "Primaria";
-                }else if(inputRdSecundaria.isSelected()){
-                    nivEducativo = "Secundaria";
-                }else if(inputRdPregrado.isSelected()){
-                    nivEducativo = "Pregrado";
-                }
-                
-                char sexo = 'M';
-                if(inputOptionSexo.getSelectedItem() == "Hombre"){
-                    sexo = 'H';
-                }
-                
-                controladorDePersona.actPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
-                        crearDir(), inputEmail.getText(), 
-                        sexo, "Hola", 
-                        inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
-                        (short) inputNumEdad.getValue(), Short.parseShort("0"),
-                        Short.parseShort("0"), Short.parseShort("0"));
-                msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
-                limpiarVetana();
-            }else{
-                msjIndicacion.setText("Debes ingresar información valida en los campos");
-            }
-        }else{
-            if(comprobarFormularioJuridica()){
-                controladorDePersona.actPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
-                        inputEmail.getText(), inputActividad.getText()
-                        , (String)inputOptionSector.getSelectedItem());
-                msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
-                limpiarVetana();
-            }else{
-                msjIndicacion.setText("Debes ingresar información valida en los campos");
-            }
-        }
+        actualizarPersonaVista();
     }//GEN-LAST:event_btnActualizaInfoMouseClicked
 
     /**

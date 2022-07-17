@@ -186,7 +186,7 @@ public class Utils {
                 ((JComboBox) objeto).setSelectedIndex(0);
                 ((JComboBox) objeto).setBackground(Color.white);
             }else if(objeto instanceof JSpinner){
-                ((JSpinner) objeto).setValue(0);
+                ((JSpinner) objeto).setValue((short)0);
             }else if(objeto instanceof JCheckBox){
                 ((JCheckBox) objeto).setSelected(false);
             }
