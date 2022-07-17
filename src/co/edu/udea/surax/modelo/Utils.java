@@ -209,9 +209,9 @@ public class Utils {
      * @param anterior
      * @param siguiente
      */
-    public static void pasarFrame(JFrame anterior, JFrame siguiente) {
-        anterior.setVisible(false);
+    public static void pasarFrame(JFrame actual, JFrame siguiente) {
         siguiente.setVisible(true);
+        actual.dispose();
     }
     
     public static boolean comprobarTexto(String texto, String expresionRegular) {

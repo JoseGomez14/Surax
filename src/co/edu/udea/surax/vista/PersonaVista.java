@@ -11,6 +11,7 @@ import co.edu.udea.surax.modelo.NaturalModelo;
 import co.edu.udea.surax.modelo.PersonaModelo;
 import co.edu.udea.surax.modelo.Utils;
 import java.awt.Color;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
@@ -27,10 +28,24 @@ public class PersonaVista extends javax.swing.JFrame {
     PersonaControl controladorDePersona;
     Color colorError = new Color(255, 180, 180);
     Color colorBlanco = new Color(255, 255, 255);
+    ArrayList<String> listaOcupaciones = new ArrayList<String>();
+    String[] arrOcupaciones;
+    
+    
     /**
      * Creates new form PersonaVista
      */
-    public PersonaVista() {
+    public PersonaVista(ArrayList<Object> data){
+        try {
+            this.listaOcupaciones = Utils.leerCsv("Profesiones.csv");
+            this.arrOcupaciones = new String[listaOcupaciones.size()];
+            for(int i = 0; i < arrOcupaciones.length; i++){
+                String aux = listaOcupaciones.get(i);
+                arrOcupaciones[i] = aux.split(";")[0];
+            }
+        } catch (IOException e) {
+            msjIndicacion.setText("Ocurrió un error al cargar las profesiones");
+        }
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
         setTitle("Surax");
@@ -38,8 +53,14 @@ public class PersonaVista extends javax.swing.JFrame {
         jScrollPane1.getVerticalScrollBar().setUnitIncrement(10);
         cambiarANatural();
         
-        controladorDePersona = new PersonaControl();
+        controladorDePersona = new PersonaControl(data);
     }
+
+    private PersonaVista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     public void agregarNaturalVista(){
         if(comprobarFormularioNatural()){             
@@ -445,6 +466,16 @@ public class PersonaVista extends javax.swing.JFrame {
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVolverMouseClicked(evt);
+            }
+        });
+        btnVolver.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnVolverKeyPressed(evt);
+            }
+        });
         jPanel5.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 32, -1, 54));
 
         btnAgregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_persona.png"))); // NOI18N
@@ -663,7 +694,7 @@ public class PersonaVista extends javax.swing.JFrame {
         inputCheckBoxDiscapacidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputCheckBoxDiscapacidad.setText("Discapacidad");
 
-        inputOptionOcupacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una ocupación", "Trabajador", "Estudiante" }));
+        inputOptionOcupacion.setModel(new javax.swing.DefaultComboBoxModel<>(arrOcupaciones));
         inputOptionOcupacion.setBorder(null);
         inputOptionOcupacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -680,17 +711,14 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
                         .addComponent(inputCheckBoxDiscapacidad)
-                        .addGap(312, 312, 312))
+                        .addContainerGap())
                     .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
-                        .addGroup(jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputOptionEstadoCivil, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanelInfoPer2Layout.createSequentialGroup()
-                                .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(inputNumEstrato))
-                            .addComponent(inputOptionOcupacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())))
+                        .addComponent(inputNumEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(inputNumEstrato))
+                    .addComponent(inputOptionEstadoCivil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputOptionSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputOptionOcupacion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanelInfoPer2Layout.setVerticalGroup(
             jPanelInfoPer2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -709,7 +737,7 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanelIzq.add(jPanelInfoPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, -1));
+        jPanelIzq.add(jPanelInfoPer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 440, -1));
 
         jPanelInfoPer3.setBackground(java.awt.Color.white);
 
@@ -1264,6 +1292,14 @@ public class PersonaVista extends javax.swing.JFrame {
     private void inputOptionOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionOcupacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputOptionOcupacionActionPerformed
+
+    private void btnVolverKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVolverKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverKeyPressed
+
+    private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
+        Utils.pasarFrame(this, new Surax(controladorDePersona.getData()));
+    }//GEN-LAST:event_btnVolverMouseClicked
 
     /**
      * @param args the command line arguments

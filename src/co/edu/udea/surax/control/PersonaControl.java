@@ -19,9 +19,34 @@ import java.util.HashMap;
  */
  
 public class PersonaControl{
+    /**
+     * Método constructor de la clase
+     * 
+     * @param data informaciíon de la sesión
+     */
+    public PersonaControl(ArrayList<Object> data) {
+        this.data = data;
+    }
     
     public static ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
-    
+    public static ArrayList<Object> data;
+
+    public static ArrayList<PersonaModelo> getListaDePersonas() {
+        return listaDePersonas;
+    }
+
+    public static void setListaDePersonas(ArrayList<PersonaModelo> listaDePersonas) {
+        PersonaControl.listaDePersonas = listaDePersonas;
+    }
+
+    public static ArrayList<Object> getData() {
+        return data;
+    }
+
+    public static void setData(ArrayList<Object> data) {
+        PersonaControl.data = data;
+    }
+       
     /**
      * Este método permite agregar una <b>persona natural</b> a la lista de personas.
      * 
@@ -47,6 +72,7 @@ public class PersonaControl{
             short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
             short vo2max){
         listaDePersonas.add(new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
+        data.set(0, listaDePersonas);
     }
     
     /**
@@ -63,6 +89,7 @@ public class PersonaControl{
     public void crearPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
             String correo, String actividadPrincipal, String sector){
         listaDePersonas.add(new JuridicaModelo(actividadPrincipal, sector, nombre, id, tel, direccion, correo));
+        data.set(0, listaDePersonas);
     }
     
     /**
@@ -79,6 +106,7 @@ public class PersonaControl{
         if(!listaDePersonas.isEmpty()){
             for(PersonaModelo persona: listaDePersonas){
                 if(persona.getId() == id){
+                    data.set(0, listaDePersonas);
                     return persona;
                 }
             
@@ -119,6 +147,7 @@ public class PersonaControl{
             for(int i = 0; i < listaDePersonas.size(); i++){
                 if(listaDePersonas.get(i).getId() == id){
                     listaDePersonas.set(i , new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
+                    data.set(0, listaDePersonas);
                     return true;
                 }
             }
@@ -149,6 +178,7 @@ public class PersonaControl{
             for(int i = 0; i < listaDePersonas.size(); i++){
                 if(listaDePersonas.get(i).getId() == id){
                     listaDePersonas.set(i , new JuridicaModelo(actividadPrincipal, sector, nombre, id, tel, direccion, correo));
+                    data.set(0, listaDePersonas);
                     return true;
                 }
             }
@@ -171,6 +201,7 @@ public class PersonaControl{
             for(PersonaModelo persona: listaDePersonas){
                 if(persona.getId() == id){
                     listaDePersonas.remove(persona);
+                    data.set(0, listaDePersonas);
                     return true;
                 } 
             }              

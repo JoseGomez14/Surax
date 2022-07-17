@@ -5,8 +5,13 @@
  */
 package co.edu.udea.surax.vista;
 
+import co.edu.udea.surax.modelo.EstudianteModelo;
+import co.edu.udea.surax.modelo.PersonaModelo;
+import co.edu.udea.surax.modelo.PolizaModelo;
 import co.edu.udea.surax.modelo.Utils;
+import co.edu.udea.surax.modelo.VehiculoModelo;
 import co.edu.udea.surax.vista.*;
+import java.util.ArrayList;
 
 /**
  * 
@@ -16,14 +21,29 @@ import co.edu.udea.surax.vista.*;
  * 
  */
 public class Surax extends javax.swing.JFrame {
-
+    
+    ArrayList<Object> data;
+    ArrayList<PersonaModelo> personas;
+    ArrayList<VehiculoModelo> vehiculos;
+    ArrayList<EstudianteModelo> estudiantes;
+    ArrayList<PolizaModelo> polizas;
+    
     /**
      * Creates new form Surax
      */
-    public Surax() {
+    public Surax(ArrayList<Object> data) {
         initComponents();
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/icon.png")).getImage());
         setTitle("Surax");
+        this.data = data;
+        this.personas = (ArrayList<PersonaModelo>) this.data.get(0);
+        this.vehiculos = (ArrayList<VehiculoModelo>) this.data.get(1);
+        this.estudiantes = (ArrayList<EstudianteModelo>) this.data.get(2);
+        this.polizas = (ArrayList<PolizaModelo>) this.data.get(3);
+    }
+
+    private Surax() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -36,11 +56,15 @@ public class Surax extends javax.swing.JFrame {
     private void initComponents() {
 
         icon = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelInicial = new javax.swing.JPanel();
         btnEstudiantes = new javax.swing.JLabel();
         btnVehiculos = new javax.swing.JLabel();
         btnPersonas = new javax.swing.JLabel();
         msjIndicacion = new javax.swing.JLabel();
+        btnConsolidado = new javax.swing.JLabel();
+        jPanelConsolidado = new javax.swing.JPanel();
+        btnVolver = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -55,7 +79,7 @@ public class Surax extends javax.swing.JFrame {
         icon.setText("SuraX");
         getContentPane().add(icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelInicial.setBackground(new java.awt.Color(255, 255, 255));
 
         btnEstudiantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/estudiantes_card.png"))); // NOI18N
         btnEstudiantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -76,11 +100,24 @@ public class Surax extends javax.swing.JFrame {
         msjIndicacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         msjIndicacion.setText("Selecciona la modalidad de poliza a la que desea acceder");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        btnConsolidado.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnConsolidado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnConsolidado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/consolidado_info.png"))); // NOI18N
+        btnConsolidado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsolidado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnConsolidadoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelInicialLayout = new javax.swing.GroupLayout(jPanelInicial);
+        jPanelInicial.setLayout(jPanelInicialLayout);
+        jPanelInicialLayout.setHorizontalGroup(
+            jPanelInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicialLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanelInicialLayout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(btnPersonas)
                 .addGap(36, 36, 36)
@@ -88,19 +125,22 @@ public class Surax extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(btnEstudiantes)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(msjIndicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicialLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnConsolidado)
+                .addGap(106, 106, 106))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelInicialLayout.setVerticalGroup(
+            jPanelInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInicialLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnConsolidado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(jPanelInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnVehiculos)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanelInicialLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPersonas)
                             .addComponent(btnEstudiantes))))
                 .addGap(40, 40, 40)
@@ -108,14 +148,75 @@ public class Surax extends javax.swing.JFrame {
                 .addGap(40, 40, 40))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        getContentPane().add(jPanelInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+
+        jPanelConsolidado.setBackground(java.awt.Color.white);
+
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVolverMouseClicked(evt);
+            }
+        });
+        btnVolver.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnVolverKeyPressed(evt);
+            }
+        });
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanelConsolidadoLayout = new javax.swing.GroupLayout(jPanelConsolidado);
+        jPanelConsolidado.setLayout(jPanelConsolidadoLayout);
+        jPanelConsolidadoLayout.setHorizontalGroup(
+            jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
+                .addGroup(jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btnVolver))
+                    .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(370, Short.MAX_VALUE))
+        );
+        jPanelConsolidadoLayout.setVerticalGroup(
+            jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(362, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanelConsolidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPersonasMouseClicked
-        Utils.pasarFrame(this, new PersonaVista());
+        Utils.pasarFrame(this, new PersonaVista(this.data));
     }//GEN-LAST:event_btnPersonasMouseClicked
+
+    private void btnConsolidadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsolidadoMouseClicked
+        jPanelInicial.setVisible(false);
+        jPanelConsolidado.setVisible(true);
+        icon.setVisible(false);
+        jLabel1.setText("Nombre: " + this.personas.get(0).getNombre() + "\nID: " +  this.personas.get(0).getId());
+        System.out.println(this.personas.get(0).getNombre());
+    }//GEN-LAST:event_btnConsolidadoMouseClicked
+
+    private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
+        jPanelInicial.setVisible(true);
+        jPanelConsolidado.setVisible(false);
+        icon.setVisible(true);
+    }//GEN-LAST:event_btnVolverMouseClicked
+
+    private void btnVolverKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVolverKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverKeyPressed
 
     /**
      * @param args the command line arguments
@@ -153,11 +254,15 @@ public class Surax extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnConsolidado;
     private javax.swing.JLabel btnEstudiantes;
     private javax.swing.JLabel btnPersonas;
     private javax.swing.JLabel btnVehiculos;
+    private javax.swing.JLabel btnVolver;
     private javax.swing.JLabel icon;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanelConsolidado;
+    private javax.swing.JPanel jPanelInicial;
     private javax.swing.JLabel msjIndicacion;
     // End of variables declaration//GEN-END:variables
 }

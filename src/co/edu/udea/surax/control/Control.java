@@ -18,12 +18,28 @@ import java.util.ArrayList;
 
 public class Control {
     public static void main(String[] args){
-        Surax ventanaIncial = new Surax();
-        ventanaIncial.setVisible(true);
+        ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
+        ArrayList<VehiculoModelo> listaDeVehiculos = new ArrayList<VehiculoModelo>();
+        ArrayList<EstudianteModelo> listaDeEstudiantes = new ArrayList<EstudianteModelo>();
+        ArrayList<PolizaParticular> listaPolizasPersonas = new ArrayList<PolizaParticular>();
+        ArrayList<Object> data = new ArrayList<>();
         
-        ArrayList<PersonaModelo>    listaDePersonas;
-        ArrayList<VehiculoModelo>   listaDeVehiculos;
-        ArrayList<EstudianteModelo> listaEstudiantes;
-    }        
+        data.add(listaDePersonas);
+        data.add(listaDeVehiculos);
+        data.add(listaDeEstudiantes);
+        data.add(listaPolizasPersonas);
+        
+        ArrayList<String> direccionOperario = new ArrayList<>();
+        direccionOperario.add("Colombia");
+        direccionOperario.add("Antioquia");
+        direccionOperario.add("Antioquia");
+        direccionOperario.add("Andes");
+        direccionOperario.add("");
+        
+        data.add(new OperarioModelo("Vendedor", 10, 30, "Juan Peréz", 1040402343, 6488080, direccionOperario, "juan.perez@gmail.com"));
+        
+        Surax ventanaIncial = new Surax(data);
+        ventanaIncial.setVisible(true);
+    }   
     
 }
