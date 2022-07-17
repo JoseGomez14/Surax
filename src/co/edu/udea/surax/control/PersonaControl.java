@@ -176,4 +176,21 @@ public class PersonaControl{
         }
         return false;
     }
+   
+    /**
+     * Este métdo comprueba si una persona se encuentra en la lista.
+     * 
+     * @param id es el número de identificacón de la persona a buscar.
+     * @return retorna true si la persona se encuentre en la lista.
+     */
+    public boolean personaExistente(int id){
+        if(!listaDePersonas.isEmpty()){
+            for(PersonaModelo persona: listaDePersonas){
+                if(persona.getId() == id){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
