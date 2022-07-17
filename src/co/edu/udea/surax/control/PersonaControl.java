@@ -8,6 +8,7 @@ import co.edu.udea.surax.modelo.PersonaModelo;
 import co.edu.udea.surax.modelo.NaturalModelo;
 import co.edu.udea.surax.modelo.JuridicaModelo;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * 
@@ -42,7 +43,7 @@ public class PersonaControl{
      * @param vo2max 
      */
     public void crearPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
-            String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, short ocupacion,
+            String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, String ocupacion,
             short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
             short vo2max){
         listaDePersonas.add(new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
@@ -110,7 +111,7 @@ public class PersonaControl{
      * @return retorna un boolean de acuerdo al estado de la operación
      */
     public boolean actPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
-        String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, short ocupacion,
+        String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, String ocupacion,
         short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
         short vo2max){
         

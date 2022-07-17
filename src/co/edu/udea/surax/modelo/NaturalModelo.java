@@ -95,7 +95,7 @@ public class NaturalModelo extends PersonaModelo {
         this.estrato = estrato;
     }
 
-    public String EstadoCivil() {
+    public String getEstadoCivil() {
         return estadoCivil;
     }
 
