@@ -6,6 +6,7 @@
 package co.edu.udea.surax.modelo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -19,13 +20,12 @@ public class NaturalModelo extends PersonaModelo {
     private char sexo;
     private String enfermedadesPreinscritas;
     private boolean discapacidad;
-
-    //riesgo de la ocupación del 1 al 10
-    private short ocupacion;
-    
     private short estrato;
     private String estadoCivil;
     private String nivelEducativo;
+    
+    //Nombre de la ocupacion, valor de riesgo asociado
+    private HashMap<String, Integer> ocupacion;
     private short edad;
     /*private short peso;
     private short altura;
@@ -39,14 +39,14 @@ public class NaturalModelo extends PersonaModelo {
     }
 
     public NaturalModelo(char sexo, String enfermedadesPreinscritas, boolean 
-            discapacidad, short ocupacion, short estrato, String estadoCivil, 
+            discapacidad, HashMap ocupacion, short estrato, String estadoCivil, 
             String nivelEducativo, short edad, String nombre, 
             long id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
+        this.ocupacion = ocupacion;
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
-        this.ocupacion = ocupacion;
         this.estrato = estrato;
         this.estadoCivil = estadoCivil;
         this.nivelEducativo = nivelEducativo;
@@ -79,11 +79,11 @@ public class NaturalModelo extends PersonaModelo {
         this.discapacidad = discapacidad;
     }
 
-    public short getOcupacion() {
+    public HashMap getOcupacion() {
         return ocupacion;
     }
 
-    public void setOcupacion(short ocupacion) {
+    public void setOcupacion(HashMap ocupacion) {
         this.ocupacion = ocupacion;
     }
 
@@ -95,7 +95,7 @@ public class NaturalModelo extends PersonaModelo {
         this.estrato = estrato;
     }
 
-    public String isEstadoCivil() {
+    public String getEstadoCivil() {
         return estadoCivil;
     }
 
@@ -219,6 +219,7 @@ public class NaturalModelo extends PersonaModelo {
         } else {
             this.porcRiesgo = puntaje * 2;
         }
+        
      
     }
  
