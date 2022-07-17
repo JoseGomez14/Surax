@@ -4,10 +4,19 @@
 
 package co.edu.udea.surax.modelo;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 
 /**
  * 
@@ -64,7 +73,7 @@ public class Utils {
      * Método que permite leer información de un archivo .csv
      * @param filePath es la ruta del archivo que se desea leer
      * 
-     * @return Retorna ArrayList<String> con las lineas del archivo .csv
+     * @return Retorna ArrayList con las lineas del archivo .csv
      */
     public static ArrayList<String> leerCsv(String filePath) throws IOException {
         BufferedReader br = null;
@@ -148,4 +157,39 @@ public class Utils {
         return MUNICIPIOS;
     }
     
+    /**
+     * Esté método permite cambiar entre dos JFrames;
+     * 
+     * @param anterior
+     * @param siguiente 
+     */
+    public static void pasarFrame(JFrame anterior, JFrame siguiente){
+        anterior.setVisible(false);
+        siguiente.setVisible(true);
+    }
+    
+    public static boolean comprobarTexto(String texto, String expresionRegular){
+        Pattern patternName = Pattern.compile(expresionRegular);
+        Matcher matcherName = patternName.matcher(texto);
+        if(matcherName.matches()){
+            return true;
+        }
+        return false;
+    }
+    
+    public static void limpiarCampos(JPanel panel){
+        for(Object objeto: panel.getComponents()){
+            if(objeto instanceof JTextField){
+                ((JTextField) objeto).setText("");
+                ((JTextField) objeto).setBackground(Color.white);
+            }else if(objeto instanceof JComboBox){
+                ((JComboBox) objeto).setSelectedIndex(0);
+                ((JComboBox) objeto).setBackground(Color.white);
+            }else if(objeto instanceof JSpinner){
+                ((JSpinner) objeto).setValue(0);
+            }else if(objeto instanceof JCheckBox){
+                ((JCheckBox) objeto).setSelected(false);
+            }
+        }
+    }
 }
