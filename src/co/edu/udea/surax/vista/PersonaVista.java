@@ -61,11 +61,11 @@ public class PersonaVista extends javax.swing.JFrame {
                 }
                 
                 controladorDePersona.crearPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
                         inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"), 
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
                 msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
@@ -77,8 +77,8 @@ public class PersonaVista extends javax.swing.JFrame {
     
     public void agregarJuridicaVista(){
         if(comprobarFormularioJuridica()){
-                controladorDePersona.crearPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
+                controladorDePersona.crearPersona(inputNombre.getText(), Long.parseLong(inputId.getText()),
+                        Long.parseLong(inputTel.getText()), crearDir(),
                         inputEmail.getText(), inputActividad.getText()
                         , (String)inputOptionSector.getSelectedItem());
                 msjIndicacion.setText(inputNombre.getText() + " se agregó correctamente");
@@ -89,8 +89,8 @@ public class PersonaVista extends javax.swing.JFrame {
     }
     
     public void agregarPersonaVista(){
-        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,11}$")){
-            if(controladorDePersona.personaExistente(Integer.parseInt(inputId.getText()))){
+        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
+            if(!controladorDePersona.personaExistente(Long.parseLong(inputId.getText()))){
                 if(inputRdNatural.isSelected()){
                     agregarNaturalVista();
                 }
@@ -100,12 +100,16 @@ public class PersonaVista extends javax.swing.JFrame {
             }else{
                 msjIndicacion.setText("La persona ya se encuentra registrada.");
             }
+        }else{
+            if(inputRdNatural.isSelected()){
+                comprobarFormularioNatural();
+            }else{comprobarFormularioJuridica();}
         }
     }
     
     public void eliminarPersonaVista(){
         String msj = "";
-        if(controladorDePersona.eliminarPersona(Integer.parseInt(inputId.getText()))){
+        if(controladorDePersona.eliminarPersona(Long.parseLong(inputId.getText()))){
                 msj = "Se eliminó correctamente la persona identificada con: " + inputId.getText();
                 limpiarVetana();
         }else{
@@ -133,11 +137,11 @@ public class PersonaVista extends javax.swing.JFrame {
                 }
                 
                 controladorDePersona.actPersona(inputNombre.getText(), 
-                        Integer.parseInt(inputId.getText()), Integer.parseInt(inputTel.getText()),
+                        Long.parseLong(inputId.getText()), Long.parseLong(inputTel.getText()),
                         crearDir(), inputEmail.getText(), 
                         sexo, "Hola", 
                         inputCheckBoxDiscapacidad.isSelected(), Short.parseShort("0"),
-                        (short) inputNumEstrato.getValue(), false, nivEducativo, 
+                        (short) inputNumEstrato.getValue(), (String)inputOptionEstadoCivil.getSelectedItem(), nivEducativo, 
                         (short) inputNumEdad.getValue(), Short.parseShort("0"),
                         Short.parseShort("0"), Short.parseShort("0"));
                 msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
@@ -147,8 +151,8 @@ public class PersonaVista extends javax.swing.JFrame {
             }
         }else{
             if(comprobarFormularioJuridica()){
-                controladorDePersona.actPersona(inputNombre.getText(), Integer.parseInt(inputId.getText()),
-                        Integer.parseInt(inputTel.getText()), crearDir(),
+                controladorDePersona.actPersona(inputNombre.getText(), Long.parseLong(inputId.getText()),
+                        Long.parseLong(inputTel.getText()), crearDir(),
                         inputEmail.getText(), inputActividad.getText()
                         , (String)inputOptionSector.getSelectedItem());
                 msjIndicacion.setText(inputNombre.getText() + " se actualizó correctamente");
@@ -159,23 +163,49 @@ public class PersonaVista extends javax.swing.JFrame {
         }
     }
     
+    public void buscarNaturalVista(NaturalModelo naturalModelo) {
+        if (naturalModelo.getSexo() == 'M') {
+            inputOptionSexo.setSelectedIndex(1);
+        } else {
+            inputOptionSexo.setSelectedIndex(2);
+        }
+
+        inputNumEdad.setValue(naturalModelo.getEdad());
+        inputNumEstrato.setValue(naturalModelo.getEstrato());
+        inputRdNatural.setSelected(true);
+        inputRdJuridica.setSelected(false);
+
+        if (naturalModelo.getDiscapacidad()) {
+            inputCheckBoxDiscapacidad.setSelected(true);
+        }
+
+        if ("Primaria".equals(naturalModelo.getNivelEducativo())) {
+            inputRdPrimaria.setSelected(true);
+        } else if ("Secundaria".equals(naturalModelo.getNivelEducativo())) {
+            inputRdPrimaria.setSelected(true);
+        } else if ("Pregrado".equals(naturalModelo.getNivelEducativo())) {
+            inputRdPrimaria.setSelected(true);
+        }
+    }
+    
     public void buscarPersonaVista(){
-        PersonaModelo personaBuscada = controladorDePersona.leerPersona(Integer.parseInt(inputId.getText()));
+        PersonaModelo personaBuscada = controladorDePersona.leerPersona(Long.parseLong(inputId.getText()));
     
        if(personaBuscada != null){
+           if(personaBuscada instanceof NaturalModelo naturalModelo){
+                buscarNaturalVista(naturalModelo);
+            }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
+                inputActividad.setText(juridicaModelo.getActividadPrincipal());
+                inputOptionSector.setSelectedItem(((JuridicaModelo) personaBuscada).getSector());
+                inputRdNatural.setSelected(false);
+                inputRdJuridica.setSelected(true);;  
+            }
+            
+            inputTel.setText(String.valueOf(personaBuscada.getTel()));
             inputNombre.setText(personaBuscada.getNombre());
             inputId.setText(String.valueOf(personaBuscada.getId()));
             inputEmail.setText(personaBuscada.getCorreo());
             leerDir(personaBuscada.getDireccion());
-            if(personaBuscada instanceof NaturalModelo naturalModelo){
-                inputNumEdad.setValue(naturalModelo.getEdad());
-                inputRdNatural.setSelected(true);
-                inputRdJuridica.setSelected(false);
-            }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
-                inputActividad.setText(juridicaModelo.getActividadPrincipal());
-                inputRdNatural.setSelected(false);
-                inputRdJuridica.setSelected(true);;                     
-            }
            
            btnActualizaInfo.setEnabled(true);
        }else{
@@ -204,11 +234,10 @@ public class PersonaVista extends javax.swing.JFrame {
     }
     
     public boolean comprobarFormulario(){
-        
         compTxtFld(inputNombre, "^[a-zA-ZÀ-ÿ\\s]{1,80}$");
-        compTxtFld(inputId, "^\\d{7,11}$");
+        compTxtFld(inputId, "^\\d{7,10}$");
         compTxtFld(inputEmail, "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$");
-        compTxtFld(inputTel, "^\\d{7,11}$");
+        compTxtFld(inputTel, "^\\d{7,10}$");
         
         if(!"".equals(inputDir.getText())){
             inputDir.setBackground(colorBlanco);
@@ -223,9 +252,9 @@ public class PersonaVista extends javax.swing.JFrame {
         }else{inputOptionMpio.setBackground(colorError);}
         
         return Utils.comprobarTexto(inputNombre.getText(), "^[a-zA-ZÀ-ÿ\\s]{1,80}$")
-                && Utils.comprobarTexto(inputId.getText(), "^\\d{7,11}$")
+                && Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")
                 && Utils.comprobarTexto(inputEmail.getText(), "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
-                && Utils.comprobarTexto(inputTel.getText(), "^\\d{7,11}$")
+                && Utils.comprobarTexto(inputTel.getText(), "^\\d{7,10}$")
                 && !"".equals(inputDir.getText())
                 && idxDtpoSelect != 0 && idxMpioSelect != 0;
     }
@@ -378,6 +407,11 @@ public class PersonaVista extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -387,6 +421,11 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.setBackground(java.awt.Color.white);
         jPanel5.setAutoscrolls(true);
         jPanel5.setPreferredSize(new java.awt.Dimension(1280, 950));
+        jPanel5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPanel5KeyPressed(evt);
+            }
+        });
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
@@ -1210,6 +1249,14 @@ public class PersonaVista extends javax.swing.JFrame {
     private void btnActualizaInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizaInfoMouseClicked
         actualizarPersonaVista();
     }//GEN-LAST:event_btnActualizaInfoMouseClicked
+
+    private void jPanel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel5KeyPressed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments

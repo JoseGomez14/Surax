@@ -16,8 +16,8 @@ public class PersonaModelo {
 
     //En persona jurídica, equivale a la razón social
     private String nombre;
-    private int id;
-    private int tel;
+    private long id;
+    private long tel;
     // En 0 país, en 1 departamento, en 2 municipio, en 3 zona (Rural, Urbano), en 4 direccion, en 5 código postal 
     private ArrayList<String> direccion;
     private String correo;
@@ -27,7 +27,7 @@ public class PersonaModelo {
     }
 
     //Constructores
-    public PersonaModelo(String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+    public PersonaModelo(String nombre, long id, long tel, ArrayList<String> direccion, String correo) {
         this.nombre = nombre;
         this.id = id;
         this.tel = tel;
@@ -45,7 +45,7 @@ public class PersonaModelo {
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -53,11 +53,11 @@ public class PersonaModelo {
         this.id = id;
     }
 
-    public int getTel() {
+    public long getTel() {
         return tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(long tel) {
         this.tel = tel;
     }
 

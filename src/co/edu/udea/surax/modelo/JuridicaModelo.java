@@ -27,14 +27,13 @@ public class JuridicaModelo extends PersonaModelo{
     }
 
     public JuridicaModelo(String actividadPrincipal, String sector, 
-            String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+            String nombre, long  id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
         this.actividadPrincipal = actividadPrincipal;
         this.sector = sector;
     }
 
     //Setters & Getters
-
     public String getActividadPrincipal() {
         return actividadPrincipal;
     }
@@ -50,7 +49,5 @@ public class JuridicaModelo extends PersonaModelo{
     public void setSector(String sector) {
         this.sector = sector;
     }
-    
-    
     
 }

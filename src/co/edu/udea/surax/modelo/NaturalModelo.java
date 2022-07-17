@@ -41,7 +41,7 @@ public class NaturalModelo extends PersonaModelo {
     public NaturalModelo(char sexo, String enfermedadesPreinscritas, boolean 
             discapacidad, short ocupacion, short estrato, String estadoCivil, 
             String nivelEducativo, short edad, String nombre, 
-            int id, int tel, ArrayList<String> direccion, String correo) {
+            long id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;

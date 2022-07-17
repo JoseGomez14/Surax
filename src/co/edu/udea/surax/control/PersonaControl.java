@@ -41,11 +41,11 @@ public class PersonaControl{
      * @param altura
      * @param vo2max 
      */
-    public void crearPersona(String nombre, int id, int tel, ArrayList<String> direccion, 
+    public void crearPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
             String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, short ocupacion,
-            short estrato, boolean estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
+            short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
             short vo2max){
-        listaDePersonas.add(new NaturalModelo(ocupacion, edad, nombre, id, tel, direccion, correo));
+        listaDePersonas.add(new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
     }
     
     /**
@@ -59,9 +59,9 @@ public class PersonaControl{
      * @param actividadPrincipal
      * @param sector 
      */
-    public void crearPersona(String nombre, int id, int tel, ArrayList<String> direccion, 
+    public void crearPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
             String correo, String actividadPrincipal, String sector){
-        listaDePersonas.add(new JuridicaModelo(nombre, id, tel, direccion, correo));
+        listaDePersonas.add(new JuridicaModelo(actividadPrincipal, sector, nombre, id, tel, direccion, correo));
     }
     
     /**
@@ -73,7 +73,7 @@ public class PersonaControl{
      * @param id número que identifica a la persona que se desea leer.
      * @return 
      */
-    public PersonaModelo leerPersona(int id){
+    public PersonaModelo leerPersona(long id){
         PersonaModelo result = null;
         if(!listaDePersonas.isEmpty()){
             for(PersonaModelo persona: listaDePersonas){
@@ -109,15 +109,15 @@ public class PersonaControl{
      * 
      * @return retorna un boolean de acuerdo al estado de la operación
      */
-    public boolean actPersona(String nombre, int id, int tel, ArrayList<String> direccion, 
+    public boolean actPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
         String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, short ocupacion,
-        short estrato, boolean estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
+        short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
         short vo2max){
         
         if(!listaDePersonas.isEmpty()){
             for(int i = 0; i < listaDePersonas.size(); i++){
                 if(listaDePersonas.get(i).getId() == id){
-                    listaDePersonas.set(i , new NaturalModelo(nombre, id, tel, correo));
+                    listaDePersonas.set(i , new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
                     return true;
                 }
             }
@@ -141,13 +141,13 @@ public class PersonaControl{
      * 
      * @return 
      */
-    public boolean actPersona(String nombre, int id, int tel,ArrayList<String> direccion, 
+    public boolean actPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
             String correo, String actividadPrincipal, String sector){
         
         if(!listaDePersonas.isEmpty()){
             for(int i = 0; i < listaDePersonas.size(); i++){
                 if(listaDePersonas.get(i).getId() == id){
-                    listaDePersonas.set(i , new JuridicaModelo(nombre, id, tel, direccion, correo));
+                    listaDePersonas.set(i , new JuridicaModelo(actividadPrincipal, sector, nombre, id, tel, direccion, correo));
                     return true;
                 }
             }
@@ -165,7 +165,7 @@ public class PersonaControl{
      * @param id número que identifica a la persona que se desea eliminar.
      * @return retorna el estado de la acción.
      */
-    public boolean eliminarPersona(int id){
+    public boolean eliminarPersona(long id){
         if(!listaDePersonas.isEmpty()){
             for(PersonaModelo persona: listaDePersonas){
                 if(persona.getId() == id){
@@ -183,7 +183,7 @@ public class PersonaControl{
      * @param id es el número de identificacón de la persona a buscar.
      * @return retorna true si la persona se encuentre en la lista.
      */
-    public boolean personaExistente(int id){
+    public boolean personaExistente(long id){
         if(!listaDePersonas.isEmpty()){
             for(PersonaModelo persona: listaDePersonas){
                 if(persona.getId() == id){
