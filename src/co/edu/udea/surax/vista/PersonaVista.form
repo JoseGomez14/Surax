@@ -102,6 +102,10 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVolverMouseClicked"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnVolverKeyPressed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="32" y="32" width="-1" height="54"/>
@@ -496,33 +500,28 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="90" y="420" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="90" y="420" width="440" height="-1"/>
                     </Constraint>
                   </Constraints>
 
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="inputCheckBoxDiscapacidad" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
+                                      <EmptySpace min="312" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="inputOptionEstadoCivil" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="inputOptionSexo" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="inputNumEdad" min="-2" pref="212" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="inputNumEstrato" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="inputOptionOcupacion" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="inputNumEdad" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="inputNumEstrato" max="32767" attributes="0"/>
                                   </Group>
+                                  <Component id="inputOptionEstadoCivil" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputOptionSexo" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="inputOptionOcupacion" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -643,12 +642,8 @@
                     </Component>
                     <Component class="javax.swing.JComboBox" name="inputOptionOcupacion">
                       <Properties>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="3">
-                            <StringItem index="0" value="Seleccione una ocupaci&#xf3;n"/>
-                            <StringItem index="1" value="Trabajador"/>
-                            <StringItem index="2" value="Estudiante"/>
-                          </StringArray>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(arrOcupaciones)" type="code"/>
                         </Property>
                         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                           <Border info="null"/>
