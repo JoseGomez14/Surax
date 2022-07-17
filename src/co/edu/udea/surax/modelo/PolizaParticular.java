@@ -34,6 +34,8 @@ public class PolizaParticular extends PolizaModelo{
     }
 
     //Metodos
+    
+    //
     void calcularRiesgos(String principal) {
 
         if (asegurado.getPorcRiesgo() > 80) {
