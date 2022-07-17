@@ -109,10 +109,11 @@ public class Utils {
      * @return
      * @throws IOException 
      */
-    public static <T> HashMap leerCsv(String filePath, int lineaSalto) throws IOException {
+    public static  ArrayList<HashMap> leerCsv(String filePath, int lineaSalto) throws IOException {
         BufferedReader br = null;
         FileReader fr = null;
-        HashMap result = new HashMap();
+        HashMap coleccion = new HashMap();
+        ArrayList <HashMap> result = new ArrayList<>();
         for (int i = 0; i < lineaSalto; i++) {
             br.readLine();
         }
@@ -122,7 +123,7 @@ public class Utils {
             br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
-               cutter = line.split(",");
+               cutter = line.split(";");
                 }
         } catch (IOException e) {
             System.out.println(e);
