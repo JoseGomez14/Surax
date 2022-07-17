@@ -25,7 +25,7 @@ public class NaturalModelo extends PersonaModelo {
     private String nivelEducativo;
     
     //Nombre de la ocupacion, valor de riesgo asociado
-    private HashMap<String, Integer> ocupacion;
+    private HashMap<String, Integer> ocupacion = new HashMap<>();
     private short edad;
     /*private short peso;
     private short altura;
@@ -39,11 +39,11 @@ public class NaturalModelo extends PersonaModelo {
     }
 
     public NaturalModelo(char sexo, String enfermedadesPreinscritas, boolean 
-            discapacidad, HashMap ocupacion, short estrato, String estadoCivil, 
+            discapacidad, String ocupacion, short estrato, String estadoCivil, 
             String nivelEducativo, short edad, String nombre, 
             long id, long tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
-        this.ocupacion = ocupacion;
+        this.ocupacion.put(ocupacion, null);
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
@@ -95,7 +95,7 @@ public class NaturalModelo extends PersonaModelo {
         this.estrato = estrato;
     }
 
-    public String getEstadoCivil() {
+    public String EstadoCivil() {
         return estadoCivil;
     }
 
