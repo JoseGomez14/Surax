@@ -22,32 +22,27 @@ public class NaturalModelo extends PersonaModelo {
 
     //riesgo de la ocupación del 1 al 10
     private short ocupacion;
+    
     private short estrato;
-    private boolean estadoCivil;
+    private String estadoCivil;
     private String nivelEducativo;
     private short edad;
-    private short peso;
+    /*private short peso;
     private short altura;
-    private short vo2max;
+    private short vo2max;*/
     private int porcRiesgo;
 
     //Constructores
-    public NaturalModelo() {
+
+    public NaturalModelo(){
+        
     }
 
-    public NaturalModelo(short ocupacion, short edad, String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+    public NaturalModelo(char sexo, String enfermedadesPreinscritas, boolean 
+            discapacidad, short ocupacion, short estrato, String estadoCivil, 
+            String nivelEducativo, short edad, String nombre, 
+            int id, int tel, ArrayList<String> direccion, String correo) {
         super(nombre, id, tel, direccion, correo);
-        this.ocupacion = ocupacion;
-        this.edad = edad;
-    }
-    
-    
-
-    public NaturalModelo(char sexo, String enfermedadesPreinscritas,
-            boolean discapacidad, short ocupacion, short estrato,
-            boolean estadoCivil, String nivelEducativo, short edad,
-            short peso, short altura, short vo2max) {
-
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
@@ -56,19 +51,9 @@ public class NaturalModelo extends PersonaModelo {
         this.estadoCivil = estadoCivil;
         this.nivelEducativo = nivelEducativo;
         this.edad = edad;
-        this.peso = peso;
-        this.altura = altura;
-        this.vo2max = vo2max;
         calcularPorcRiesgo();
     }
-
-    public NaturalModelo(String nombre, int id, int tel, String correo) {
-        super.setNombre(nombre);
-        super.setId(id);
-        super.setTel(tel);
-        super.setCorreo(correo);
-    }
-
+    
     //Getters & Setters
     public char getSexo() {
         return sexo;
@@ -110,11 +95,11 @@ public class NaturalModelo extends PersonaModelo {
         this.estrato = estrato;
     }
 
-    public boolean isEstadoCivil() {
+    public String isEstadoCivil() {
         return estadoCivil;
     }
 
-    public void setEstadoCivil(boolean estadoCivil) {
+    public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
 
@@ -133,7 +118,7 @@ public class NaturalModelo extends PersonaModelo {
     public void setEdad(short edad) {
         this.edad = edad;
     }
-
+/*
     public short getPeso() {
         return peso;
     }
@@ -157,19 +142,15 @@ public class NaturalModelo extends PersonaModelo {
     public void setVo2max(short vo2max) {
         this.vo2max = vo2max;
     }
-
+*/
     public int getPorcRiesgo() {
         return porcRiesgo;
     }
-
-    public void setPorcRiesgo(int porcRiesgo) {
-        this.porcRiesgo = porcRiesgo;
-    }
-
+    
     //Metodo
-    public void calcularPorcRiesgo() {
+    public final void calcularPorcRiesgo() {
 
-        double imc = getPeso() / (getAltura() * getAltura());
+       // double imc = getPeso() / (getAltura() * getAltura());
         int puntaje = 0;
 
         //Filtramos las enfermedades para el puntaje
@@ -188,13 +169,13 @@ public class NaturalModelo extends PersonaModelo {
         if (getEnfermedadesPreinscritas().equalsIgnoreCase("Enfermedad medianamente grave")) {
             puntaje += 8;
         }
-        if (imc < 18) {
+       /* if (imc < 18) {
             puntaje += 3;
         } else if (imc >= 25 && imc <= 29.9) {
             puntaje += 5;
         } else if (imc > 30) {
             puntaje += 8;
-        }
+        }*/
         if (getEnfermedadesPreinscritas().equalsIgnoreCase("Cardiopatía isquémica")) {
             puntaje += 20;
         }
@@ -216,9 +197,9 @@ public class NaturalModelo extends PersonaModelo {
         if (getEnfermedadesPreinscritas().equalsIgnoreCase("Cancer de colon")) {
             puntaje += 18;
         }
-        if (getVo2max() < 35) {
+       /* if (getVo2max() < 35) {
             puntaje += 5;
-        }
+        }*/
         if (getEnfermedadesPreinscritas().equalsIgnoreCase("Paciente terminal")) {
             puntaje += 50;
         }
@@ -234,11 +215,11 @@ public class NaturalModelo extends PersonaModelo {
         puntaje = res.intValue();
         
         if (puntaje >= 50) {
-            setPorcRiesgo(100);
+            this.porcRiesgo = 100;
         } else {
-            setPorcRiesgo(puntaje * 2);
+            this.porcRiesgo = puntaje * 2;
         }
-        
+     
     }
-
+ 
 }

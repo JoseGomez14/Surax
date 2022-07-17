@@ -25,18 +25,14 @@ public class JuridicaModelo extends PersonaModelo{
         this.actividadPrincipal = actividadPrincipal;
         this.sector = sector;
     }
-    
-    public JuridicaModelo(){
-        this.actividadPrincipal = null;
-        this.sector = null;
+
+    public JuridicaModelo(String actividadPrincipal, String sector, 
+            String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
+        super(nombre, id, tel, direccion, correo);
+        this.actividadPrincipal = actividadPrincipal;
+        this.sector = sector;
     }
 
-    public JuridicaModelo(String nombre, int id, int tel, ArrayList<String> direccion, String correo) {
-        super(nombre, id, tel, direccion, correo);
-    }
-    
-    
-    
     //Setters & Getters
 
     public String getActividadPrincipal() {
