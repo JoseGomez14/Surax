@@ -7,6 +7,7 @@ package co.edu.udea.surax.control;
 import co.edu.udea.surax.modelo.PersonaModelo;
 import co.edu.udea.surax.modelo.NaturalModelo;
 import co.edu.udea.surax.modelo.JuridicaModelo;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -70,7 +71,7 @@ public class PersonaControl{
     public void crearPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
             String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, String ocupacion,
             short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
-            short vo2max){
+            short vo2max) throws IOException{
         listaDePersonas.add(new NaturalModelo(sexo, enfermedadesPreinscritas, discapacidad, ocupacion, estrato, estadoCivil, nivelEducativo, edad, nombre, id, tel, direccion, correo));
         data.set(0, listaDePersonas);
     }
@@ -141,7 +142,7 @@ public class PersonaControl{
     public boolean actPersona(String nombre, long id, long tel, ArrayList<String> direccion, 
         String correo, char sexo, String enfermedadesPreinscritas, boolean discapacidad, String ocupacion,
         short estrato, String estadoCivil, String nivelEducativo, short edad, short peso,  short altura,
-        short vo2max){
+        short vo2max) throws IOException{
         
         if(!listaDePersonas.isEmpty()){
             for(int i = 0; i < listaDePersonas.size(); i++){
