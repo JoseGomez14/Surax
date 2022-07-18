@@ -52,4 +52,4 @@ La aplicación se ha desarrollado bajo el paradigma objetual o también conocido
   
   ### Optimización
   
-  Aunque este no es uno de los puntos más importandes dentro de los objetivos del proyecto, se hizo lo posible por preservar las buenas técnicas dentro del proceso de la codificación del aplicativo, pero debe seguir escalndo para optimizar los métodos y la gestión de la información.
+  Aunque este no es uno de los puntos más importandes dentro de los objetivos del proyecto, se hizo lo posible por preservar las buenas técnicas dentro del proceso de la codificación del aplicativo, pero debe seguir escalndo para optimizar los métodos y la gestión de la información, dado que el almacenamineto en *RAM* afecta mucho en este aspecto.
