@@ -24,7 +24,7 @@ public class Control {
         ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
         ArrayList<VehiculoModelo> listaDeVehiculos = new ArrayList<VehiculoModelo>();
         ArrayList<EstudianteModelo> listaDeEstudiantes = new ArrayList<EstudianteModelo>();
-        ArrayList<PolizaParticular> listaPolizasPersonas = new ArrayList<PolizaParticular>();
+        ArrayList<PolizaVidaModelo> listaPolizasPersonas = new ArrayList<PolizaVidaModelo>();
         ArrayList<Object> data = new ArrayList<>();
         
         data.add(listaDePersonas);

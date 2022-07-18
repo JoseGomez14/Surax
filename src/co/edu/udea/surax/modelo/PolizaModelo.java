@@ -17,7 +17,7 @@ import java.util.Date;
 public class PolizaModelo {
 
     private int idPoliza;
-    //(copsto Mensual)
+    //(costo Mensual)
     private double costo;
     private Date fechaExp;
     private OperarioModelo vendedor;

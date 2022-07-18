@@ -574,10 +574,10 @@ public class PersonaVista extends javax.swing.JFrame {
         inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputId.setVerifyInputWhenFocusTarget(false);
         inputId.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 inputIdInputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         inputId.addActionListener(new java.awt.event.ActionListener() {
@@ -1149,6 +1149,14 @@ public class PersonaVista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jPanel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel5KeyPressed
+
     private void inputRdRuralActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdRuralActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputRdRuralActionPerformed
@@ -1175,56 +1183,6 @@ public class PersonaVista extends javax.swing.JFrame {
         DefaultComboBoxModel styleCbxModelMpios = new javax.swing.DefaultComboBoxModel<>(listMpios);
         inputOptionMpio.setModel(styleCbxModelMpios);
     }//GEN-LAST:event_inputOptionDptoActionPerformed
-
-    private void inputRdJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdJuridicaActionPerformed
-        cambiarAJuridica();
-    }//GEN-LAST:event_inputRdJuridicaActionPerformed
-
-    private void inputRdNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdNaturalActionPerformed
-        cambiarANatural();
-    }//GEN-LAST:event_inputRdNaturalActionPerformed
-
-    private void inputTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputTelActionPerformed
-
-    private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputEmailActionPerformed
-
-    private void inputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputIdActionPerformed
-
-    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputNombreActionPerformed
-
-    private void inputOptionSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOptionSexoActionPerformed
-
-    private void inputIdInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inputIdInputMethodTextChanged
-
-    }//GEN-LAST:event_inputIdInputMethodTextChanged
-
-    private void inputIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputIdKeyTyped
-        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
-            btnBuscarPersona.setEnabled(true);
-            btnEliminarPersona.setEnabled(true);
-        }else{
-            btnBuscarPersona.setEnabled(false);
-            btnEliminarPersona.setEnabled(false);
-        }
-    }//GEN-LAST:event_inputIdKeyTyped
-
-    private void btnAgregarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarPersonaMouseClicked
-        try {
-            agregarPersonaVista();
-        } catch (IOException ex) {
-            Logger.getLogger(PersonaVista.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnAgregarPersonaMouseClicked
 
     private void inputCheckBoxEnf12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf12ActionPerformed
         // TODO add your handling code here:
@@ -1270,21 +1228,55 @@ public class PersonaVista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputRdPrimariaActionPerformed
 
-    private void btnEliminarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarPersonaMouseClicked
-        eliminarPersonaVista();
-    }//GEN-LAST:event_btnEliminarPersonaMouseClicked
-
     private void inputActividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputActividadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputActividadActionPerformed
 
-    private void btnLimpiarVentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarVentanaMouseClicked
-        limpiarVetana();
-    }//GEN-LAST:event_btnLimpiarVentanaMouseClicked
+    private void inputOptionOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionOcupacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputOptionOcupacionActionPerformed
 
-    private void btnBuscarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarPersonaMouseClicked
-       buscarPersonaVista();
-    }//GEN-LAST:event_btnBuscarPersonaMouseClicked
+    private void inputOptionSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputOptionSexoActionPerformed
+
+    private void inputRdJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdJuridicaActionPerformed
+        cambiarAJuridica();
+    }//GEN-LAST:event_inputRdJuridicaActionPerformed
+
+    private void inputRdNaturalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputRdNaturalActionPerformed
+        cambiarANatural();
+    }//GEN-LAST:event_inputRdNaturalActionPerformed
+
+    private void inputNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNombreActionPerformed
+
+    private void inputIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputIdKeyTyped
+        if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
+            btnBuscarPersona.setEnabled(true);
+            btnEliminarPersona.setEnabled(true);
+        }else{
+            btnBuscarPersona.setEnabled(false);
+            btnEliminarPersona.setEnabled(false);
+        }
+    }//GEN-LAST:event_inputIdKeyTyped
+
+    private void inputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputIdActionPerformed
+
+    private void inputIdInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inputIdInputMethodTextChanged
+
+    }//GEN-LAST:event_inputIdInputMethodTextChanged
+
+    private void inputEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputEmailActionPerformed
+
+    private void inputTelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputTelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputTelActionPerformed
 
     private void btnActualizaInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizaInfoMouseClicked
         try {
@@ -1294,17 +1286,25 @@ public class PersonaVista extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnActualizaInfoMouseClicked
 
-    private void jPanel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel5KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel5KeyPressed
+    private void btnLimpiarVentanaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimpiarVentanaMouseClicked
+        limpiarVetana();
+    }//GEN-LAST:event_btnLimpiarVentanaMouseClicked
 
-    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formKeyPressed
+    private void btnEliminarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarPersonaMouseClicked
+        eliminarPersonaVista();
+    }//GEN-LAST:event_btnEliminarPersonaMouseClicked
 
-    private void inputOptionOcupacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputOptionOcupacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputOptionOcupacionActionPerformed
+    private void btnBuscarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBuscarPersonaMouseClicked
+        buscarPersonaVista();
+    }//GEN-LAST:event_btnBuscarPersonaMouseClicked
+
+    private void btnAgregarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarPersonaMouseClicked
+        try {
+            agregarPersonaVista();
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAgregarPersonaMouseClicked
 
     private void btnVolverKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVolverKeyPressed
         // TODO add your handling code here:

@@ -12,16 +12,16 @@ import java.util.Date;
  *
  * @author Eljac
  */
-public class PolizaParticular extends PolizaModelo{
+public class PolizaVidaModelo extends PolizaModelo{
 
     NaturalModelo asegurado;
     ArrayList<RiesgoModelo> riesgos;
 
-    public PolizaParticular(NaturalModelo asegurado) {
+    public PolizaVidaModelo(NaturalModelo asegurado) {
         this.asegurado = asegurado;
     }
 
-    public PolizaParticular(NaturalModelo asegurado, ArrayList<RiesgoModelo> riesgos,
+    public PolizaVidaModelo(NaturalModelo asegurado, ArrayList<RiesgoModelo> riesgos,
             int idPoliza, double costo, Date fechaExp,
             OperarioModelo vendedor, String tipo, int mesesContratados,
             Date vigencia, PersonaModelo tomador, PersonaModelo beneficiario,
