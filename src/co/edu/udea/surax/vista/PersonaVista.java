@@ -329,10 +329,10 @@ public class PersonaVista extends javax.swing.JFrame {
         inputOptionMpio.setSelectedItem(direccion.get(2));
         if("Rural".equals(direccion.get(3))){
             inputRdRural.setSelected(true);
-            inputRdJuridica.setSelected(false);
+            inputRdUrbana.setSelected(false);
         }else{
             inputRdRural.setSelected(false);
-            inputRdJuridica.setSelected(true);
+            inputRdUrbana.setSelected(true);
         }
         inputDir.setText(direccion.get(4));
         inputCodPostal.setText(direccion.get(5));
