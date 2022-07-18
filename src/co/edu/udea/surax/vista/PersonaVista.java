@@ -33,6 +33,14 @@ public class PersonaVista extends javax.swing.JFrame {
     ArrayList<String> listaOcupaciones = new ArrayList<String>();
     String[] arrOcupaciones;
     
+    int idxDtpoSelect = 0;
+    int idxMpioSelect = 0;
+    Utils utils = new Utils();
+    String[] listDptos = utils.getDEPARTAMENTOS();
+    String[] listMpios = utils.getMUNICIPIOS()[idxDtpoSelect];
+       
+    DefaultComboBoxModel optionsCbxModelDptos;
+    DefaultComboBoxModel optionsCbxModelMpios;
     
     /**
      * Creates new form PersonaVista
@@ -62,8 +70,7 @@ public class PersonaVista extends javax.swing.JFrame {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
-    
+
     public void agregarNaturalVista() throws IOException{
         if(comprobarFormularioNatural()){             
                 String nivEducativo = "Ninguno";
@@ -217,7 +224,6 @@ public class PersonaVista extends javax.swing.JFrame {
                 NaturalModelo naturalModelo = (NaturalModelo)personaBuscada;
                 buscarNaturalVista(naturalModelo);
                 cambiarANatural();
-                System.out.println(naturalModelo);
             }else if(personaBuscada instanceof JuridicaModelo){
                 JuridicaModelo juridicaModelo = (JuridicaModelo)personaBuscada;       
                 inputActividad.setText(juridicaModelo.getActividadPrincipal());
@@ -230,8 +236,9 @@ public class PersonaVista extends javax.swing.JFrame {
             inputId.setText(String.valueOf(personaBuscada.getId()));
             inputEmail.setText(personaBuscada.getCorreo());
             leerDir(personaBuscada.getDireccion());
-           
-           btnActualizaInfo.setEnabled(true);
+            inputId.setEnabled(false);
+
+            btnActualizaInfo.setEnabled(true);
        }else{
            msjIndicacion.setText("La persona buscada no se encuentra en la base de datos.");
        }
@@ -248,6 +255,7 @@ public class PersonaVista extends javax.swing.JFrame {
         btnBuscarPersona.setEnabled(false);
         btnEliminarPersona.setEnabled(false);
         btnActualizaInfo.setEnabled(false);
+        inputId.setEnabled(true);
     }
     
     public void compTxtFld(JTextField input, String expresion){
@@ -370,16 +378,7 @@ public class PersonaVista extends javax.swing.JFrame {
                 .createLineBorder(new java.awt.Color(112, 112, 112), 2), "NIT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
                 javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
     }
-        
-    int idxDtpoSelect = 0;
-    int idxMpioSelect = 0;
-    Utils utils = new Utils();
-    String[] listDptos = utils.getDEPARTAMENTOS();
-    String[] listMpios = utils.getMUNICIPIOS()[idxDtpoSelect];
-       
-    DefaultComboBoxModel optionsCbxModelDptos;
-    DefaultComboBoxModel optionsCbxModelMpios;
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -554,7 +553,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(btnActualizaInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 860, -1, -1));
 
         btnCotizarPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza.png"))); // NOI18N
-        btnCotizarPoliza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCotizarPoliza.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnCotizarPoliza.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"))); // NOI18N
         btnCotizarPoliza.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -590,10 +589,10 @@ public class PersonaVista extends javax.swing.JFrame {
         inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112))); // NOI18N
         inputId.setVerifyInputWhenFocusTarget(false);
         inputId.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 inputIdInputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         inputId.addActionListener(new java.awt.event.ActionListener() {
@@ -1051,6 +1050,7 @@ public class PersonaVista extends javax.swing.JFrame {
         inputRdUrbana.setBackground(new java.awt.Color(230, 246, 252));
         btnGroupZona.add(inputRdUrbana);
         inputRdUrbana.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        inputRdUrbana.setSelected(true);
         inputRdUrbana.setText("Urbana");
         inputRdUrbana.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

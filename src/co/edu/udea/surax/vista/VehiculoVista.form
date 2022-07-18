@@ -290,14 +290,13 @@
                 <Component class="javax.swing.JComboBox" name="inputOptionCategoria">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
+                      <StringArray count="6">
                         <StringItem index="0" value="Seleccione una categor&#xed;a"/>
                         <StringItem index="1" value="Autom&#xf3;vil"/>
                         <StringItem index="2" value="Bicicleta"/>
                         <StringItem index="3" value="Cami&#xf3;n"/>
                         <StringItem index="4" value="Monopat&#xed;n"/>
                         <StringItem index="5" value="Motocicleta"/>
-                        <StringItem index="6" value=" "/>
                       </StringArray>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

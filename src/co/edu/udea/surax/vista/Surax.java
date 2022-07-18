@@ -41,9 +41,20 @@ public class Surax extends javax.swing.JFrame {
         this.estudiantes = (ArrayList<EstudianteModelo>) this.data.get(2);
         this.polizas = (ArrayList<PolizaModelo>) this.data.get(3);
     }
-
+    
     private Surax() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void mostrarConsolidado(){
+        jPanelInicial.setVisible(false);
+        jPanelConsolidado.setVisible(true);
+        icon.setVisible(false);
+        String msj = "";
+        for (PersonaModelo persona : this.personas) {
+            msj += " Nombre: " + persona.getNombre() + "   ID: " +  persona.getId();
+        }
+        jLabel1.setText(msj);
     }
 
     /**
@@ -86,6 +97,11 @@ public class Surax extends javax.swing.JFrame {
 
         btnVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/vehiculos_card.png"))); // NOI18N
         btnVehiculos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVehiculos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVehiculosMouseClicked(evt);
+            }
+        });
 
         btnPersonas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/personas_card.png"))); // NOI18N
         btnPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -165,30 +181,32 @@ public class Surax extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Sin Información");
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanelConsolidadoLayout = new javax.swing.GroupLayout(jPanelConsolidado);
         jPanelConsolidado.setLayout(jPanelConsolidadoLayout);
         jPanelConsolidadoLayout.setHorizontalGroup(
             jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
-                .addGroup(jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnVolver))
-                    .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(370, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(btnVolver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConsolidadoLayout.createSequentialGroup()
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1061, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
         );
         jPanelConsolidadoLayout.setVerticalGroup(
             jPanelConsolidadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConsolidadoLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(362, Short.MAX_VALUE))
+                .addContainerGap(398, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanelConsolidado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
@@ -201,11 +219,7 @@ public class Surax extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPersonasMouseClicked
 
     private void btnConsolidadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsolidadoMouseClicked
-        jPanelInicial.setVisible(false);
-        jPanelConsolidado.setVisible(true);
-        icon.setVisible(false);
-        jLabel1.setText("Nombre: " + this.personas.get(0).getNombre() + "\nID: " +  this.personas.get(0).getId());
-        System.out.println(this.personas.get(0).getNombre());
+        mostrarConsolidado();
     }//GEN-LAST:event_btnConsolidadoMouseClicked
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
@@ -217,6 +231,10 @@ public class Surax extends javax.swing.JFrame {
     private void btnVolverKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVolverKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVolverKeyPressed
+
+    private void btnVehiculosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVehiculosMouseClicked
+        Utils.pasarFrame(this, new VehiculoVista());
+    }//GEN-LAST:event_btnVehiculosMouseClicked
 
     /**
      * @param args the command line arguments

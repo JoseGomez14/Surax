@@ -168,7 +168,7 @@ public class VehiculoVista extends javax.swing.JFrame {
         labelInfoVehiculo1.setForeground(new java.awt.Color(0, 163, 224));
         labelInfoVehiculo1.setText("Información del Vehículo*");
 
-        inputOptionCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoría", "Automóvil", "Bicicleta", "Camión", "Monopatín", "Motocicleta", " " }));
+        inputOptionCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una categoría", "Automóvil", "Bicicleta", "Camión", "Monopatín", "Motocicleta" }));
         inputOptionCategoria.setBorder(null);
         inputOptionCategoria.setMinimumSize(new java.awt.Dimension(118, 20));
         inputOptionCategoria.setPreferredSize(new java.awt.Dimension(118, 20));
