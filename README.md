@@ -1,5 +1,10 @@
 # Surax
 
+## - [Propósito](README.md/#propósito)
+## - [Elementos previos al desarrollo](README.md/elementos-previos-al-desarrollo)
+## - [Información de desarrollo](README.md/#información-de-desarrollo)
+
+
 
 ## Propósito
 
