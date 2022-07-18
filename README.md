@@ -1,9 +1,5 @@
 # Surax
 
-## - [Propósito](https://github.com/JoseG04/Surax#propósito)
-## - [Elementos previos al desarrollo](https://github.com/JoseG04/#elementos-previos-al-desarrollo)
-## - [Información de desarrollo](https://github.com/JoseG04/#información-de-desarrollo)
-
 
 
 ## Propósito
@@ -35,3 +31,20 @@ Es proyecto ha sido desarrollado por los siguientes estudiantes de Ingeniería d
 -	Luis David Martínez G.
 
 La aplicación se ha desarrollado bajo el paradigma objetual o también conocido como la programación orientada a objetos (POO), usando el lenguaje de programación *JAVA* en su versión *Standard Edition*, y el patrón de diseño *MVC (Modelo – vista – controlador)*.
+
+
+  ### Interfaz gráfica
+  
+  Para la interfaz gráfica de la aplicación se ha hecho uso de la librería *Java Swing* que proporciona los elementos gráficos necesarios para mostrar información generada desde el código en un ambiente gráfico. Aunque sus componentes no son muy modernos si tienen una amplia lista de propiedades que permiten modificarlos y también un manejo de eventos completo que permitió mejorar la interactividad en el uso de la aplicación.
+  
+  
+  ### Almacenamiento de información
+  
+  Para almacenar los datos de la aplicación se ha hecho uso de los métodos para guardar información en *RAM* lo que implica que los datos se guardarán mientras el programa permanezca activo y cada vez que esté se inicie los campos estarán en blanco.
+  
+  Se han usado variables, vectores, *ArrayList*, *HashMap* para guardar los datos necesarios para realizar las operaciones, y los datos que el usuario podrá seleccionar desde cajas de selección están almacenados en documentos que contienen la información obtenida desde fuentes afines a los datos requeridos.
+
+
+  ### Seguridad
+  
+  Se ha tomado el supuesto de que esté software está creado como *Software Cerrado* y de uso exclusivo para la compañía prestadora del servició, pero si se quisiera proteger aún más y escalar con otros sistemas de información se podría generar un control de sesión por operario, donde se ingrese una clave y contraseña y el programa valide y cargue la información necesaria.
