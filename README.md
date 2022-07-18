@@ -17,7 +17,7 @@ En el ciclo del desarrollo se hacen necesarios otros tipos de consideraciones pr
 -	Diagrama: https://drive.google.com/file/d/1YhAVe1v1xRH3Oyz_qnZlXSkMOIg_ertM/view?usp=sharing
 -	Mockup: https://www.figma.com/file/enqqoaALARx6VwduUAoqrA/Surax---Main?node-id=0%3A1
 
-Además, se han usado algunas herramientas que atienden al flujo de trabajo de metodologías agiles, como *Trello*, chats de comunicación, aplicativos de videoconferencias, *figma*, etc.
+Además, se han usado algunas herramientas que atienden al flujo de trabajo de metodologías agiles, como [*Trello*](https://trello.com/es), [*GitHub*](https://github.com/), chats de comunicación, aplicativos de videoconferencias, [*figma*](https://www.figma.com/), etc.
 
 
 ## Información de desarrollo
