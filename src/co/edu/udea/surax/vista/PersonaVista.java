@@ -346,8 +346,14 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanelInfoPer3.setVisible(false);
         inputRdNatural.setSelected(true);
         inputRdJuridica.setSelected(false);
-        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
-        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax
+                .swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), 
+                "Nombre Completo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder
+                .DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory
+                .createLineBorder(new java.awt.Color(112, 112, 112), 2), "Número de Documento",
+                javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder
+                .DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
     }
     
     public void cambiarAJuridica(){
@@ -356,8 +362,13 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanelInfoPer3.setVisible(true);
         inputRdNatural.setSelected(false);
         inputRdJuridica.setSelected(true);
-        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "Razón Social", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
-        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(112, 112, 112), 2), "NIT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory
+                .createLineBorder(new java.awt.Color(112, 112, 112), 2), "Razón Social",
+                javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION,
+                new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
+        inputId.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory
+                .createLineBorder(new java.awt.Color(112, 112, 112), 2), "NIT", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 16), new java.awt.Color(112, 112, 112)));
     }
         
     int idxDtpoSelect = 0;
@@ -470,7 +481,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
-        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnVolverMouseClicked(evt);
@@ -484,7 +495,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 32, -1, 54));
 
         btnAgregarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_persona.png"))); // NOI18N
-        btnAgregarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAgregarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAgregarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/agregar_persona_disabled.png"))); // NOI18N
         btnAgregarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -494,7 +505,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(btnAgregarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(106, 32, -1, -1));
 
         btnBuscarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_persona.png"))); // NOI18N
-        btnBuscarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBuscarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/buscar_persona_disabled.png"))); // NOI18N
         btnBuscarPersona.setEnabled(false);
         btnBuscarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -505,7 +516,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(btnBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(499, 32, -1, -1));
 
         btnEliminarPersona.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_persona.png"))); // NOI18N
-        btnEliminarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminarPersona.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/eliminar_persona_disabled.png"))); // NOI18N
         btnEliminarPersona.setEnabled(false);
         btnEliminarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -516,7 +527,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(btnEliminarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(892, 32, -1, -1));
 
         btnLimpiarVentana.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/trash_icon.png"))); // NOI18N
-        btnLimpiarVentana.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLimpiarVentana.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnLimpiarVentana.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/trash_icon_disabled.png"))); // NOI18N
         btnLimpiarVentana.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -532,7 +543,7 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanel5.add(msjIndicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 92, 1280, 40));
 
         btnActualizaInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion.png"))); // NOI18N
-        btnActualizaInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizaInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnActualizaInfo.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/act_informacion_disabled.png"))); // NOI18N
         btnActualizaInfo.setEnabled(false);
         btnActualizaInfo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -545,6 +556,11 @@ public class PersonaVista extends javax.swing.JFrame {
         btnCotizarPoliza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza.png"))); // NOI18N
         btnCotizarPoliza.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCotizarPoliza.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/cotizar_poliza_disabled.png"))); // NOI18N
+        btnCotizarPoliza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCotizarPolizaMouseClicked(evt);
+            }
+        });
         jPanel5.add(btnCotizarPoliza, new org.netbeans.lib.awtextra.AbsoluteConstraints(716, 860, -1, -1));
 
         jPanelIzq.setBackground(java.awt.Color.white);
@@ -677,7 +693,6 @@ public class PersonaVista extends javax.swing.JFrame {
         jPanelInfoPer2.setBackground(java.awt.Color.white);
 
         inputOptionSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un sexo", "Hombre", "Mujer" }));
-        inputOptionSexo.setBorder(null);
         inputOptionSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionSexoActionPerformed(evt);
@@ -693,14 +708,12 @@ public class PersonaVista extends javax.swing.JFrame {
         inputNumEstrato.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
 
         inputOptionEstadoCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un estado civil", "Soltero/a", "Casado/a", "Viudo/a", "Divorciado/a", "En unión libre" }));
-        inputOptionEstadoCivil.setBorder(null);
 
         inputCheckBoxDiscapacidad.setBackground(java.awt.Color.white);
         inputCheckBoxDiscapacidad.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         inputCheckBoxDiscapacidad.setText("Discapacidad");
 
         inputOptionOcupacion.setModel(new javax.swing.DefaultComboBoxModel<>(arrOcupaciones));
-        inputOptionOcupacion.setBorder(null);
         inputOptionOcupacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionOcupacionActionPerformed(evt);
@@ -756,7 +769,6 @@ public class PersonaVista extends javax.swing.JFrame {
         });
 
         inputOptionSector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione un sector", "Agropecuario", "Comercio exterior", "Comercio y servicios", "Construcción", "Industria", "Precios", "Economía Regional", "Educacion", "Tecnologías de información", "Agropecuario", "Industria", "Indicadores de competitividad", "Educacion" }));
-        inputOptionSector.setBorder(null);
 
         javax.swing.GroupLayout jPanelInfoPer3Layout = new javax.swing.GroupLayout(jPanelInfoPer3);
         jPanelInfoPer3.setLayout(jPanelInfoPer3Layout);
@@ -1001,7 +1013,6 @@ public class PersonaVista extends javax.swing.JFrame {
         labelDir.setText("Dirección*");
 
         inputOptionDpto.setModel(new javax.swing.DefaultComboBoxModel<>(listDptos));
-        inputOptionDpto.setBorder(null);
         inputOptionDpto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionDptoActionPerformed(evt);
@@ -1009,7 +1020,6 @@ public class PersonaVista extends javax.swing.JFrame {
         });
 
         inputOptionMpio.setModel(new javax.swing.DefaultComboBoxModel<>(listMpios));
-        inputOptionMpio.setBorder(null);
         inputOptionMpio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputOptionMpioActionPerformed(evt);
@@ -1111,7 +1121,7 @@ public class PersonaVista extends javax.swing.JFrame {
                 .addGroup(jPanelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelEnf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelDir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelDerLayout.setVerticalGroup(
             jPanelDerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1313,6 +1323,10 @@ public class PersonaVista extends javax.swing.JFrame {
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
         Utils.pasarFrame(this, new Surax(controladorDePersona.getData()));
     }//GEN-LAST:event_btnVolverMouseClicked
+
+    private void btnCotizarPolizaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCotizarPolizaMouseClicked
+        Utils.pasarFrame(this, new PolizaVista(controladorDePersona.getData()));
+    }//GEN-LAST:event_btnCotizarPolizaMouseClicked
 
     /**
      * @param args the command line arguments

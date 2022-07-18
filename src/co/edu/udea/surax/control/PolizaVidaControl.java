@@ -17,10 +17,22 @@ public class PolizaVidaControl implements PolizaInterface {
 
     private ArrayList<RiesgoModelo> Riesgos = new ArrayList<>();
     private ArrayList<PolizaVidaModelo> Polizas;
-
-    public PolizaVidaControl() {
+    private ArrayList<Object> data;
+    
+    public PolizaVidaControl(ArrayList<Object> data) {
         llenarRiesgos();
+        this.data = data;
     }
+
+    public ArrayList<Object> getData() {
+        return data;
+    }
+
+    public void setData(ArrayList<Object> data) {
+        this.data = data;
+    }
+    
+    
     
     /**
      * 

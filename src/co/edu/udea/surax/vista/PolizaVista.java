@@ -5,17 +5,28 @@
  */
 package co.edu.udea.surax.vista;
 
+import co.edu.udea.surax.control.PolizaVidaControl;
+import co.edu.udea.surax.modelo.Utils;
+import java.util.ArrayList;
+
 /**
  *
  * @author Eljac
  */
 public class PolizaVista extends javax.swing.JFrame {
+    
+    PolizaVidaControl polizaVidaControl;
 
     /**
      * Creates new form PolizaVista
      */
-    public PolizaVista() {
+    public PolizaVista(ArrayList<Object> data) {
         initComponents();
+        polizaVidaControl = new PolizaVidaControl(data);
+    }
+
+    private PolizaVista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -31,6 +42,8 @@ public class PolizaVista extends javax.swing.JFrame {
         btnVolver = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(java.awt.Color.white);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/surax/vista/images/back_icon.png"))); // NOI18N
         btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -77,7 +90,7 @@ public class PolizaVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVolverMouseClicked
-       // Utils.pasarFrame(this, new Surax(controladorDePersona.getData()));
+       Utils.pasarFrame(this, new PersonaVista(polizaVidaControl.getData()));
     }//GEN-LAST:event_btnVolverMouseClicked
 
     private void btnVolverKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnVolverKeyPressed

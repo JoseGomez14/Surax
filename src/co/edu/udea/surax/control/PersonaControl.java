@@ -19,6 +19,10 @@ import java.util.ArrayList;
  */
  
 public class PersonaControl{
+    
+    public static ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
+    public static ArrayList<Object> data;
+    
     /**
      * Método constructor de la clase
      * 
@@ -28,13 +32,12 @@ public class PersonaControl{
         this.data = data;
     }
     
-    public static ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
-    public static ArrayList<Object> data;
-
+    /*Getters*/
     public static ArrayList<PersonaModelo> getListaDePersonas() {
         return listaDePersonas;
     }
-
+    
+    /*Setters*/
     public static void setListaDePersonas(ArrayList<PersonaModelo> listaDePersonas) {
         PersonaControl.listaDePersonas = listaDePersonas;
     }
