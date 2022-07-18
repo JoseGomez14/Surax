@@ -48,3 +48,7 @@ La aplicación se ha desarrollado bajo el paradigma objetual o también conocido
   ### Seguridad
   
   Se ha tomado el supuesto de que esté software está creado como *Software Cerrado* y de uso exclusivo para la compañía prestadora del servició, pero si se quisiera proteger aún más y escalar con otros sistemas de información se podría generar un control de sesión por operario, donde se ingrese una clave y contraseña y el programa valide y cargue la información necesaria.
+  
+  
+  ### Optimización
+  
