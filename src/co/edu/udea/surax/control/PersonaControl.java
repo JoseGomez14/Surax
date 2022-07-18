@@ -9,7 +9,6 @@ import co.edu.udea.surax.modelo.NaturalModelo;
 import co.edu.udea.surax.modelo.JuridicaModelo;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * 

@@ -83,8 +83,8 @@ public class NaturalModelo extends PersonaModelo {
         this.discapacidad = discapacidad;
     }
 
-    public HashMap getOcupacion() {
-        return ocupacion;
+    public String getOcupacion() {
+        return String.valueOf(this.ocupacion.get(0));
     }
 
     public void setOcupacion(HashMap ocupacion) {
@@ -122,6 +122,8 @@ public class NaturalModelo extends PersonaModelo {
     public void setEdad(short edad) {
         this.edad = edad;
     }
+    
+    
 /*
     public short getPeso() {
         return peso;

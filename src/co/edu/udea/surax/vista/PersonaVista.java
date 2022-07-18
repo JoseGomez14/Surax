@@ -213,10 +213,13 @@ public class PersonaVista extends javax.swing.JFrame {
         PersonaModelo personaBuscada = controladorDePersona.leerPersona(Long.parseLong(inputId.getText()));
     
        if(personaBuscada != null){
-           if(personaBuscada instanceof NaturalModelo naturalModelo){
+           if(personaBuscada instanceof NaturalModelo){
+                NaturalModelo naturalModelo = (NaturalModelo)personaBuscada;
                 buscarNaturalVista(naturalModelo);
                 cambiarANatural();
-            }else if(personaBuscada instanceof JuridicaModelo juridicaModelo){
+                System.out.println(naturalModelo);
+            }else if(personaBuscada instanceof JuridicaModelo){
+                JuridicaModelo juridicaModelo = (JuridicaModelo)personaBuscada;       
                 inputActividad.setText(juridicaModelo.getActividadPrincipal());
                 inputOptionSector.setSelectedItem(((JuridicaModelo) personaBuscada).getSector());
                 cambiarAJuridica();
