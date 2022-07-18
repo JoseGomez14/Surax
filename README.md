@@ -1,8 +1,8 @@
 # Surax
 
-## - [Propósito](README.md/#propósito)
-## - [Elementos previos al desarrollo](README.md/elementos-previos-al-desarrollo)
-## - [Información de desarrollo](README.md/#información-de-desarrollo)
+## - [Propósito](https://github.com/JoseG04/Surax#propósito)
+## - [Elementos previos al desarrollo](https://github.com/JoseG04/#elementos-previos-al-desarrollo)
+## - [Información de desarrollo](https://github.com/JoseG04/#información-de-desarrollo)
 
 
 
