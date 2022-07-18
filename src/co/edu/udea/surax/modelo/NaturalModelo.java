@@ -46,7 +46,7 @@ public class NaturalModelo extends PersonaModelo {
             String nivelEducativo, short edad, String nombre, 
             long id, long tel, ArrayList<String> direccion, String correo) throws IOException {
         super(nombre, id, tel, direccion, correo);
-        this.trabajos = Utils.leerCsv(ocupacion,0);
+        this.trabajos = Utils.leerCsv("Profesiones.csv",0);
         this.sexo = sexo;
         this.enfermedadesPreinscritas = enfermedadesPreinscritas;
         this.discapacidad = discapacidad;
@@ -54,9 +54,8 @@ public class NaturalModelo extends PersonaModelo {
         this.estadoCivil = estadoCivil;
         this.nivelEducativo = nivelEducativo;
         this.edad = edad;
-        calcularPorcRiesgo();
         asignarOcupacion(ocupacion);
-
+        calcularPorcRiesgo();
     }
     
     //Getters & Setters
@@ -216,7 +215,8 @@ public class NaturalModelo extends PersonaModelo {
             puntaje += 3;
         }
         
-        puntaje += (this.ocupacion.get(1)*2);
+        String n = String.valueOf(this.ocupacion.get(1));
+        puntaje += (Integer.parseInt(n)*2);
         
         Double res = ((Math.exp(edad/20.268888)- 1.6666)) ;
         puntaje = res.intValue();
@@ -237,8 +237,7 @@ public class NaturalModelo extends PersonaModelo {
      * @param empleo el trabajo que haya seleccionado el usuario
      */
     public void asignarOcupacion(String empleo) {
-
-        this.trabajos.stream().filter((trabajo) -> (trabajo.get(1).equals(empleo))).forEachOrdered((HashMap trabajo) -> {
+        this.trabajos.stream().filter((trabajo) -> (trabajo.get(0).equals(empleo))).forEachOrdered((HashMap trabajo) -> {
             NaturalModelo.this.ocupacion = trabajo;
         });
     }

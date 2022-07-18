@@ -13,6 +13,8 @@ import co.edu.udea.surax.modelo.Utils;
 import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 
@@ -62,7 +64,7 @@ public class PersonaVista extends javax.swing.JFrame {
     
     
     
-    public void agregarNaturalVista(){
+    public void agregarNaturalVista() throws IOException{
         if(comprobarFormularioNatural()){             
                 String nivEducativo = "Ninguno";
                 
@@ -106,7 +108,7 @@ public class PersonaVista extends javax.swing.JFrame {
             }
     }
     
-    public void agregarPersonaVista(){
+    public void agregarPersonaVista() throws IOException{
         if(Utils.comprobarTexto(inputId.getText(), "^\\d{7,10}$")){
             if(!controladorDePersona.personaExistente(Long.parseLong(inputId.getText()))){
                 if(inputRdNatural.isSelected()){
@@ -136,7 +138,7 @@ public class PersonaVista extends javax.swing.JFrame {
         msjIndicacion.setText(msj);
     }
     
-    public void actualizarPersonaVista(){
+    public void actualizarPersonaVista() throws IOException{
         if(inputRdNatural.isSelected()){
             if(comprobarFormularioNatural()){             
                 String nivEducativo = "Ninguno";
@@ -1214,7 +1216,11 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_inputIdKeyTyped
 
     private void btnAgregarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarPersonaMouseClicked
-        agregarPersonaVista();
+        try {
+            agregarPersonaVista();
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnAgregarPersonaMouseClicked
 
     private void inputCheckBoxEnf12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputCheckBoxEnf12ActionPerformed
@@ -1278,7 +1284,11 @@ public class PersonaVista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarPersonaMouseClicked
 
     private void btnActualizaInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizaInfoMouseClicked
-        actualizarPersonaVista();
+        try {
+            actualizarPersonaVista();
+        } catch (IOException ex) {
+            Logger.getLogger(PersonaVista.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnActualizaInfoMouseClicked
 
     private void jPanel5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPanel5KeyPressed

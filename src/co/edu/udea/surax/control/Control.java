@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 public class Control {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         ArrayList<PersonaModelo> listaDePersonas = new ArrayList<PersonaModelo>();
         ArrayList<VehiculoModelo> listaDeVehiculos = new ArrayList<VehiculoModelo>();
         ArrayList<EstudianteModelo> listaDeEstudiantes = new ArrayList<EstudianteModelo>();
@@ -40,7 +40,6 @@ public class Control {
         direccionOperario.add("");
         
         data.add(new OperarioModelo("Vendedor", 10, 30, "Juan Peréz", 1040402343, 6488080, direccionOperario, "juan.perez@gmail.com"));
-        
         Surax ventanaIncial = new Surax(data);
         ventanaIncial.setVisible(true);
     }   
